@@ -18,11 +18,15 @@ topic_pool:
   - 数字游戏产业
   - 互动叙事
   - IP 开发与版权运营
+  - 跨媒介叙事
+  - 有声书
+  - 知识付费
   - 出版平台治理
   - 出版企业管理
   - 出版品牌与用户运营
   - 数字内容产品
   - 生成式 AI 与内容生产
+  - 生成式 AI 与出版伦理
   - AI 辅助编辑、审稿与出版伦理
 
 groups:
@@ -32,13 +36,18 @@ groups:
       - 学术出版
       - 科技期刊
       - 期刊治理
+      - 科技期刊治理
       - 开放获取
       - 同行评议
       - 学术传播
       - 期刊国际化
+      - 科技期刊国际化
+      - 学术期刊治理
       - scholarly publishing
       - scientific journal
       - journal governance
+      - academic journal governance
+      - science and technology journals
       - open access
       - peer review
       - scholarly communication
@@ -48,23 +57,32 @@ groups:
     keywords:
       - 出版企业管理
       - 出版组织能力
+      - 出版企业管理
       - 出版品牌
       - 出版营销
       - 版权运营
+      - IP 开发
+      - IP 运营
       - 出版平台治理
       - 知识服务
+      - 知识付费
       - publishing management
+      - publishing enterprise management
       - publishing organization
       - publishing brand
       - copyright operation
+      - copyright management
+      - IP operation
       - platform governance
       - knowledge service
+      - paid knowledge
   digital_publishing:
     description: 数字出版、融合出版与数字内容产品
     keywords:
       - 数字出版
       - 融合出版
       - 数据出版
+      - 智能出版
       - 数字阅读
       - 网络文学
       - 知识付费
@@ -72,10 +90,14 @@ groups:
       - 电子书
       - 数字内容产品
       - digital publishing
+      - integrated publishing
+      - smart publishing
       - data publishing
       - digital reading
       - online literature
       - audiobook
+      - audio book
+      - paid knowledge
       - ebook
       - digital content
   game_and_interactive_publishing:
@@ -87,13 +109,16 @@ groups:
       - 游戏化阅读
       - 跨媒介叙事
       - IP 开发
+      - IP 运营
       - 虚拟社区
       - game publishing
       - digital games
+      - digital game industry
       - interactive narrative
       - gamified reading
       - transmedia storytelling
       - intellectual property development
+      - IP development
       - virtual community
   transferable_management_communication:
     description: 可迁移的经管与新闻传播研究
@@ -106,6 +131,8 @@ groups:
       - 国际传播
       - 媒介管理
       - 文化产业管理
+      - 出版企业管理
+      - 科技期刊治理
       - brand equity
       - organizational capability
       - dynamic capability
@@ -135,3 +162,7 @@ groups:
       - 数据治理
       - 科研诚信
       - AI 伦理
+      - 出版伦理
+      - 生成式 AI 与出版伦理
+      - AI publishing ethics
+      - generative AI and publishing ethics

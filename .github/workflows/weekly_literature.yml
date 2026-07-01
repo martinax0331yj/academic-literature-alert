@@ -5,6 +5,15 @@ on:
     # Monday Beijing time 09:00; GitHub Actions cron uses UTC.
     - cron: "0 1 * * 1"
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Generate preview only; do not send email or update pushed records"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 permissions:
   contents: write
@@ -31,10 +40,16 @@ jobs:
           EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
-        run: python scripts/run_pipeline.py --mode weekly
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            python scripts/run_pipeline.py --mode weekly --dry-run
+          else
+            python scripts/run_pipeline.py --mode weekly
+          fi
 
       - name: Commit updated cache and records
+        if: ${{ github.event.inputs.dry_run != 'true' }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "update weekly literature alert records"
+          commit_message: "update literature alert records"
           file_pattern: data/*.csv data/*.jsonl data/*.md logs/.gitkeep

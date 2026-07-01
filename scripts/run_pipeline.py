@@ -27,7 +27,7 @@ LOGGER = logging.getLogger("academic_literature_alert")
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run academic literature alert pipeline.")
     parser.add_argument("--mode", choices=["daily", "weekly"], required=True)
-    parser.add_argument("--dry-run", action="store_true", help="Generate preview and records without sending email.")
+    parser.add_argument("--dry-run", action="store_true", help="Generate preview without sending email or updating pushed records.")
     parser.add_argument("--manual-records", type=Path, help="Optional CSV/XLSX file exported manually by the user.")
     parser.add_argument("--skip-network", action="store_true", help="Use fallback/manual records only.")
     args = parser.parse_args()
@@ -51,16 +51,34 @@ def main() -> None:
     records = load_records(PUSHED_RECORDS)
     fresh = filter_recent_duplicates(selected, records, args.mode)
     record_items = fresh
+    preview_only = False
     if not fresh:
-        LOGGER.info("All selected items were recently pushed; keeping a preview from selected items.")
-        fresh = selected[: min(len(selected), target_count(args.mode))]
+        LOGGER.info("All selected items were recently pushed.")
+        if args.dry_run:
+            LOGGER.info("Dry-run preview will show selected duplicate candidates for inspection.")
+            fresh = selected[: min(len(selected), target_count(args.mode))]
+            preview_only = True
+        else:
+            fresh = []
+            preview_only = True
 
-    markdown = render_markdown(fresh, args.mode)
-    html = render_html(fresh, args.mode)
+    markdown = render_markdown(fresh, args.mode, preview_only=preview_only)
+    html = render_html(fresh, args.mode, preview_only=preview_only)
     PREVIEW_PATH.write_text(markdown, encoding="utf-8")
     subject = f"[Literature Alert] {args.mode} digest - {date.today().isoformat()}"
-    sent = send_email(subject, markdown, html, dry_run=args.dry_run)
-    append_records(record_items, PUSHED_RECORDS, status="sent" if sent else "preview")
+    sent = False
+    if fresh and not preview_only:
+        sent = send_email(subject, markdown, html, dry_run=args.dry_run)
+    elif args.dry_run:
+        send_email(subject, markdown, html, dry_run=True)
+    else:
+        LOGGER.info("No fresh items; email was not sent.")
+    if args.dry_run:
+        LOGGER.info("Dry-run enabled; pushed records were not updated.")
+    elif sent:
+        append_records(record_items, PUSHED_RECORDS, status="sent")
+    else:
+        LOGGER.warning("Email was not sent; pushed records were not updated.")
     LOGGER.info("Pipeline finished: selected=%s fresh=%s recorded=%s sent=%s", len(selected), len(fresh), len(record_items), sent)
 
 
@@ -147,19 +165,32 @@ def load_records(path: Path) -> list[dict[str, str]]:
 
 def filter_recent_duplicates(items: list[dict[str, Any]], records: list[dict[str, str]], mode: str) -> list[dict[str, Any]]:
     today = date.today()
-    recent_keys: set[str] = set()
+    recent_dois: set[str] = set()
+    recent_title_hashes: set[str] = set()
     for record in records:
+        if record.get("status") != "sent":
+            continue
         pushed_date = parse_date(record.get("pushed_date", ""))
         if not pushed_date:
             continue
         days = (today - pushed_date).days
-        limit = 180 if record.get("category") == "classic_highly_cited_english" or mode == "daily" and "classic" in record.get("category", "") else 90
+        limit = 180 if is_classic_record(record) else 90
         if days <= limit:
-            recent_keys.add(record.get("doi") or record.get("title_hash") or "")
+            doi = normalize_doi(record.get("doi", ""))
+            title = record.get("title_hash", "")
+            if doi:
+                recent_dois.add(doi)
+            if title:
+                recent_title_hashes.add(title)
     fresh = []
     for item in items:
-        if item_key(item) not in recent_keys:
-            fresh.append(item)
+        doi = normalize_doi(str(item.get("doi", "")))
+        title = title_hash(str(item.get("title", "")))
+        if doi and doi in recent_dois:
+            continue
+        if title and title in recent_title_hashes:
+            continue
+        fresh.append(item)
     return fresh
 
 
@@ -176,7 +207,7 @@ def append_records(items: list[dict[str, Any]], path: Path, status: str) -> None
                     "doi": normalize_doi(str(item.get("doi", ""))),
                     "title_hash": title_hash(str(item.get("title", ""))),
                     "title": item.get("title", ""),
-                    "category": item.get("daily_bucket") or item.get("category") or item.get("matched_category") or "uncategorized",
+                    "category": record_category(item),
                     "first_seen_date": first_seen.get(key, today),
                     "pushed_date": today,
                     "source": item.get("source", "missing"),
@@ -193,7 +224,25 @@ def item_key(item: dict[str, Any]) -> str:
 
 
 def normalize_doi(doi: str) -> str:
-    return doi.strip().lower().replace("https://doi.org/", "")
+    return doi.strip().lower().replace("https://doi.org/", "").replace("http://doi.org/", "")
+
+
+def record_category(item: dict[str, Any]) -> str:
+    if is_classic_item(item):
+        return "classic_highly_cited_english"
+    return item.get("daily_bucket") or item.get("category") or item.get("matched_category") or "uncategorized"
+
+
+def is_classic_item(item: dict[str, Any]) -> bool:
+    try:
+        citations = int(item.get("citation_count") or 0)
+    except (TypeError, ValueError):
+        citations = 0
+    return item.get("language") == "en" and citations >= 50
+
+
+def is_classic_record(record: dict[str, str]) -> bool:
+    return "classic" in (record.get("category") or "")
 
 
 def normalize_title(title: str) -> str:

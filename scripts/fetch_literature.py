@@ -5,6 +5,8 @@ import json
 import logging
 import time
 from dataclasses import dataclass, field
+import hashlib
+import re
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -305,9 +307,48 @@ def fallback_items(mode: str) -> list[dict[str, Any]]:
 
 def write_cache(items: list[dict[str, Any]], cache_path: Path = ROOT / "data" / "literature_cache.jsonl") -> None:
     cache_path.parent.mkdir(parents=True, exist_ok=True)
+    seen = existing_cache_keys(cache_path)
     with cache_path.open("a", encoding="utf-8") as handle:
         for item in items:
+            key = item_key(item)
+            if key in seen:
+                continue
             handle.write(json.dumps(item, ensure_ascii=False) + "\n")
+            seen.add(key)
+
+
+def existing_cache_keys(cache_path: Path) -> set[str]:
+    if not cache_path.exists():
+        return set()
+    keys: set[str] = set()
+    with cache_path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if not line.strip():
+                continue
+            try:
+                keys.add(item_key(json.loads(line)))
+            except json.JSONDecodeError:
+                LOGGER.warning("Skipping malformed cache line in %s", cache_path)
+    return keys
+
+
+def item_key(item: dict[str, Any]) -> str:
+    doi = normalize_doi(str(item.get("doi", "")))
+    if doi:
+        return doi
+    return title_hash(str(item.get("title", "")))
+
+
+def normalize_doi(doi: str) -> str:
+    return doi.strip().lower().replace("https://doi.org/", "").replace("http://doi.org/", "")
+
+
+def normalize_title(title: str) -> str:
+    return re.sub(r"\W+", "", title.casefold().strip())
+
+
+def title_hash(title: str) -> str:
+    return hashlib.sha256(normalize_title(title).encode("utf-8")).hexdigest()[:16]
 
 
 def first_value(value: Any) -> str:
