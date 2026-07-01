@@ -10,14 +10,16 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
+from journal_config import load_yaml_file
+
 try:
     import yaml
 except ImportError:  # pragma: no cover - local fallback for minimal environments
     yaml = None
 
 from fetch_literature import fallback_items, fetch_open_sources, get_discovery_stats, read_manual_records, write_cache
-from render_email import render_html, render_markdown
-from score_literature import score_items
+from render_email import render_html, render_html_from_markdown, render_markdown
+from score_literature import load_exclusion_rules, load_journal_names, load_topic_groups, score_item, score_items
 from send_email import send_email
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,6 +36,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run academic literature alert pipeline.")
     parser.add_argument("--mode", choices=["daily", "weekly"], required=True)
     parser.add_argument("--dry-run", action="store_true", help="Generate preview without sending email or updating pushed records.")
+    parser.add_argument("--email-smoke-test", action="store_true", help="Send a test email only; do not fetch literature or update records.")
     parser.add_argument("--manual-records", type=Path, help="Optional CSV/XLSX file exported manually by the user.")
     parser.add_argument("--skip-network", action="store_true", help="Use fallback/manual records only.")
     args = parser.parse_args()
@@ -42,7 +45,14 @@ def main() -> None:
     ensure_data_files()
     send_empty_digest = should_send_empty_digest(args.mode)
 
-    LOGGER.info("Pipeline started: mode=%s dry_run=%s", args.mode, args.dry_run)
+    LOGGER.info("Pipeline started: mode=%s dry_run=%s email_smoke_test=%s", args.mode, args.dry_run, args.email_smoke_test)
+    LOGGER.info("mode: %s", args.mode)
+    LOGGER.info("dry_run: %s", args.dry_run)
+    LOGGER.info("send_empty_digest: %s", send_empty_digest)
+    if args.email_smoke_test:
+        run_email_smoke_test(args.mode)
+        return
+
     items = []
     if args.manual_records:
         items.extend(read_manual_records(args.manual_records))
@@ -58,14 +68,19 @@ def main() -> None:
     write_cache(items, CACHE_PATH)
     scored = score_items(items)
     selected = select_items(scored, args.mode)
-    filtered_reasons = top_filtered_records(items, scored)
+    evaluated = evaluate_items(items)
+    block_counts = block_counts_from_evaluated(evaluated)
+    filtered_reasons = top_filtered_records(evaluated)
     records = load_records(PUSHED_RECORDS)
     fresh = filter_recent_duplicates(selected, records, args.mode)
+    duplicate_count = max(0, len(selected) - len(fresh))
     record_items = fresh
     preview_only = False
     if not fresh:
         if selected:
             LOGGER.info("All selected items were recently pushed.")
+            if duplicate_count > 0:
+                LOGGER.info("records found but all were already pushed")
         else:
             LOGGER.info("No items passed the quality gate.")
         if send_empty_digest:
@@ -76,25 +91,43 @@ def main() -> None:
             fresh = selected[: min(len(selected), target_count(args.mode))]
             preview_only = True
         else:
+            if args.mode == "daily":
+                LOGGER.info("no qualified daily records; email skipped because send_empty_digest=false")
             fresh = []
             preview_only = True
 
-    diagnostics = build_diagnostics(discovery_stats, len(items), len(fresh), filtered_reasons)
+    diagnostics = build_diagnostics(
+        discovery_stats,
+        len(items),
+        len(fresh),
+        duplicate_count,
+        block_counts,
+        filtered_reasons,
+        args.mode,
+        args.dry_run,
+        send_empty_digest,
+    )
     log_diagnostics(diagnostics)
     markdown = render_markdown(fresh, args.mode, preview_only=preview_only)
     if not fresh:
         markdown = append_diagnostics_to_preview(markdown, diagnostics)
-    html = render_html(fresh, args.mode, preview_only=preview_only)
+    html = render_html_from_markdown(markdown)
     PREVIEW_PATH.write_text(markdown, encoding="utf-8")
     subject = email_subject(args.mode, has_items=bool(fresh))
     sent = False
+    send_email_called = False
     should_send = (bool(fresh) or send_empty_digest) and not preview_only
+    LOGGER.info("should_send_email: %s", should_send)
     if should_send:
+        send_email_called = True
         sent = send_email(subject, markdown, html, dry_run=args.dry_run)
     elif args.dry_run:
+        send_email_called = True
         send_email(subject, markdown, html, dry_run=True)
     else:
         LOGGER.info("No fresh items; email was not sent.")
+    LOGGER.info("send_email_called: %s", send_email_called)
+    LOGGER.info("email_sent_successfully: %s", sent)
     if args.dry_run:
         LOGGER.info("Dry-run enabled; pushed records were not updated.")
     elif sent:
@@ -126,11 +159,24 @@ def ensure_data_files() -> None:
 
 def should_send_empty_digest(mode: str) -> bool:
     fallback = mode == "weekly"
-    if yaml is None or not SCHEDULES_PATH.exists():
+    if not SCHEDULES_PATH.exists():
         return fallback
-    with SCHEDULES_PATH.open("r", encoding="utf-8") as handle:
-        config = yaml.safe_load(handle) or {}
+    config = load_yaml_file(SCHEDULES_PATH, yaml)
     return bool(config.get(mode, {}).get("send_empty_digest", fallback))
+
+
+def run_email_smoke_test(mode: str) -> None:
+    subject = "【文献推送测试】Daily email smoke test" if mode == "daily" else "【文献推送测试】Email smoke test"
+    markdown = "daily email smoke test passed\n"
+    html = "<html><body><p>daily email smoke test passed</p></body></html>"
+    LOGGER.info("should_send_email: true")
+    LOGGER.info("send_email_called: true")
+    try:
+        sent = send_email(subject, markdown, html, dry_run=False)
+    except Exception:
+        LOGGER.info("email_sent_successfully: false")
+        raise
+    LOGGER.info("email_sent_successfully: %s", sent)
 
 
 def email_subject(mode: str, has_items: bool) -> str:
@@ -203,17 +249,30 @@ def build_diagnostics(
     discovery_stats: dict[str, int],
     candidate_total: int,
     final_count: int,
+    duplicate_count: int,
+    block_counts: dict[str, int],
     filtered_reasons: list[dict[str, str]],
+    mode: str,
+    dry_run: bool,
+    send_empty_digest: bool,
 ) -> dict[str, Any]:
     diagnostics: dict[str, Any] = dict(discovery_stats)
+    diagnostics["mode"] = mode
+    diagnostics["dry_run"] = dry_run
+    diagnostics["send_empty_digest"] = send_empty_digest
     diagnostics["candidate_total_before_filter"] = candidate_total
     diagnostics["final_email_record_count"] = final_count
+    diagnostics["duplicate_or_already_pushed_count"] = duplicate_count
+    diagnostics.update(block_counts)
     diagnostics["top_filtered_records"] = filtered_reasons
     return diagnostics
 
 
 def log_diagnostics(diagnostics: dict[str, Any]) -> None:
     for key in [
+        "mode",
+        "dry_run",
+        "send_empty_digest",
         "loaded_journal_zh_count",
         "loaded_journal_en_count",
         "journal_whitelist_discovery_count",
@@ -221,20 +280,75 @@ def log_diagnostics(diagnostics: dict[str, Any]) -> None:
         "fetched_from_semantic_scholar_count",
         "candidate_total_before_filter",
         "final_email_record_count",
+        "duplicate_or_already_pushed_count",
+        "blocked_by_score_threshold_count",
+        "blocked_by_missing_journal_count",
+        "blocked_by_uncategorized_count",
+        "blocked_by_crossref_only_count",
+        "blocked_by_document_type_count",
+        "blocked_by_exclusion_rules_count",
     ]:
         LOGGER.info("%s=%s", key, diagnostics.get(key, 0))
     for item in diagnostics.get("top_filtered_records", [])[:5]:
-        LOGGER.info("filtered_record title=%r reason=%s", item.get("title"), item.get("reason"))
+        LOGGER.info(
+            "filtered_record %s | %s | %s | %s | %s | %s",
+            item.get("title"),
+            item.get("source_api"),
+            item.get("journal"),
+            item.get("score"),
+            item.get("priority"),
+            item.get("block_reason"),
+        )
 
 
-def top_filtered_records(items: list[dict[str, Any]], scored: list[dict[str, Any]]) -> list[dict[str, str]]:
-    selected_keys = {item_key(item) for item in scored}
+def evaluate_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    topic_groups = load_topic_groups()
+    journal_names = load_journal_names()
+    exclusions = load_exclusion_rules()
+    return [score_item(dict(item), topic_groups, journal_names, exclusions) for item in items]
+
+
+def block_counts_from_evaluated(evaluated: list[dict[str, Any]]) -> dict[str, int]:
+    counts = {
+        "blocked_by_score_threshold_count": 0,
+        "blocked_by_missing_journal_count": 0,
+        "blocked_by_uncategorized_count": 0,
+        "blocked_by_crossref_only_count": 0,
+        "blocked_by_document_type_count": 0,
+        "blocked_by_exclusion_rules_count": 0,
+    }
+    for item in evaluated:
+        reason = filter_reason(item)
+        if "score threshold" in reason or item.get("priority") == "C":
+            counts["blocked_by_score_threshold_count"] += 1
+        if "missing journal" in reason:
+            counts["blocked_by_missing_journal_count"] += 1
+        if "uncategorized" in reason:
+            counts["blocked_by_uncategorized_count"] += 1
+        if "crossref-only" in reason:
+            counts["blocked_by_crossref_only_count"] += 1
+        if "work_type" in reason:
+            counts["blocked_by_document_type_count"] += 1
+        if "exclusion" in reason:
+            counts["blocked_by_exclusion_rules_count"] += 1
+    return counts
+
+
+def top_filtered_records(evaluated: list[dict[str, Any]]) -> list[dict[str, str]]:
     filtered: list[dict[str, str]] = []
-    for item in items:
-        key = item_key(item)
-        if key in selected_keys:
+    for item in evaluated:
+        if item.get("eligible_for_email"):
             continue
-        filtered.append({"title": str(item.get("title", "missing")), "reason": filter_reason(item)})
+        filtered.append(
+            {
+                "title": str(item.get("title", "missing")),
+                "source_api": str(item.get("source_api") or item.get("source") or "missing"),
+                "journal": str(item.get("venue") or "missing"),
+                "score": str(item.get("score", "missing")),
+                "priority": str(item.get("priority", "missing")),
+                "block_reason": filter_reason(item),
+            }
+        )
         if len(filtered) >= 8:
             break
     return filtered
@@ -247,13 +361,19 @@ def filter_reason(item: dict[str, Any]) -> str:
         return "crossref-only or metadata-only source"
     if missing_value(item.get("venue")):
         return "missing journal/source"
+    if item.get("matched_category") == "uncategorized":
+        return "uncategorized"
     if is_future_item(item):
         return "future publication year"
     work_type = str(item.get("work_type", "")).casefold()
     if work_type in {"book", "book-chapter", "chapter", "component", "monograph", "proceedings", "proceedings-article"}:
         return f"blocked work_type={work_type}"
+    if int(item.get("quality_penalties", 0) or 0) >= 100:
+        return "blocked by exclusion rules or hard quality rule"
     if missing_value(item.get("abstract")):
         return "missing abstract"
+    if item.get("priority") == "C" or int(item.get("score", 0) or 0) < (70 if item.get("alert_mode") == "weekly" else 65):
+        return "blocked by score threshold"
     return "did not pass topic relevance, priority, or score threshold"
 
 
@@ -270,16 +390,36 @@ def append_diagnostics_to_preview(markdown: str, diagnostics: dict[str, Any]) ->
         f"- fetched_from_semantic_scholar_count: {diagnostics.get('fetched_from_semantic_scholar_count', 0)}",
         f"- candidate_total_before_filter: {diagnostics.get('candidate_total_before_filter', 0)}",
         f"- final_email_record_count: {diagnostics.get('final_email_record_count', 0)}",
+        f"- duplicate_or_already_pushed_count: {diagnostics.get('duplicate_or_already_pushed_count', 0)}",
+        f"- blocked_by_score_threshold_count: {diagnostics.get('blocked_by_score_threshold_count', 0)}",
+        f"- blocked_by_missing_journal_count: {diagnostics.get('blocked_by_missing_journal_count', 0)}",
+        f"- blocked_by_uncategorized_count: {diagnostics.get('blocked_by_uncategorized_count', 0)}",
+        f"- blocked_by_crossref_only_count: {diagnostics.get('blocked_by_crossref_only_count', 0)}",
+        f"- blocked_by_document_type_count: {diagnostics.get('blocked_by_document_type_count', 0)}",
+        f"- blocked_by_exclusion_rules_count: {diagnostics.get('blocked_by_exclusion_rules_count', 0)}",
         "",
         "### Top Filtered Records",
         "",
+        "title | source_api | journal | score | priority | block_reason",
+        "--- | --- | --- | --- | --- | ---",
     ]
     filtered = diagnostics.get("top_filtered_records", [])
     if filtered:
         for item in filtered[:5]:
-            lines.append(f"- {item.get('title', 'missing')}: {item.get('reason', 'unknown')}")
+            lines.append(
+                " | ".join(
+                    [
+                        str(item.get("title", "missing")),
+                        str(item.get("source_api", "missing")),
+                        str(item.get("journal", "missing")),
+                        str(item.get("score", "missing")),
+                        str(item.get("priority", "missing")),
+                        str(item.get("block_reason", "unknown")),
+                    ]
+                )
+            )
     else:
-        lines.append("- None")
+        lines.append("None | missing | missing | missing | missing | missing")
     return "\n".join(lines) + "\n"
 
 

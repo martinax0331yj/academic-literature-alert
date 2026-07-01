@@ -65,12 +65,18 @@ def render_markdown(items: list[dict[str, Any]], mode: str, preview_only: bool =
 
 def render_html(items: list[dict[str, Any]], mode: str, preview_only: bool = False) -> str:
     markdown = render_markdown(items, mode, preview_only=preview_only)
+    return render_html_from_markdown(markdown)
+
+
+def render_html_from_markdown(markdown: str) -> str:
     body = []
     for line in markdown.splitlines():
         if line.startswith("# "):
             body.append(f"<h1>{escape(line[2:])}</h1>")
         elif line.startswith("## "):
             body.append(f"<h2>{escape(line[3:])}</h2>")
+        elif line.startswith("### "):
+            body.append(f"<h3>{escape(line[4:])}</h3>")
         elif line.startswith("- "):
             body.append(f"<li>{escape(line[2:])}</li>")
         elif line.strip():

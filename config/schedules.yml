@@ -1,7 +1,7 @@
 daily:
   timezone: Asia/Shanghai
   github_actions_cron_utc: "30 0 * * *"
-  send_empty_digest: false
+  send_empty_digest: true
   note: 每天北京时间 08:30 左右运行；GitHub Actions cron 使用 UTC。
   selections:
     classic_highly_cited_english:

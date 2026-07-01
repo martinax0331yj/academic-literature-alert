@@ -14,6 +14,14 @@ on:
         options:
           - "false"
           - "true"
+      email_smoke_test:
+        description: "Send a test email only"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 permissions:
   contents: write
@@ -52,14 +60,16 @@ jobs:
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
         run: |
-          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+          if [ "${{ github.event.inputs.email_smoke_test }}" = "true" ]; then
+            python scripts/run_pipeline.py --mode daily --email-smoke-test
+          elif [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             python scripts/run_pipeline.py --mode daily --dry-run
           else
             python scripts/run_pipeline.py --mode daily
           fi
 
       - name: Commit updated cache and records
-        if: ${{ github.event.inputs.dry_run != 'true' }}
+        if: ${{ github.event.inputs.dry_run != 'true' && github.event.inputs.email_smoke_test != 'true' }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "update literature alert records"

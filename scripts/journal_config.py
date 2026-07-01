@@ -10,6 +10,8 @@ def load_yaml_file(path: Path, yaml_module: Any | None = None) -> dict[str, Any]
             return yaml_module.safe_load(handle) or {}
     if path.name.startswith("journals_"):
         return load_journal_yaml_fallback(path)
+    if path.name == "schedules.yml":
+        return load_simple_nested_yaml_fallback(path)
     return {}
 
 
@@ -82,3 +84,22 @@ def strip_quotes(value: str) -> str:
     if (text.startswith('"') and text.endswith('"')) or (text.startswith("'") and text.endswith("'")):
         return text[1:-1]
     return text
+
+
+def load_simple_nested_yaml_fallback(path: Path) -> dict[str, Any]:
+    config: dict[str, Any] = {}
+    current_section: str | None = None
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.split("#", 1)[0].rstrip()
+        if not line.strip():
+            continue
+        if not raw_line.startswith(" ") and line.endswith(":"):
+            current_section = line[:-1].strip()
+            config[current_section] = {}
+            continue
+        stripped = line.strip()
+        if current_section and ":" in stripped:
+            key, value = split_key_value(stripped)
+            if key and value != "":
+                config[current_section][key] = parse_scalar(value)
+    return config

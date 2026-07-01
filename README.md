@@ -138,6 +138,12 @@ python3 scripts/run_pipeline.py --mode daily --dry-run
 python3 scripts/run_pipeline.py --mode weekly --dry-run
 ```
 
+只测试 daily 邮件发送系统，不抓文献、不写推送记录：
+
+```bash
+python3 scripts/run_pipeline.py --mode daily --email-smoke-test
+```
+
 跳过联网检索，只测试流程：
 
 ```bash
@@ -174,6 +180,7 @@ export SMTP_PORT="587"
 - 不要把 SMTP 密码写入 YAML。
 - 不要提交任何 Secret、token、password。
 - dry-run 只生成预览，不会发送邮件。
+- `--email-smoke-test` 只发送一封测试邮件，正文包含 `daily email smoke test passed`。
 - 非 dry-run 模式缺少邮件变量会直接报错，不会静默跳过。
 
 ## 🎓 SerpAPI Scholar-like 检索
