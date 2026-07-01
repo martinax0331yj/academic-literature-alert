@@ -1,0 +1,40 @@
+name: Weekly Literature Alert
+
+on:
+  schedule:
+    # Monday Beijing time 09:00; GitHub Actions cron uses UTC.
+    - cron: "0 1 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  weekly-literature:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run weekly pipeline
+        env:
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+        run: python scripts/run_pipeline.py --mode weekly
+
+      - name: Commit updated cache and records
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "update weekly literature alert records"
+          file_pattern: data/*.csv data/*.jsonl data/*.md logs/.gitkeep

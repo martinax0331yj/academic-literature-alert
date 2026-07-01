@@ -1,0 +1,37 @@
+# 中文期刊核心来源状态需要用户后续手动核验和维护。
+# 是否为北大核心、CSSCI、AMI 或其他核心来源，不得由代码虚构。
+journals:
+  - name: 出版发行研究
+    quality_note: core status to be manually verified
+  - name: 中国出版
+    quality_note: core status to be manually verified
+  - name: 科技与出版
+    quality_note: core status to be manually verified
+  - name: 编辑学报
+    quality_note: core status to be manually verified
+  - name: 出版科学
+    quality_note: core status to be manually verified
+  - name: 中国科技期刊研究
+    quality_note: core status to be manually verified
+  - name: 现代出版
+    quality_note: core status to be manually verified
+  - name: 编辑之友
+    quality_note: core status to be manually verified
+  - name: 新闻与传播研究
+    quality_note: core status to be manually verified
+  - name: 国际新闻界
+    quality_note: core status to be manually verified
+  - name: 新闻大学
+    quality_note: core status to be manually verified
+  - name: 现代传播
+    quality_note: core status to be manually verified
+  - name: 出版广角
+    quality_note: core status to be manually verified
+  - name: 中国编辑
+    quality_note: core status to be manually verified
+  - name: 传媒
+    quality_note: core status to be manually verified
+  - name: 青年记者
+    quality_note: core status to be manually verified
+  - name: 中国图书评论
+    quality_note: core status to be manually verified

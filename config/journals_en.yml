@@ -1,0 +1,57 @@
+quality_note: Add JCR, CiteScore, SJR, ABS, or impact factor data only after manual verification. Do not fabricate unavailable metrics.
+
+fields:
+  scholarly_communication_and_publishing:
+    - journal: Learned Publishing
+      quality_note: metrics to be manually verified
+    - journal: Journal of Scholarly Publishing
+      quality_note: metrics to be manually verified
+    - journal: Scientometrics
+      quality_note: metrics to be manually verified
+    - journal: Research Evaluation
+      quality_note: metrics to be manually verified
+  information_science_and_scientometrics:
+    - journal: Journal of Informetrics
+      quality_note: metrics to be manually verified
+    - journal: Journal of the Association for Information Science and Technology
+      quality_note: metrics to be manually verified
+    - journal: Information Processing and Management
+      quality_note: metrics to be manually verified
+    - journal: Library and Information Science Research
+      quality_note: metrics to be manually verified
+  communication_and_media_studies:
+    - journal: New Media and Society
+      quality_note: metrics to be manually verified
+    - journal: Journal of Communication
+      quality_note: metrics to be manually verified
+    - journal: Communication Research
+      quality_note: metrics to be manually verified
+    - journal: Media, Culture and Society
+      quality_note: metrics to be manually verified
+  management_and_organization_studies:
+    - journal: Academy of Management Journal
+      quality_note: metrics to be manually verified
+    - journal: Academy of Management Review
+      quality_note: metrics to be manually verified
+    - journal: Organization Science
+      quality_note: metrics to be manually verified
+    - journal: Strategic Management Journal
+      quality_note: metrics to be manually verified
+  digital_media_games_and_cultural_industries:
+    - journal: Games and Culture
+      quality_note: metrics to be manually verified
+    - journal: Convergence
+      quality_note: metrics to be manually verified
+    - journal: International Journal of Cultural Studies
+      quality_note: metrics to be manually verified
+    - journal: Digital Creativity
+      quality_note: metrics to be manually verified
+  ai_information_systems_and_digital_transformation:
+    - journal: MIS Quarterly
+      quality_note: metrics to be manually verified
+    - journal: Information Systems Research
+      quality_note: metrics to be manually verified
+    - journal: Journal of Management Information Systems
+      quality_note: metrics to be manually verified
+    - journal: AI and Society
+      quality_note: metrics to be manually verified

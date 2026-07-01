@@ -1,0 +1,137 @@
+topic_pool:
+  - 出版管理
+  - 学术出版
+  - 科技期刊治理
+  - 开放获取
+  - 同行评议
+  - 期刊国际化
+  - 数字出版
+  - 智能出版
+  - 融合出版
+  - 知识服务
+  - 数据出版
+  - 教育出版
+  - 专业出版
+  - 数字阅读
+  - 网络文学
+  - 游戏出版
+  - 数字游戏产业
+  - 互动叙事
+  - IP 开发与版权运营
+  - 出版平台治理
+  - 出版企业管理
+  - 出版品牌与用户运营
+  - 数字内容产品
+  - 生成式 AI 与内容生产
+  - AI 辅助编辑、审稿与出版伦理
+
+groups:
+  academic_publishing:
+    description: 学术出版、科技期刊治理与学术传播
+    keywords:
+      - 学术出版
+      - 科技期刊
+      - 期刊治理
+      - 开放获取
+      - 同行评议
+      - 学术传播
+      - 期刊国际化
+      - scholarly publishing
+      - scientific journal
+      - journal governance
+      - open access
+      - peer review
+      - scholarly communication
+      - research integrity
+  publishing_management:
+    description: 出版企业、品牌、版权、平台与知识服务
+    keywords:
+      - 出版企业管理
+      - 出版组织能力
+      - 出版品牌
+      - 出版营销
+      - 版权运营
+      - 出版平台治理
+      - 知识服务
+      - publishing management
+      - publishing organization
+      - publishing brand
+      - copyright operation
+      - platform governance
+      - knowledge service
+  digital_publishing:
+    description: 数字出版、融合出版与数字内容产品
+    keywords:
+      - 数字出版
+      - 融合出版
+      - 数据出版
+      - 数字阅读
+      - 网络文学
+      - 知识付费
+      - 有声书
+      - 电子书
+      - 数字内容产品
+      - digital publishing
+      - data publishing
+      - digital reading
+      - online literature
+      - audiobook
+      - ebook
+      - digital content
+  game_and_interactive_publishing:
+    description: 游戏出版、互动叙事与跨媒介 IP
+    keywords:
+      - 游戏出版
+      - 数字游戏产业
+      - 互动叙事
+      - 游戏化阅读
+      - 跨媒介叙事
+      - IP 开发
+      - 虚拟社区
+      - game publishing
+      - digital games
+      - interactive narrative
+      - gamified reading
+      - transmedia storytelling
+      - intellectual property development
+      - virtual community
+  transferable_management_communication:
+    description: 可迁移的经管与新闻传播研究
+    keywords:
+      - 品牌资产
+      - 组织能力
+      - 动态能力
+      - 平台治理
+      - 用户参与
+      - 国际传播
+      - 媒介管理
+      - 文化产业管理
+      - brand equity
+      - organizational capability
+      - dynamic capability
+      - platform governance
+      - user engagement
+      - international communication
+      - media management
+      - cultural industry management
+  technology_frontier:
+    description: AI、数据治理与技术前沿
+    keywords:
+      - generative AI
+      - large language model
+      - smart publishing
+      - AI peer review
+      - recommendation system
+      - knowledge graph
+      - data governance
+      - research integrity
+      - AI ethics
+      - 生成式 AI
+      - 大语言模型
+      - 智能出版
+      - AI 审稿
+      - 推荐系统
+      - 知识图谱
+      - 数据治理
+      - 科研诚信
+      - AI 伦理

@@ -1,0 +1,21 @@
+name: academic-literature-alert
+version: 0.1.0
+description: OpenAI Skill wrapper for academic literature metadata alerts.
+entrypoint: scripts/run_pipeline.py
+default_args:
+  mode: daily
+  dry_run: true
+inputs:
+  - config/topics.yml
+  - config/journals_zh.yml
+  - config/journals_en.yml
+  - config/schedules.yml
+  - config/email.yml.example
+outputs:
+  - data/literature_cache.jsonl
+  - data/pushed_records.csv
+  - logs/pipeline.log
+policy:
+  metadata_only: true
+  no_full_text_downloads: true
+  no_paywall_bypass: true

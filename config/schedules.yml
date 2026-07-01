@@ -1,0 +1,34 @@
+daily:
+  timezone: Asia/Shanghai
+  github_actions_cron_utc: "30 0 * * *"
+  note: 每天北京时间 08:30 左右运行；GitHub Actions cron 使用 UTC。
+  selections:
+    classic_highly_cited_english:
+      count_min: 1
+      count_max: 2
+      dedupe_days: 180
+    transferable_management_communication:
+      count_min: 1
+      count_max: 2
+      dedupe_days: 90
+    technology_frontier:
+      count_min: 1
+      count_max: 2
+      dedupe_days: 90
+    digital_publishing_frontier:
+      count_min: 1
+      count_max: 2
+      dedupe_days: 90
+
+weekly:
+  timezone: Asia/Shanghai
+  github_actions_cron_utc: "0 1 * * 1"
+  note: 每周一北京时间 09:00 左右运行；GitHub Actions cron 使用 UTC。
+  total_count: 4
+  chinese_count: 2
+  english_count: 2
+  topic_scope:
+    - publishing_management
+    - academic_publishing
+    - digital_publishing
+    - game_and_interactive_publishing

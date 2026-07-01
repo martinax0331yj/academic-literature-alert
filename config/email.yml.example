@@ -1,0 +1,6 @@
+sender: ${EMAIL_SENDER}
+password: ${EMAIL_PASSWORD}
+receiver: ${EMAIL_RECEIVER}
+smtp_host: ${SMTP_HOST}
+smtp_port: ${SMTP_PORT}
+use_tls: true
