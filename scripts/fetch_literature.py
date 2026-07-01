@@ -48,6 +48,8 @@ class LiteratureItem:
     language: str = "unknown"
     citation_count: int | None = None
     published_date: str = ""
+    work_type: str = ""
+    is_oa: bool | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -63,6 +65,8 @@ class LiteratureItem:
             "language": self.language,
             "citation_count": self.citation_count,
             "published_date": self.published_date,
+            "work_type": self.work_type,
+            "is_oa": self.is_oa,
         }
 
 
@@ -111,6 +115,7 @@ def fetch_crossref(query: str, rows: int = 5, timeout: int = 20) -> list[dict[st
             language="en",
             citation_count=work.get("is-referenced-by-count"),
             published_date=str(year or ""),
+            work_type=work.get("type", "") or "",
         )
         items.append(item.to_dict())
     return items
@@ -147,6 +152,8 @@ def fetch_openalex(query: str, rows: int = 5, timeout: int = 20) -> list[dict[st
             language=work.get("language") or "en",
             citation_count=work.get("cited_by_count"),
             published_date=work.get("publication_date") or "",
+            work_type=work.get("type") or work.get("type_crossref") or "",
+            is_oa=(work.get("open_access") or {}).get("is_oa"),
         )
         items.append(item.to_dict())
     return items
@@ -159,7 +166,7 @@ def fetch_semantic_scholar(query: str, rows: int = 5, timeout: int = 20) -> list
     params = {
         "query": query,
         "limit": rows,
-        "fields": "title,authors,year,venue,url,abstract,citationCount,externalIds",
+        "fields": "title,authors,year,venue,url,abstract,citationCount,externalIds,publicationTypes,publicationDate,isOpenAccess",
     }
     response = requests.get(url, params=params, timeout=timeout, headers={"User-Agent": "academic-literature-alert/0.1"})
     response.raise_for_status()
@@ -182,6 +189,8 @@ def fetch_semantic_scholar(query: str, rows: int = 5, timeout: int = 20) -> list
             language="en",
             citation_count=paper.get("citationCount"),
             published_date=str(paper.get("year") or ""),
+            work_type=semantic_work_type(paper.get("publicationTypes")),
+            is_oa=paper.get("isOpenAccess"),
         )
         items.append(item.to_dict())
     return items
@@ -220,6 +229,7 @@ def read_manual_records(path: Path) -> list[dict[str, Any]]:
             language=str(first_existing(row, ["language", "语种"]) or "zh"),
             citation_count=parse_int(first_existing(row, ["citation_count", "被引", "引用量"])),
             published_date=str(first_existing(row, ["published_date", "发表日期"]) or ""),
+            work_type=str(first_existing(row, ["work_type", "type", "文献类型"]) or "journal-article"),
         )
         items.append(item.to_dict())
     return items
@@ -232,20 +242,73 @@ def fetch_open_sources(mode: str, per_query: int = 3) -> list[dict[str, Any]]:
         selected_groups = ["academic_publishing", "publishing_management", "digital_publishing", "game_and_interactive_publishing"]
 
     all_items: list[dict[str, Any]] = []
-    providers = [fetch_openalex, fetch_crossref, fetch_semantic_scholar]
+    providers = [fetch_openalex, fetch_semantic_scholar, fetch_crossref]
     for group in selected_groups:
         keywords = queries_by_group.get(group, [])
-        query = " ".join(keywords[:3]) if keywords else group
+        query = build_query(group, keywords)
         for provider in providers:
             try:
                 fetched = provider(query, rows=per_query)
                 for item in fetched:
                     item["category"] = group
+                    if item.get("source") == "crossref":
+                        item["metadata_only"] = True
                 all_items.extend(fetched)
                 time.sleep(0.2)
             except Exception as exc:  # noqa: BLE001
                 LOGGER.warning("%s failed for query %r: %s", provider.__name__, query, exc)
-    return all_items
+    return merge_metadata(all_items)
+
+
+def merge_metadata(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    merged: dict[str, dict[str, Any]] = {}
+    order: list[str] = []
+    for item in items:
+        key = item_key(item)
+        if not key:
+            continue
+        if key not in merged:
+            merged[key] = dict(item)
+            order.append(key)
+            continue
+        existing = merged[key]
+        existing_sources = {str(part) for part in str(existing.get("source", "")).split("+") if part}
+        existing_sources.add(str(item.get("source", "")))
+        existing["source"] = "+".join(sorted(existing_sources))
+        for field in ["doi", "url", "abstract", "venue", "year", "published_date", "work_type"]:
+            if is_missing(existing.get(field)) and not is_missing(item.get(field)):
+                existing[field] = item.get(field)
+        if not existing.get("authors") and item.get("authors"):
+            existing["authors"] = item.get("authors")
+        if item.get("citation_count") not in {None, ""}:
+            current = existing.get("citation_count")
+            try:
+                existing["citation_count"] = max(int(current or 0), int(item.get("citation_count") or 0))
+            except (TypeError, ValueError):
+                existing["citation_count"] = item.get("citation_count")
+        existing["metadata_only"] = existing.get("metadata_only") and item.get("metadata_only")
+    return [merged[key] for key in order]
+
+
+def is_missing(value: Any) -> bool:
+    if value is None:
+        return True
+    text = str(value).strip().casefold()
+    return not text or text in {"missing", "none", "null", "nan"}
+
+
+def build_query(group: str, keywords: list[str]) -> str:
+    core_queries = {
+        "academic_publishing": '"scholarly publishing" OR "journal governance" OR "peer review"',
+        "publishing_management": '"publishing management" OR "publishing industry" OR "copyright management"',
+        "digital_publishing": '"digital publishing" OR "online literature" OR audiobook',
+        "game_and_interactive_publishing": '"game publishing" OR "interactive narrative" OR "transmedia storytelling"',
+        "transferable_management_communication": '"brand equity" OR "dynamic capability" OR "platform governance"',
+        "technology_frontier": '"generative AI" publishing ethics OR "AI peer review"',
+    }
+    if group in core_queries:
+        return core_queries[group]
+    return " ".join(keywords[:3]) if keywords else group
 
 
 def fallback_items(mode: str) -> list[dict[str, Any]]:
@@ -262,6 +325,7 @@ def fallback_items(mode: str) -> list[dict[str, Any]]:
             language="en",
             citation_count=None,
             published_date=today,
+            work_type="journal-article",
         ),
         LiteratureItem(
             title="Generative AI and editorial workflows in digital publishing",
@@ -274,6 +338,7 @@ def fallback_items(mode: str) -> list[dict[str, Any]]:
             language="en",
             citation_count=None,
             published_date=today,
+            work_type="journal-article",
         ),
         LiteratureItem(
             title="数字内容产品的平台治理与用户参与研究",
@@ -286,6 +351,7 @@ def fallback_items(mode: str) -> list[dict[str, Any]]:
             language="zh",
             citation_count=None,
             published_date=today,
+            work_type="journal-article",
         ),
         LiteratureItem(
             title="出版品牌、版权运营与知识服务的组织能力研究",
@@ -298,6 +364,7 @@ def fallback_items(mode: str) -> list[dict[str, Any]]:
             language="zh",
             citation_count=None,
             published_date=today,
+            work_type="journal-article",
         ),
     ]
     if mode == "daily":
@@ -393,6 +460,23 @@ def parse_int(value: Any) -> int | None:
         return int(float(value))
     except (TypeError, ValueError):
         return None
+
+
+def semantic_work_type(publication_types: Any) -> str:
+    if not publication_types:
+        return "journal-article"
+    if isinstance(publication_types, list):
+        lowered = {str(item).casefold() for item in publication_types}
+        if "review" in lowered:
+            return "review"
+        if "journalarticle" in lowered or "journal article" in lowered:
+            return "journal-article"
+        if "book" in lowered:
+            return "book"
+        if "bookchapter" in lowered or "book chapter" in lowered:
+            return "book-chapter"
+        return str(publication_types[0])
+    return str(publication_types)
 
 
 def write_items_csv(items: list[dict[str, Any]], path: Path) -> None:

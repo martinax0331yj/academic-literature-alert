@@ -31,6 +31,45 @@ DEFAULT_JOURNALS = {
     "scientometrics",
 }
 
+ALLOWED_WORK_TYPES = {
+    "",
+    "article",
+    "journal-article",
+    "journal article",
+    "review",
+    "review-article",
+    "review article",
+}
+
+BLOCKED_WORK_TYPES = {
+    "book",
+    "book-chapter",
+    "chapter",
+    "component",
+    "monograph",
+    "proceedings",
+    "proceedings-article",
+    "posted-content",
+    "dataset",
+    "report",
+    "reference-entry",
+}
+
+BLACKLIST_PATTERNS = [
+    "francis academic press",
+    "call for papers",
+    "call for paper",
+    "征稿",
+    "外文期刊征稿",
+    "第三版",
+    "3rd edition",
+    "third edition",
+    "chapter ",
+    "book chapter",
+    "解决冲突与调解技巧",
+    "conflict resolution and mediation",
+]
+
 
 def load_yaml(path: Path) -> dict[str, Any]:
     if yaml is None:
@@ -59,7 +98,8 @@ def load_journal_names() -> set[str]:
 def score_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     topic_groups = load_topic_groups()
     journal_names = load_journal_names()
-    return [score_item(item, topic_groups, journal_names) for item in items]
+    scored = [score_item(item, topic_groups, journal_names) for item in items]
+    return [item for item in scored if item.get("eligible_for_email")]
 
 
 def score_item(item: dict[str, Any], topic_groups: dict[str, list[str]], journal_names: set[str]) -> dict[str, Any]:
@@ -68,19 +108,25 @@ def score_item(item: dict[str, Any], topic_groups: dict[str, list[str]], journal
         for key in ["title", "abstract", "venue", "category"]
     ).casefold()
     category, relevance = best_topic_match(text, topic_groups)
-    source_quality = 20 if str(item.get("venue", "")).casefold() in journal_names else 10
+    whitelisted = is_whitelisted_venue(item, journal_names)
+    source_quality = source_quality_points(item, whitelisted)
     recency = recency_points(item)
     citation = citation_points(item.get("citation_count"))
     transferable = transferable_points(text)
-    score = min(100, relevance + source_quality + recency + citation + transferable)
+    penalties = quality_penalties(item, text, whitelisted)
+    score = max(0, min(100, relevance + source_quality + recency + citation + transferable - penalties))
 
     enriched = dict(item)
     enriched["category"] = item.get("category") or category
     enriched["matched_category"] = category
+    enriched["topic_relevance_points"] = relevance
+    enriched["source_quality_points"] = source_quality
+    enriched["quality_penalties"] = penalties
     enriched["score"] = score
     enriched["priority"] = priority(score)
     enriched["recommendation_reason"] = recommendation_reason(enriched)
     enriched["research_relation"] = research_relation(enriched)
+    enriched["eligible_for_email"] = is_eligible_for_email(enriched, text, whitelisted)
     return enriched
 
 
@@ -94,6 +140,93 @@ def best_topic_match(text: str, topic_groups: dict[str, list[str]]) -> tuple[str
             best_hits = hits
     relevance = min(35, best_hits * 8)
     return best_group, relevance
+
+
+def is_allowed_work_type(item: dict[str, Any]) -> bool:
+    raw = str(item.get("work_type", "") or "").strip().casefold()
+    if raw in BLOCKED_WORK_TYPES:
+        return False
+    return raw in ALLOWED_WORK_TYPES
+
+
+def is_blacklisted(text: str) -> bool:
+    return any(pattern in text for pattern in BLACKLIST_PATTERNS)
+
+
+def is_whitelisted_venue(item: dict[str, Any], journal_names: set[str]) -> bool:
+    venue = str(item.get("venue", "")).casefold().strip()
+    if not venue or venue == "missing":
+        return False
+    return venue in journal_names
+
+
+def source_quality_points(item: dict[str, Any], whitelisted: bool) -> int:
+    source = str(item.get("source", "")).casefold()
+    if whitelisted:
+        return 25
+    if "openalex" in source or "semantic_scholar" in source:
+        return 15
+    if source.startswith("manual:"):
+        return 20
+    if source == "crossref":
+        return 4
+    if source == "fallback_seed":
+        return 0
+    return 8
+
+
+def quality_penalties(item: dict[str, Any], text: str, whitelisted: bool) -> int:
+    penalties = 0
+    source = str(item.get("source", "")).casefold()
+    if source == "crossref" and not whitelisted:
+        penalties += 15
+    if missing(item.get("abstract")):
+        penalties += 10
+    if missing(item.get("venue")):
+        penalties += 10
+    if item.get("citation_count") in {None, "", 0, "0"}:
+        penalties += 6
+    if is_future_item(item):
+        penalties += 100
+    if not is_allowed_work_type(item):
+        penalties += 100
+    if is_blacklisted(text):
+        penalties += 100
+    return penalties
+
+
+def is_eligible_for_email(item: dict[str, Any], text: str, whitelisted: bool) -> bool:
+    if item.get("priority") not in {"A", "B"}:
+        return False
+    if item.get("topic_relevance_points", 0) < 16 and not whitelisted:
+        return False
+    if is_future_item(item):
+        return False
+    if not is_allowed_work_type(item):
+        return False
+    if is_blacklisted(text):
+        return False
+    source = str(item.get("source", "")).casefold()
+    if source == "crossref" and not whitelisted:
+        if missing(item.get("venue")) or missing(item.get("abstract")) or item.get("citation_count") in {None, "", 0, "0"}:
+            return False
+    if item.get("language") == "zh" and source == "crossref" and not whitelisted:
+        return False
+    if source == "fallback_seed":
+        return False
+    return True
+
+
+def missing(value: Any) -> bool:
+    if value is None:
+        return True
+    text = str(value).strip().casefold()
+    return not text or text in {"missing", "none", "null", "nan", "未获取"}
+
+
+def is_future_item(item: dict[str, Any]) -> bool:
+    year = extract_year(str(item.get("published_date") or item.get("year") or ""))
+    return bool(year and year > date.today().year)
 
 
 def recency_points(item: dict[str, Any]) -> int:

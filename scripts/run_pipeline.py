@@ -103,7 +103,11 @@ def ensure_data_files() -> None:
 
 
 def select_items(items: list[dict[str, Any]], mode: str) -> list[dict[str, Any]]:
-    sorted_items = sorted(items, key=lambda item: int(item.get("score", 0)), reverse=True)
+    eligible_items = [
+        item for item in items
+        if item.get("eligible_for_email") and item.get("priority") in {"A", "B"}
+    ]
+    sorted_items = sorted(eligible_items, key=lambda item: int(item.get("score", 0)), reverse=True)
     if mode == "weekly":
         return balanced_weekly(sorted_items)
     return balanced_daily(sorted_items)
