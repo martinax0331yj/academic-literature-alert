@@ -6,7 +6,8 @@ It contains a ChatGPT Skill, Python retrieval and scoring scripts, editable conf
 
 ## What It Does
 
-- Retrieves English literature metadata from open sources such as Crossref, OpenAlex, and Semantic Scholar.
+- Retrieves English literature metadata from open sources such as OpenAlex and Semantic Scholar, with Crossref used as metadata enrichment.
+- Optionally discovers Google Scholar-like candidates through the SerpAPI Google Scholar API.
 - Supports Chinese bibliographic records manually exported by the user as CSV or XLSX.
 - Scores items by topic relevance, source quality, recency, citation influence, and transferable value.
 - Deduplicates by DOI or normalized title hash.
@@ -16,7 +17,9 @@ It contains a ChatGPT Skill, Python retrieval and scoring scripts, editable conf
 
 ## Compliance
 
-This project does not download full-text PDFs and does not bypass logins, paywalls, CAPTCHAs, or anti-bot controls. Restricted databases such as CNKI, Wanfang, VIP, Web of Science, Scopus, and JCR are supported only through user-provided exported bibliographic records.
+This project does not call ChatGPT's Scholar GPT, does not scrape Google Scholar pages directly, does not scrape CNKI pages, does not download full-text PDFs, and does not bypass logins, paywalls, CAPTCHAs, or anti-bot controls. Restricted databases such as CNKI, Wanfang, VIP, Web of Science, Scopus, and JCR are supported only through user-provided exported bibliographic records.
+
+Google Scholar-like discovery is implemented through the official SerpAPI Google Scholar API. SerpAPI results are treated as candidate discovery only: a Google Scholar hit does not automatically enter an email. Candidates are enriched through OpenAlex, Semantic Scholar, and Crossref, then filtered by the strict quality gate.
 
 If abstracts, DOI values, citation counts, impact factors, or journal ranking data are missing, the scripts mark them as missing. They do not fabricate metadata.
 
@@ -117,6 +120,41 @@ export SMTP_PORT="587"
 
 Do not write real passwords into code, YAML files, or committed files.
 
+## Scholar-like Discovery With SerpAPI
+
+This project can use SerpAPI's Google Scholar API for candidate discovery. It does not scrape Google Scholar directly.
+
+To enable it locally:
+
+```bash
+export SERPAPI_API_KEY="your_serpapi_key"
+```
+
+To enable it in GitHub Actions, add this optional repository secret:
+
+```text
+SERPAPI_API_KEY
+```
+
+If `SERPAPI_API_KEY` is missing, the pipeline skips SerpAPI and continues with OpenAlex, Semantic Scholar, manual imports, and other configured sources. Missing SerpAPI configuration is not an error.
+
+Control SerpAPI usage in:
+
+```text
+config/source_policy.yml
+```
+
+The key setting is:
+
+```yaml
+serpapi_google_scholar:
+  max_results_per_query: 10
+```
+
+Each topic group generates at most two Scholar-style queries to avoid unnecessary API consumption.
+
+CNKI remains manual-export only. Do not add direct CNKI scraping.
+
 ## GitHub Actions Secrets
 
 In GitHub, open:
@@ -133,6 +171,12 @@ EMAIL_PASSWORD
 EMAIL_RECEIVER
 SMTP_HOST
 SMTP_PORT
+```
+
+Optional:
+
+```text
+SERPAPI_API_KEY
 ```
 
 ## Scheduled Runs

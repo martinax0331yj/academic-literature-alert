@@ -33,6 +33,16 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Check optional source configuration
+        env:
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+        run: |
+          if [ -n "$SERPAPI_API_KEY" ]; then
+            echo "SERPAPI_API_KEY configured: yes"
+          else
+            echo "SERPAPI_API_KEY configured: no"
+          fi
+
       - name: Run daily pipeline
         env:
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
@@ -40,6 +50,7 @@ jobs:
           EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
         run: |
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             python scripts/run_pipeline.py --mode daily --dry-run

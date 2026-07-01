@@ -52,6 +52,8 @@ def main() -> None:
         LOGGER.warning("No open-source records fetched; using metadata-only fallback seeds.")
         items = fallback_items(args.mode)
 
+    for item in items:
+        item["alert_mode"] = args.mode
     write_cache(items, CACHE_PATH)
     scored = score_items(items)
     selected = select_items(scored, args.mode)
@@ -60,7 +62,10 @@ def main() -> None:
     record_items = fresh
     preview_only = False
     if not fresh:
-        LOGGER.info("All selected items were recently pushed.")
+        if selected:
+            LOGGER.info("All selected items were recently pushed.")
+        else:
+            LOGGER.info("No items passed the quality gate.")
         if send_empty_digest:
             LOGGER.info("Empty digest enabled for mode=%s.", args.mode)
             fresh = []

@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import os
+
+from fetch_literature import fetch_serpapi_google_scholar
 from score_literature import score_items
 
 
@@ -66,6 +69,76 @@ def main() -> None:
             "work_type": "journal-article",
         },
         {
+            "title": "A crossref only paper about scholarly publishing",
+            "authors": ["Crossref Only"],
+            "year": "2026",
+            "venue": "Unknown Journal",
+            "doi": "10.61726/bad",
+            "url": "",
+            "abstract": "scholarly publishing and peer review",
+            "source": "crossref",
+            "is_crossref_only": True,
+            "category": "academic_publishing",
+            "language": "en",
+            "citation_count": 99,
+            "published_date": "2026",
+            "work_type": "journal-article",
+        },
+        {
+            "title": "Google Scholar candidate without journal source",
+            "authors": ["Candidate"],
+            "year": "2026",
+            "venue": "missing",
+            "doi": "",
+            "url": "https://example.test/scholar",
+            "abstract": "missing",
+            "search_snippet": "scholarly publishing platform governance",
+            "source": "serpapi_google_scholar",
+            "source_api": "serpapi_google_scholar",
+            "discovery_source": "google_scholar",
+            "is_crossref_only": False,
+            "category": "academic_publishing",
+            "language": "en",
+            "citation_count": 40,
+            "published_date": "2026",
+            "work_type": "journal-article",
+        },
+        {
+            "title": "Google Scholar candidate without confirmed document type",
+            "authors": ["Candidate"],
+            "year": "2026",
+            "venue": "Learned Publishing",
+            "doi": "",
+            "url": "https://example.test/scholar-type",
+            "abstract": "scholarly publishing platform governance peer review open access journal management",
+            "search_snippet": "scholarly publishing platform governance",
+            "source": "serpapi_google_scholar+openalex",
+            "source_api": "serpapi_google_scholar",
+            "discovery_source": "google_scholar",
+            "is_crossref_only": False,
+            "category": "academic_publishing",
+            "language": "en",
+            "citation_count": 40,
+            "published_date": "2026",
+            "work_type": "",
+        },
+        {
+            "title": "数字出版平台治理与知识服务研究",
+            "authors": ["中文作者"],
+            "year": "2026",
+            "venue": "Unknown Journal",
+            "doi": "",
+            "url": "https://example.test/zh-weekly",
+            "abstract": "数字出版 平台治理 知识服务 出版企业管理",
+            "source": "openalex",
+            "category": "digital_publishing",
+            "language": "zh",
+            "citation_count": 50,
+            "published_date": "2026",
+            "work_type": "journal-article",
+            "alert_mode": "weekly",
+        },
+        {
             "title": "Peer review governance in scholarly publishing platforms",
             "authors": ["Good Author"],
             "year": "2026",
@@ -87,8 +160,18 @@ def main() -> None:
     assert "Conflict Resolution and Mediation Skills, Third Edition" not in titles
     assert "Digital publishing futures in 2027" not in titles
     assert "Broad management keyword only" not in titles
+    assert "A crossref only paper about scholarly publishing" not in titles
+    assert "Google Scholar candidate without journal source" not in titles
+    assert "Google Scholar candidate without confirmed document type" not in titles
+    assert "数字出版平台治理与知识服务研究" not in titles
     assert "Peer review governance in scholarly publishing platforms" in titles
     assert all(item["priority"] in {"A", "B"} for item in scored)
+    old_key = os.environ.pop("SERPAPI_API_KEY", None)
+    try:
+        assert fetch_serpapi_google_scholar("scholarly publishing", 1) == []
+    finally:
+        if old_key is not None:
+            os.environ["SERPAPI_API_KEY"] = old_key
     print("quality gate smoke test passed")
 
 

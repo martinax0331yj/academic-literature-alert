@@ -32,7 +32,6 @@ DEFAULT_JOURNALS = {
 }
 
 ALLOWED_WORK_TYPES = {
-    "",
     "article",
     "journal-article",
     "journal article",
@@ -70,6 +69,13 @@ BLACKLIST_PATTERNS = [
     "conflict resolution and mediation",
 ]
 
+DEFAULT_EXCLUSION_RULES = {
+    "blocked_doi_prefixes": ["10.61726"],
+    "blocked_publishers": ["Francis Academic Press", "Clausius Scientific Press", "CSP", "弗朗西斯学术出版社", "克劳修斯科学出版社"],
+    "blocked_title_keywords_zh": ["征稿", "投稿", "征文", "会议通知", "会议系列", "出版社", "外文学术期刊征稿", "目录", "序言", "前言", "编者按", "出版说明", "广告", "声明", "预刊"],
+    "blocked_title_keywords_en": ["call for papers", "call for submissions", "conference series", "proceedings series", "publisher notice", "advertisement", "announcement", "editorial note", "preface", "foreword", "table of contents"],
+}
+
 
 def load_yaml(path: Path) -> dict[str, Any]:
     if yaml is None:
@@ -98,14 +104,16 @@ def load_journal_names() -> set[str]:
 def score_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     topic_groups = load_topic_groups()
     journal_names = load_journal_names()
-    scored = [score_item(item, topic_groups, journal_names) for item in items]
+    exclusions = load_exclusion_rules()
+    scored = [score_item(item, topic_groups, journal_names, exclusions) for item in items]
     return [item for item in scored if item.get("eligible_for_email")]
 
 
-def score_item(item: dict[str, Any], topic_groups: dict[str, list[str]], journal_names: set[str]) -> dict[str, Any]:
+def score_item(item: dict[str, Any], topic_groups: dict[str, list[str]], journal_names: set[str], exclusions: dict[str, Any] | None = None) -> dict[str, Any]:
+    exclusions = exclusions or load_exclusion_rules()
     text = " ".join(
         str(item.get(key, ""))
-        for key in ["title", "abstract", "venue", "category"]
+        for key in ["title", "abstract", "venue", "category", "publisher", "search_snippet"]
     ).casefold()
     category, relevance = best_topic_match(text, topic_groups)
     whitelisted = is_whitelisted_venue(item, journal_names)
@@ -113,7 +121,7 @@ def score_item(item: dict[str, Any], topic_groups: dict[str, list[str]], journal
     recency = recency_points(item)
     citation = citation_points(item.get("citation_count"))
     transferable = transferable_points(text)
-    penalties = quality_penalties(item, text, whitelisted)
+    penalties = quality_penalties(item, text, whitelisted, exclusions)
     score = max(0, min(100, relevance + source_quality + recency + citation + transferable - penalties))
 
     enriched = dict(item)
@@ -126,8 +134,17 @@ def score_item(item: dict[str, Any], topic_groups: dict[str, list[str]], journal
     enriched["priority"] = priority(score)
     enriched["recommendation_reason"] = recommendation_reason(enriched)
     enriched["research_relation"] = research_relation(enriched)
-    enriched["eligible_for_email"] = is_eligible_for_email(enriched, text, whitelisted)
+    enriched["eligible_for_email"] = is_eligible_for_email(enriched, text, whitelisted, exclusions)
     return enriched
+
+
+def load_exclusion_rules(path: Path = ROOT / "config" / "exclusion_rules.yml") -> dict[str, Any]:
+    config = load_yaml(path)
+    if not config:
+        return DEFAULT_EXCLUSION_RULES
+    merged = dict(DEFAULT_EXCLUSION_RULES)
+    merged.update(config)
+    return merged
 
 
 def best_topic_match(text: str, topic_groups: dict[str, list[str]]) -> tuple[str, int]:
@@ -149,8 +166,16 @@ def is_allowed_work_type(item: dict[str, Any]) -> bool:
     return raw in ALLOWED_WORK_TYPES
 
 
-def is_blacklisted(text: str) -> bool:
-    return any(pattern in text for pattern in BLACKLIST_PATTERNS)
+def is_blacklisted(item: dict[str, Any], text: str, exclusions: dict[str, Any]) -> bool:
+    doi = str(item.get("doi", "")).casefold()
+    for prefix in exclusions.get("blocked_doi_prefixes", []):
+        if doi.startswith(str(prefix).casefold()):
+            return True
+    for publisher in exclusions.get("blocked_publishers", []):
+        if str(publisher).casefold() in text:
+            return True
+    configured_keywords = exclusions.get("blocked_title_keywords_zh", []) + exclusions.get("blocked_title_keywords_en", [])
+    return any(str(pattern).casefold() in text for pattern in BLACKLIST_PATTERNS + configured_keywords)
 
 
 def is_whitelisted_venue(item: dict[str, Any], journal_names: set[str]) -> bool:
@@ -175,10 +200,10 @@ def source_quality_points(item: dict[str, Any], whitelisted: bool) -> int:
     return 8
 
 
-def quality_penalties(item: dict[str, Any], text: str, whitelisted: bool) -> int:
+def quality_penalties(item: dict[str, Any], text: str, whitelisted: bool, exclusions: dict[str, Any]) -> int:
     penalties = 0
     source = str(item.get("source", "")).casefold()
-    if source == "crossref" and not whitelisted:
+    if item.get("is_crossref_only") or (source == "crossref" and not whitelisted):
         penalties += 15
     if missing(item.get("abstract")):
         penalties += 10
@@ -190,31 +215,59 @@ def quality_penalties(item: dict[str, Any], text: str, whitelisted: bool) -> int
         penalties += 100
     if not is_allowed_work_type(item):
         penalties += 100
-    if is_blacklisted(text):
+    if is_blacklisted(item, text, exclusions):
         penalties += 100
     return penalties
 
 
-def is_eligible_for_email(item: dict[str, Any], text: str, whitelisted: bool) -> bool:
+def is_eligible_for_email(item: dict[str, Any], text: str, whitelisted: bool, exclusions: dict[str, Any]) -> bool:
     if item.get("priority") not in {"A", "B"}:
         return False
+    if int(item.get("score", 0)) < quality_threshold(str(item.get("alert_mode", "daily"))):
+        return False
+    if item.get("matched_category") == "uncategorized":
+        return False
     if item.get("topic_relevance_points", 0) < 16 and not whitelisted:
+        return False
+    if missing(item.get("venue")):
         return False
     if is_future_item(item):
         return False
     if not is_allowed_work_type(item):
         return False
-    if is_blacklisted(text):
+    if is_blacklisted(item, text, exclusions):
         return False
     source = str(item.get("source", "")).casefold()
-    if source == "crossref" and not whitelisted:
-        if missing(item.get("venue")) or missing(item.get("abstract")) or item.get("citation_count") in {None, "", 0, "0"}:
-            return False
-    if item.get("language") == "zh" and source == "crossref" and not whitelisted:
+    if item.get("is_crossref_only") or (source == "crossref" and not whitelisted):
+        return False
+    mode = str(item.get("alert_mode", "daily"))
+    if mode == "weekly" and not source_allowed_for_weekly(item, source, whitelisted):
         return False
     if source == "fallback_seed":
         return False
     return True
+
+
+def source_allowed_for_weekly(item: dict[str, Any], source: str, whitelisted: bool) -> bool:
+    language = str(item.get("language", "")).casefold()
+    discovery_source = str(item.get("discovery_source", "")).casefold()
+    source_api = str(item.get("source_api", "")).casefold()
+    if language == "zh":
+        return whitelisted or source.startswith("manual:")
+    allowed_source_signals = [
+        "serpapi_google_scholar",
+        "openalex",
+        "semantic_scholar",
+        "publish_or_perish",
+        "manual:",
+    ]
+    if whitelisted:
+        return True
+    return any(signal in source for signal in allowed_source_signals) or discovery_source == "google_scholar" or source_api == "serpapi_google_scholar"
+
+
+def quality_threshold(mode: str) -> int:
+    return 70 if mode == "weekly" else 65
 
 
 def missing(value: Any) -> bool:

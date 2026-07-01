@@ -1,0 +1,39 @@
+blocked_doi_prefixes:
+  - "10.61726"
+
+blocked_publishers:
+  - "Francis Academic Press"
+  - "Clausius Scientific Press"
+  - "CSP"
+  - "弗朗西斯学术出版社"
+  - "克劳修斯科学出版社"
+
+blocked_title_keywords_zh:
+  - 征稿
+  - 投稿
+  - 征文
+  - 会议通知
+  - 会议系列
+  - 出版社
+  - 外文学术期刊征稿
+  - 目录
+  - 序言
+  - 前言
+  - 编者按
+  - 出版说明
+  - 广告
+  - 声明
+  - 预刊
+
+blocked_title_keywords_en:
+  - call for papers
+  - call for submissions
+  - conference series
+  - proceedings series
+  - publisher notice
+  - advertisement
+  - announcement
+  - editorial note
+  - preface
+  - foreword
+  - table of contents

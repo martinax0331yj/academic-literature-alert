@@ -40,8 +40,9 @@ jobs:
           EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
         run: |
-          for name in EMAIL_SENDER EMAIL_PASSWORD EMAIL_RECEIVER SMTP_HOST SMTP_PORT; do
+          for name in EMAIL_SENDER EMAIL_PASSWORD EMAIL_RECEIVER SMTP_HOST SMTP_PORT SERPAPI_API_KEY; do
             if [ -n "${!name}" ]; then
               echo "$name configured: yes"
             else
@@ -56,6 +57,7 @@ jobs:
           EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
         run: |
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             python scripts/run_pipeline.py --mode weekly --dry-run

@@ -1,0 +1,44 @@
+source_policy:
+  quality_mode: strict
+
+  discovery_sources:
+    primary:
+      - serpapi_google_scholar
+      - openalex
+      - semantic_scholar
+      - journal_whitelist
+      - cnki_manual_export
+      - publish_or_perish_export
+    enrichment:
+      - openalex
+      - semantic_scholar
+      - crossref
+
+  serpapi_google_scholar:
+    enabled: true
+    api_key_env: SERPAPI_API_KEY
+    engine: google_scholar
+    role: discovery_only
+    allow_direct_email_push: false
+    max_results_per_query: 10
+    default_language: auto
+    notes: "Use SerpAPI Google Scholar API only. Do not scrape Google Scholar pages directly."
+
+  openalex:
+    enabled: true
+    role: discovery_and_enrichment
+
+  semantic_scholar:
+    enabled: true
+    role: discovery_and_enrichment
+
+  crossref:
+    enabled: true
+    role: metadata_enrichment_only
+    allow_direct_email_push: false
+    reject_crossref_only_items: true
+
+  cnki:
+    enabled: true
+    mode: manual_export_only
+    allow_direct_scraping: false
