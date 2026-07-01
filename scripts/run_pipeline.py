@@ -10,6 +10,11 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
+try:
+    import yaml
+except ImportError:  # pragma: no cover - local fallback for minimal environments
+    yaml = None
+
 from fetch_literature import fallback_items, fetch_open_sources, read_manual_records, write_cache
 from render_email import render_html, render_markdown
 from score_literature import score_items
@@ -21,6 +26,7 @@ LOG_DIR = ROOT / "logs"
 PUSHED_RECORDS = DATA_DIR / "pushed_records.csv"
 CACHE_PATH = DATA_DIR / "literature_cache.jsonl"
 PREVIEW_PATH = DATA_DIR / "last_email_preview.md"
+SCHEDULES_PATH = ROOT / "config" / "schedules.yml"
 LOGGER = logging.getLogger("academic_literature_alert")
 
 
@@ -34,6 +40,7 @@ def main() -> None:
 
     setup_logging()
     ensure_data_files()
+    send_empty_digest = should_send_empty_digest(args.mode)
 
     LOGGER.info("Pipeline started: mode=%s dry_run=%s", args.mode, args.dry_run)
     items = []
@@ -54,7 +61,10 @@ def main() -> None:
     preview_only = False
     if not fresh:
         LOGGER.info("All selected items were recently pushed.")
-        if args.dry_run:
+        if send_empty_digest:
+            LOGGER.info("Empty digest enabled for mode=%s.", args.mode)
+            fresh = []
+        elif args.dry_run:
             LOGGER.info("Dry-run preview will show selected duplicate candidates for inspection.")
             fresh = selected[: min(len(selected), target_count(args.mode))]
             preview_only = True
@@ -65,9 +75,10 @@ def main() -> None:
     markdown = render_markdown(fresh, args.mode, preview_only=preview_only)
     html = render_html(fresh, args.mode, preview_only=preview_only)
     PREVIEW_PATH.write_text(markdown, encoding="utf-8")
-    subject = f"[Literature Alert] {args.mode} digest - {date.today().isoformat()}"
+    subject = email_subject(args.mode, has_items=bool(fresh))
     sent = False
-    if fresh and not preview_only:
+    should_send = (bool(fresh) or send_empty_digest) and not preview_only
+    if should_send:
         sent = send_email(subject, markdown, html, dry_run=args.dry_run)
     elif args.dry_run:
         send_email(subject, markdown, html, dry_run=True)
@@ -100,6 +111,23 @@ def ensure_data_files() -> None:
         PUSHED_RECORDS.write_text("doi,title_hash,title,category,first_seen_date,pushed_date,source,status\n", encoding="utf-8")
     if not CACHE_PATH.exists():
         CACHE_PATH.write_text("", encoding="utf-8")
+
+
+def should_send_empty_digest(mode: str) -> bool:
+    fallback = mode == "weekly"
+    if yaml is None or not SCHEDULES_PATH.exists():
+        return fallback
+    with SCHEDULES_PATH.open("r", encoding="utf-8") as handle:
+        config = yaml.safe_load(handle) or {}
+    return bool(config.get(mode, {}).get("send_empty_digest", fallback))
+
+
+def email_subject(mode: str, has_items: bool) -> str:
+    if mode == "weekly":
+        if has_items:
+            return "【文献推送｜每周精选】核心/高质量期刊论文精选"
+        return "【文献推送｜每周精选】本周暂无符合条件的高质量期刊论文"
+    return f"[Literature Alert] {mode} digest - {date.today().isoformat()}"
 
 
 def select_items(items: list[dict[str, Any]], mode: str) -> list[dict[str, Any]]:

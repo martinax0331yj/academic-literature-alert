@@ -21,11 +21,12 @@ def render_markdown(items: list[dict[str, Any]], mode: str, preview_only: bool =
         lines.append("- Preview status: no fresh sendable records; this preview is for inspection only.")
     lines.append("")
     if not items:
+        empty_message = empty_digest_message(mode)
         lines.extend(
             [
-                "## No Fresh Records",
+                "## 暂无符合条件的文献",
                 "",
-                "No new literature passed the deduplication window for this run. No email should be sent in formal mode.",
+                empty_message,
                 "",
             ]
         )
@@ -92,3 +93,9 @@ def field(value: Any) -> str:
     if not text or text.casefold() in {"missing", "none", "null", "nan"}:
         return "未获取"
     return text
+
+
+def empty_digest_message(mode: str) -> str:
+    if mode == "weekly":
+        return "本周暂无符合筛选条件的高质量期刊论文。"
+    return "暂无符合筛选条件的高质量期刊论文。"

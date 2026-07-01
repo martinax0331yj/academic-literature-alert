@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import smtplib
+import sys
 from email.message import EmailMessage
 
 
@@ -14,14 +15,13 @@ def missing_email_env() -> list[str]:
 
 def send_email(subject: str, markdown_body: str, html_body: str | None = None, dry_run: bool = False) -> bool:
     missing = missing_email_env()
-    if dry_run or missing:
-        if missing:
-            print(f"Email not sent. Missing environment variables: {', '.join(missing)}")
-        else:
-            print("Email dry-run enabled. No email sent.")
+    if dry_run:
+        print("Email dry-run enabled. No email sent.")
         print("\n--- EMAIL PREVIEW ---\n")
         print(markdown_body)
         return False
+    if missing:
+        raise RuntimeError(f"Missing required email environment variables: {', '.join(missing)}")
 
     sender = os.environ["EMAIL_SENDER"]
     receiver = os.environ["EMAIL_RECEIVER"]
@@ -36,8 +36,13 @@ def send_email(subject: str, markdown_body: str, html_body: str | None = None, d
     host = os.environ["SMTP_HOST"]
     port = int(os.environ["SMTP_PORT"])
     password = os.environ["EMAIL_PASSWORD"]
-    with smtplib.SMTP(host, port, timeout=30) as server:
-        server.starttls()
-        server.login(sender, password)
-        server.send_message(message)
+    try:
+        with smtplib.SMTP(host, port, timeout=30) as server:
+            server.starttls()
+            server.login(sender, password)
+            server.send_message(message)
+    except Exception as exc:  # noqa: BLE001
+        print(f"email send failed: {type(exc).__name__}: {exc}", file=sys.stderr)
+        raise
+    print("email sent successfully")
     return True

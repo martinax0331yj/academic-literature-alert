@@ -33,6 +33,22 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Check email secret configuration
+        env:
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+        run: |
+          for name in EMAIL_SENDER EMAIL_PASSWORD EMAIL_RECEIVER SMTP_HOST SMTP_PORT; do
+            if [ -n "${!name}" ]; then
+              echo "$name configured: yes"
+            else
+              echo "$name configured: no"
+            fi
+          done
+
       - name: Run weekly pipeline
         env:
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
