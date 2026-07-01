@@ -5,6 +5,8 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from journal_config import load_yaml_file
+
 try:
     import yaml
 except ImportError:  # pragma: no cover - exercised in minimal local environments
@@ -78,10 +80,7 @@ DEFAULT_EXCLUSION_RULES = {
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
-    if yaml is None:
-        return {}
-    with path.open("r", encoding="utf-8") as handle:
-        return yaml.safe_load(handle) or {}
+    return load_yaml_file(path, yaml)
 
 
 def load_topic_groups(path: Path = ROOT / "config" / "topics.yml") -> dict[str, list[str]]:
@@ -94,7 +93,14 @@ def load_journal_names() -> set[str]:
     zh = load_yaml(ROOT / "config" / "journals_zh.yml").get("journals", [])
     for item in zh:
         names.add(str(item.get("name", "")).casefold())
-    en_fields = load_yaml(ROOT / "config" / "journals_en.yml").get("fields", {})
+        for alias in item.get("aliases", []) or []:
+            names.add(str(alias).casefold())
+    en_config = load_yaml(ROOT / "config" / "journals_en.yml")
+    for item in en_config.get("journals", []) or []:
+        names.add(str(item.get("name", "") or item.get("journal", "")).casefold())
+        for alias in item.get("aliases", []) or []:
+            names.add(str(alias).casefold())
+    en_fields = en_config.get("fields", {})
     for journals in en_fields.values():
         for item in journals:
             names.add(str(item.get("journal", "")).casefold())

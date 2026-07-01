@@ -15,7 +15,7 @@ try:
 except ImportError:  # pragma: no cover - local fallback for minimal environments
     yaml = None
 
-from fetch_literature import fallback_items, fetch_open_sources, read_manual_records, write_cache
+from fetch_literature import fallback_items, fetch_open_sources, get_discovery_stats, read_manual_records, write_cache
 from render_email import render_html, render_markdown
 from score_literature import score_items
 from send_email import send_email
@@ -48,6 +48,7 @@ def main() -> None:
         items.extend(read_manual_records(args.manual_records))
     if not args.skip_network:
         items.extend(fetch_open_sources(args.mode))
+    discovery_stats = get_discovery_stats()
     if not items:
         LOGGER.warning("No open-source records fetched; using metadata-only fallback seeds.")
         items = fallback_items(args.mode)
@@ -57,6 +58,7 @@ def main() -> None:
     write_cache(items, CACHE_PATH)
     scored = score_items(items)
     selected = select_items(scored, args.mode)
+    filtered_reasons = top_filtered_records(items, scored)
     records = load_records(PUSHED_RECORDS)
     fresh = filter_recent_duplicates(selected, records, args.mode)
     record_items = fresh
@@ -77,7 +79,11 @@ def main() -> None:
             fresh = []
             preview_only = True
 
+    diagnostics = build_diagnostics(discovery_stats, len(items), len(fresh), filtered_reasons)
+    log_diagnostics(diagnostics)
     markdown = render_markdown(fresh, args.mode, preview_only=preview_only)
+    if not fresh:
+        markdown = append_diagnostics_to_preview(markdown, diagnostics)
     html = render_html(fresh, args.mode, preview_only=preview_only)
     PREVIEW_PATH.write_text(markdown, encoding="utf-8")
     subject = email_subject(args.mode, has_items=bool(fresh))
@@ -191,6 +197,102 @@ def balanced_weekly(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 def target_count(mode: str) -> int:
     return 4 if mode == "weekly" else 8
+
+
+def build_diagnostics(
+    discovery_stats: dict[str, int],
+    candidate_total: int,
+    final_count: int,
+    filtered_reasons: list[dict[str, str]],
+) -> dict[str, Any]:
+    diagnostics: dict[str, Any] = dict(discovery_stats)
+    diagnostics["candidate_total_before_filter"] = candidate_total
+    diagnostics["final_email_record_count"] = final_count
+    diagnostics["top_filtered_records"] = filtered_reasons
+    return diagnostics
+
+
+def log_diagnostics(diagnostics: dict[str, Any]) -> None:
+    for key in [
+        "loaded_journal_zh_count",
+        "loaded_journal_en_count",
+        "journal_whitelist_discovery_count",
+        "fetched_from_openalex_journal_count",
+        "fetched_from_semantic_scholar_count",
+        "candidate_total_before_filter",
+        "final_email_record_count",
+    ]:
+        LOGGER.info("%s=%s", key, diagnostics.get(key, 0))
+    for item in diagnostics.get("top_filtered_records", [])[:5]:
+        LOGGER.info("filtered_record title=%r reason=%s", item.get("title"), item.get("reason"))
+
+
+def top_filtered_records(items: list[dict[str, Any]], scored: list[dict[str, Any]]) -> list[dict[str, str]]:
+    selected_keys = {item_key(item) for item in scored}
+    filtered: list[dict[str, str]] = []
+    for item in items:
+        key = item_key(item)
+        if key in selected_keys:
+            continue
+        filtered.append({"title": str(item.get("title", "missing")), "reason": filter_reason(item)})
+        if len(filtered) >= 8:
+            break
+    return filtered
+
+
+def filter_reason(item: dict[str, Any]) -> str:
+    if item.get("source") == "fallback_seed":
+        return "fallback metadata is not eligible"
+    if item.get("is_crossref_only") or str(item.get("source", "")).casefold() == "crossref":
+        return "crossref-only or metadata-only source"
+    if missing_value(item.get("venue")):
+        return "missing journal/source"
+    if is_future_item(item):
+        return "future publication year"
+    work_type = str(item.get("work_type", "")).casefold()
+    if work_type in {"book", "book-chapter", "chapter", "component", "monograph", "proceedings", "proceedings-article"}:
+        return f"blocked work_type={work_type}"
+    if missing_value(item.get("abstract")):
+        return "missing abstract"
+    return "did not pass topic relevance, priority, or score threshold"
+
+
+def append_diagnostics_to_preview(markdown: str, diagnostics: dict[str, Any]) -> str:
+    lines = [
+        markdown.rstrip(),
+        "",
+        "## 诊断摘要",
+        "",
+        f"- loaded_journal_zh_count: {diagnostics.get('loaded_journal_zh_count', 0)}",
+        f"- loaded_journal_en_count: {diagnostics.get('loaded_journal_en_count', 0)}",
+        f"- journal_whitelist_discovery_count: {diagnostics.get('journal_whitelist_discovery_count', 0)}",
+        f"- fetched_from_openalex_journal_count: {diagnostics.get('fetched_from_openalex_journal_count', 0)}",
+        f"- fetched_from_semantic_scholar_count: {diagnostics.get('fetched_from_semantic_scholar_count', 0)}",
+        f"- candidate_total_before_filter: {diagnostics.get('candidate_total_before_filter', 0)}",
+        f"- final_email_record_count: {diagnostics.get('final_email_record_count', 0)}",
+        "",
+        "### Top Filtered Records",
+        "",
+    ]
+    filtered = diagnostics.get("top_filtered_records", [])
+    if filtered:
+        for item in filtered[:5]:
+            lines.append(f"- {item.get('title', 'missing')}: {item.get('reason', 'unknown')}")
+    else:
+        lines.append("- None")
+    return "\n".join(lines) + "\n"
+
+
+def missing_value(value: Any) -> bool:
+    if value is None:
+        return True
+    text = str(value).strip().casefold()
+    return not text or text in {"missing", "none", "null", "nan", "未获取"}
+
+
+def is_future_item(item: dict[str, Any]) -> bool:
+    year = re.search(r"(19|20)\d{2}", str(item.get("published_date") or item.get("year") or ""))
+    return bool(year and int(year.group(0)) > date.today().year)
 
 
 def load_records(path: Path) -> list[dict[str, str]]:

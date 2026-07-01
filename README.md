@@ -312,6 +312,29 @@ config/journals_zh.yml
 config/journals_en.yml
 ```
 
+这两个文件不只是“评分加分名单”，也是主动 discovery 的入口。每个期刊条目都应使用结构化配置，至少包含：
+
+```yaml
+- name: "Journal Name"
+  language: en
+  enabled: true
+  aliases: []
+  issn: ""
+  eissn: ""
+  openalex_source_id: ""
+  source_id: ""
+  quality_tags: []
+  subject_tags: []
+  discovery:
+    use_openalex: true
+    use_semantic_scholar: true
+    use_cnki_import: false
+    use_google_scholar_import: true
+    use_official_site: false
+  metadata_status: "unresolved"
+  metadata_note: "Journal quality, indexing and ranking should be verified manually."
+```
+
 新增中文期刊示例：
 
 ```yaml
@@ -327,6 +350,22 @@ config/journals_en.yml
 ```
 
 不要在没有人工核验的情况下写入 CSSCI、北大核心、AMI、JCR、CiteScore、SJR、ABS、影响因子等等级信息。
+
+ISSN、eISSN 和 OpenAlex source_id 比期刊名称更可靠。期刊名称可能有缩写、改名、大小写或符号差异，而 source_id 可以直接定位 OpenAlex 的期刊来源，减少误抓。
+
+解析期刊元数据：
+
+```bash
+python3 scripts/resolve_journal_metadata.py
+```
+
+解析报告位置：
+
+```text
+logs/journal_metadata_resolution_report.md
+```
+
+如果 OpenAlex 无法唯一确认期刊，脚本会保留空字段并标记 `metadata_status: unresolved`。不要手动编造 ISSN、OpenAlex source_id、影响因子或分区；无法解析的条目需要人工核验。
 
 ## 🕒 GitHub Actions 定时任务
 

@@ -1,57 +1,975 @@
-quality_note: Add JCR, CiteScore, SJR, ABS, or impact factor data only after manual verification. Do not fabricate unavailable metrics.
-
-fields:
-  scholarly_communication_and_publishing:
-    - journal: Learned Publishing
-      quality_note: metrics to be manually verified
-    - journal: Journal of Scholarly Publishing
-      quality_note: metrics to be manually verified
-    - journal: Scientometrics
-      quality_note: metrics to be manually verified
-    - journal: Research Evaluation
-      quality_note: metrics to be manually verified
-  information_science_and_scientometrics:
-    - journal: Journal of Informetrics
-      quality_note: metrics to be manually verified
-    - journal: Journal of the Association for Information Science and Technology
-      quality_note: metrics to be manually verified
-    - journal: Information Processing and Management
-      quality_note: metrics to be manually verified
-    - journal: Library and Information Science Research
-      quality_note: metrics to be manually verified
-  communication_and_media_studies:
-    - journal: New Media and Society
-      quality_note: metrics to be manually verified
-    - journal: Journal of Communication
-      quality_note: metrics to be manually verified
-    - journal: Communication Research
-      quality_note: metrics to be manually verified
-    - journal: Media, Culture and Society
-      quality_note: metrics to be manually verified
-  management_and_organization_studies:
-    - journal: Academy of Management Journal
-      quality_note: metrics to be manually verified
-    - journal: Academy of Management Review
-      quality_note: metrics to be manually verified
-    - journal: Organization Science
-      quality_note: metrics to be manually verified
-    - journal: Strategic Management Journal
-      quality_note: metrics to be manually verified
-  digital_media_games_and_cultural_industries:
-    - journal: Games and Culture
-      quality_note: metrics to be manually verified
-    - journal: Convergence
-      quality_note: metrics to be manually verified
-    - journal: International Journal of Cultural Studies
-      quality_note: metrics to be manually verified
-    - journal: Digital Creativity
-      quality_note: metrics to be manually verified
-  ai_information_systems_and_digital_transformation:
-    - journal: MIS Quarterly
-      quality_note: metrics to be manually verified
-    - journal: Information Systems Research
-      quality_note: metrics to be manually verified
-    - journal: Journal of Management Information Systems
-      quality_note: metrics to be manually verified
-    - journal: AI and Society
-      quality_note: metrics to be manually verified
+# English journal whitelist for scoring and active discovery.
+# Quality, indexing, ranking, JCR, Scopus/SJR and ABS status require manual verification.
+journals:
+  - name: "Learned Publishing"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Journal of Scholarly Publishing"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Publishing Research Quarterly"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Logos"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "International Journal of the Book"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Journal of Electronic Publishing"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Information Services & Use"
+    language: en
+    enabled: true
+    aliases: ["Information Services and Use"]
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Serials Review"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "College & Research Libraries"
+    language: en
+    enabled: true
+    aliases: ["College and Research Libraries"]
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Journal of Librarianship and Information Science"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Scientometrics"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Journal of Informetrics"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Quantitative Science Studies"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Research Evaluation"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Aslib Journal of Information Management"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Information Processing & Management"
+    language: en
+    enabled: true
+    aliases: ["Information Processing and Management"]
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Journal of Documentation"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, scholarly_communication, information_science, high_quality_candidate]
+    subject_tags: [academic_publishing, scholarly_publishing, journal_management, scholarly_communication, open_access, peer_review, bibliometrics, scientometrics]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Journal of the Association for Information Science and Technology"
+    language: en
+    enabled: true
+    aliases: ["JASIST"]
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [information_science, scholarly_communication, high_quality_candidate]
+    subject_tags: [scholarly_communication, bibliometrics, scientometrics, information_science, digital_transformation]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Library and Information Science Research"
+    language: en
+    enabled: true
+    aliases: ["Library & Information Science Research"]
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [information_science, scholarly_communication, high_quality_candidate]
+    subject_tags: [scholarly_communication, bibliometrics, scientometrics, information_science, digital_transformation]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "New Media and Society"
+    language: en
+    enabled: true
+    aliases: ["New Media & Society"]
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [communication, media_studies, high_quality_candidate]
+    subject_tags: [communication_studies, digital_media, platform_governance, digital_transformation]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Journal of Communication"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [communication, media_studies, high_quality_candidate]
+    subject_tags: [communication_studies, digital_media, platform_governance, digital_transformation]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Communication Research"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [communication, media_studies, high_quality_candidate]
+    subject_tags: [communication_studies, digital_media, platform_governance, digital_transformation]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Media, Culture and Society"
+    language: en
+    enabled: true
+    aliases: ["Media, Culture & Society"]
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [communication, media_studies, high_quality_candidate]
+    subject_tags: [communication_studies, digital_media, platform_governance, digital_transformation]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Academy of Management Journal"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Academy of Management Review"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Administrative Science Quarterly"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Organization Science"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Organization Studies"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Journal of Management"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Journal of Management Studies"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Strategic Management Journal"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Strategic Organization"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Management Science"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Journal of Marketing"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Journal of Marketing Research"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Marketing Science"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Journal of Consumer Research"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Journal of International Business Studies"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "International Marketing Review"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Industrial Marketing Management"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Journal of Business Research"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "MIS Quarterly"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Information Systems Research"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Journal of Management Information Systems"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Research Policy"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Technovation"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Journal of Product Innovation Management"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Information & Management"
+    language: en
+    enabled: true
+    aliases: ["Information and Management"]
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Government Information Quarterly"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, high_quality_candidate]
+    subject_tags: [management, organization_studies, strategy, marketing, brand_management, international_business, information_systems, digital_transformation, platform_governance, innovation_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually against latest JCR/ABS/Scopus/SJR lists."
+  - name: "Games and Culture"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [digital_media, cultural_industries, high_quality_candidate]
+    subject_tags: [game_publishing, digital_games, interactive_narrative, transmedia_storytelling, cultural_industries]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Convergence"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [digital_media, cultural_industries, high_quality_candidate]
+    subject_tags: [game_publishing, digital_games, interactive_narrative, transmedia_storytelling, cultural_industries]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "International Journal of Cultural Studies"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [digital_media, cultural_industries, high_quality_candidate]
+    subject_tags: [game_publishing, digital_games, interactive_narrative, transmedia_storytelling, cultural_industries]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "Digital Creativity"
+    language: en
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [digital_media, cultural_industries, high_quality_candidate]
+    subject_tags: [game_publishing, digital_games, interactive_narrative, transmedia_storytelling, cultural_industries]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."
+  - name: "AI and Society"
+    language: en
+    enabled: true
+    aliases: ["AI & Society"]
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [technology_frontier, information_science, high_quality_candidate]
+    subject_tags: [generative_ai, ai_ethics, publishing_ethics, digital_transformation, knowledge_service]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: true
+      use_cnki_import: false
+      use_google_scholar_import: true
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Journal quality, indexing and ranking should be verified manually before formal citation."

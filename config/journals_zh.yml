@@ -1,37 +1,723 @@
-# 中文期刊核心来源状态需要用户后续手动核验和维护。
-# 是否为北大核心、CSSCI、AMI 或其他核心来源，不得由代码虚构。
+# 中文期刊白名单同时用于评分与主动 discovery。
+# 核心/CSSCI/AMI/北大核心状态必须人工核验，不得由代码虚构。
 journals:
-  - name: 出版发行研究
-    quality_note: core status to be manually verified
-  - name: 中国出版
-    quality_note: core status to be manually verified
-  - name: 科技与出版
-    quality_note: core status to be manually verified
-  - name: 编辑学报
-    quality_note: core status to be manually verified
-  - name: 出版科学
-    quality_note: core status to be manually verified
-  - name: 中国科技期刊研究
-    quality_note: core status to be manually verified
-  - name: 现代出版
-    quality_note: core status to be manually verified
-  - name: 编辑之友
-    quality_note: core status to be manually verified
-  - name: 新闻与传播研究
-    quality_note: core status to be manually verified
-  - name: 国际新闻界
-    quality_note: core status to be manually verified
-  - name: 新闻大学
-    quality_note: core status to be manually verified
-  - name: 现代传播
-    quality_note: core status to be manually verified
-  - name: 出版广角
-    quality_note: core status to be manually verified
-  - name: 中国编辑
-    quality_note: core status to be manually verified
-  - name: 传媒
-    quality_note: core status to be manually verified
-  - name: 青年记者
-    quality_note: core status to be manually verified
-  - name: 中国图书评论
-    quality_note: core status to be manually verified
+  - name: "出版发行研究"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "中国出版"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "科技与出版"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "编辑学报"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "出版科学"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "中国科技期刊研究"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "现代出版"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "编辑之友"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "出版广角"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "中国编辑"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "传媒"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "青年记者"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "中国图书评论"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "新闻与传播研究"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "国际新闻界"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "新闻大学"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "现代传播"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "当代传播"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "新闻记者"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "新闻界"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [publishing, communication, chinese_core_candidate]
+    subject_tags: [publishing, academic_publishing, digital_publishing, communication_studies]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "管理世界"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "南开管理评论"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "管理科学学报"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "中国管理科学"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "管理评论"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "管理学报"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "科研管理"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "科学学研究"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "科学学与科学技术管理"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "外国经济与管理"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "经济管理"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "软科学"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "研究与发展管理"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "中国软科学"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "系统工程理论与实践"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "系统管理学报"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "公共管理学报"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "管理工程学报"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "预测"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."
+  - name: "运筹与管理"
+    language: zh
+    enabled: true
+    aliases: []
+    issn: ""
+    eissn: ""
+    openalex_source_id: ""
+    source_id: ""
+    quality_tags: [management, chinese_core_candidate]
+    subject_tags: [management, organization_studies, strategy, innovation_management, digital_transformation, platform_governance, brand_management]
+    discovery:
+      use_openalex: true
+      use_semantic_scholar: false
+      use_cnki_import: true
+      use_google_scholar_import: false
+      use_official_site: false
+    metadata_status: "unresolved"
+    metadata_note: "Core status requires manual verification against latest PKU/CSSCI/AMI lists."

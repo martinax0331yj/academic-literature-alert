@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 
 from fetch_literature import fetch_serpapi_google_scholar
+from fetch_literature import load_journal_whitelist
 from score_literature import score_items
 
 
@@ -153,6 +154,23 @@ def main() -> None:
             "published_date": "2026-01-01",
             "work_type": "journal-article",
         },
+        {
+            "title": "Open access and peer review governance in scholarly publishing platforms",
+            "authors": ["Zero Citation"],
+            "year": "2026",
+            "venue": "Learned Publishing",
+            "doi": "10.0000/zero-citation",
+            "url": "https://example.test/zero-citation",
+            "abstract": "This article studies scholarly publishing, peer review, open access, journal management, platform governance, and research integrity.",
+            "source": "openalex",
+            "discovery_source": "journal_whitelist",
+            "whitelist_matched": True,
+            "category": "academic_publishing",
+            "language": "en",
+            "citation_count": 0,
+            "published_date": "2026-01-01",
+            "work_type": "journal-article",
+        },
     ]
     scored = score_items(items)
     titles = {item["title"] for item in scored}
@@ -165,7 +183,11 @@ def main() -> None:
     assert "Google Scholar candidate without confirmed document type" not in titles
     assert "数字出版平台治理与知识服务研究" not in titles
     assert "Peer review governance in scholarly publishing platforms" in titles
+    assert "Open access and peer review governance in scholarly publishing platforms" in titles
     assert all(item["priority"] in {"A", "B"} for item in scored)
+    journals = load_journal_whitelist()
+    assert len([journal for journal in journals if journal.get("language") == "zh"]) >= 40
+    assert len([journal for journal in journals if journal.get("language") == "en"]) >= 54
     old_key = os.environ.pop("SERPAPI_API_KEY", None)
     try:
         assert fetch_serpapi_google_scholar("scholarly publishing", 1) == []

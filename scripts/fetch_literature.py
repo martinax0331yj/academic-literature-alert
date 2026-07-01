@@ -12,6 +12,8 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from journal_config import load_yaml_file
+
 try:
     import requests
 except ImportError:  # pragma: no cover - exercised in minimal local environments
@@ -24,6 +26,13 @@ except ImportError:  # pragma: no cover - exercised in minimal local environment
 
 ROOT = Path(__file__).resolve().parents[1]
 LOGGER = logging.getLogger(__name__)
+LAST_DISCOVERY_STATS = {
+    "loaded_journal_zh_count": 0,
+    "loaded_journal_en_count": 0,
+    "journal_whitelist_discovery_count": 0,
+    "fetched_from_openalex_journal_count": 0,
+    "fetched_from_semantic_scholar_count": 0,
+}
 
 DEFAULT_TOPIC_QUERIES = {
     "academic_publishing": ["scholarly publishing", "open access", "peer review"],
@@ -92,11 +101,13 @@ class LiteratureItem:
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
+    config = load_yaml_file(path, yaml)
+    if config:
+        return config
     if yaml is None:
         LOGGER.warning("PyYAML is not installed; using built-in default topic queries.")
         return {}
-    with path.open("r", encoding="utf-8") as handle:
-        return yaml.safe_load(handle) or {}
+    return {}
 
 
 def topic_queries(topics_path: Path = ROOT / "config" / "topics.yml") -> dict[str, list[str]]:
@@ -108,6 +119,92 @@ def topic_queries(topics_path: Path = ROOT / "config" / "topics.yml") -> dict[st
 def source_policy(path: Path = ROOT / "config" / "source_policy.yml") -> dict[str, Any]:
     config = load_yaml(path)
     return config or DEFAULT_SOURCE_POLICY
+
+
+def get_discovery_stats() -> dict[str, int]:
+    return dict(LAST_DISCOVERY_STATS)
+
+
+def reset_discovery_stats() -> None:
+    for key in LAST_DISCOVERY_STATS:
+        LAST_DISCOVERY_STATS[key] = 0
+
+
+def load_journal_whitelist() -> list[dict[str, Any]]:
+    journals: list[dict[str, Any]] = []
+    for path, language in [
+        (ROOT / "config" / "journals_zh.yml", "zh"),
+        (ROOT / "config" / "journals_en.yml", "en"),
+    ]:
+        config = load_yaml(path)
+        journals.extend(normalize_journal_entries(config, language))
+    LAST_DISCOVERY_STATS["loaded_journal_zh_count"] = sum(1 for journal in journals if journal.get("language") == "zh")
+    LAST_DISCOVERY_STATS["loaded_journal_en_count"] = sum(1 for journal in journals if journal.get("language") == "en")
+    return journals
+
+
+def normalize_journal_entries(config: dict[str, Any], default_language: str) -> list[dict[str, Any]]:
+    entries: list[dict[str, Any]] = []
+    if isinstance(config.get("journals"), list):
+        for raw in config["journals"]:
+            name = str(raw.get("name") or raw.get("journal") or "").strip()
+            if name:
+                entries.append(normalize_journal_entry(raw, name, default_language))
+    for journals in (config.get("fields") or {}).values():
+        for raw in journals:
+            name = str(raw.get("name") or raw.get("journal") or "").strip()
+            if name:
+                entries.append(normalize_journal_entry(raw, name, default_language))
+    return dedupe_journals(entries)
+
+
+def normalize_journal_entry(raw: dict[str, Any], name: str, default_language: str) -> dict[str, Any]:
+    aliases = raw.get("aliases") or []
+    if isinstance(aliases, str):
+        aliases = [aliases]
+    discovery = raw.get("discovery") or {}
+    return {
+        "name": name,
+        "language": raw.get("language") or default_language,
+        "enabled": bool(raw.get("enabled", True)),
+        "aliases": [str(alias).strip() for alias in aliases if str(alias).strip()],
+        "issn": str(raw.get("issn", "") or ""),
+        "eissn": str(raw.get("eissn", "") or ""),
+        "openalex_source_id": str(raw.get("openalex_source_id", "") or raw.get("source_id", "") or ""),
+        "source_id": str(raw.get("source_id", "") or raw.get("openalex_source_id", "") or ""),
+        "quality_tags": list(raw.get("quality_tags") or []),
+        "subject_tags": list(raw.get("subject_tags") or []),
+        "discovery": {
+            "use_openalex": bool(discovery.get("use_openalex", True)),
+            "use_semantic_scholar": bool(discovery.get("use_semantic_scholar", default_language == "en")),
+            "use_cnki_import": bool(discovery.get("use_cnki_import", default_language == "zh")),
+            "use_google_scholar_import": bool(discovery.get("use_google_scholar_import", default_language == "en")),
+            "use_official_site": bool(discovery.get("use_official_site", False)),
+        },
+        "metadata_status": raw.get("metadata_status", "unresolved"),
+        "metadata_note": raw.get("metadata_note") or raw.get("quality_note") or "",
+    }
+
+
+def dedupe_journals(journals: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    merged: dict[str, dict[str, Any]] = {}
+    order: list[str] = []
+    for journal in journals:
+        key = str(journal.get("name", "")).casefold()
+        if not key:
+            continue
+        if key not in merged:
+            merged[key] = journal
+            order.append(key)
+            continue
+        existing = merged[key]
+        existing["aliases"] = sorted(set(existing.get("aliases", [])) | set(journal.get("aliases", [])))
+        existing["quality_tags"] = sorted(set(existing.get("quality_tags", [])) | set(journal.get("quality_tags", [])))
+        existing["subject_tags"] = sorted(set(existing.get("subject_tags", [])) | set(journal.get("subject_tags", [])))
+        for field in ["issn", "eissn", "openalex_source_id", "source_id", "metadata_status", "metadata_note"]:
+            if not existing.get(field) and journal.get(field):
+                existing[field] = journal[field]
+    return [merged[key] for key in order]
 
 
 def fetch_crossref(query: str, rows: int = 5, timeout: int = 20) -> list[dict[str, Any]]:
@@ -232,6 +329,122 @@ def fetch_openalex_by_doi(doi: str, timeout: int = 20) -> dict[str, Any] | None:
         return None
     response.raise_for_status()
     return openalex_work_to_item(response.json()).to_dict()
+
+
+def fetch_openalex_source_by_issn(issn: str, timeout: int = 20) -> dict[str, Any] | None:
+    if requests is None:
+        raise RuntimeError("requests is not installed")
+    normalized = normalize_issn(issn)
+    if not normalized:
+        return None
+    url = f"https://api.openalex.org/sources/issn:{normalized}"
+    response = requests.get(url, timeout=timeout, headers={"User-Agent": "academic-literature-alert/0.1"})
+    if response.status_code == 404:
+        return None
+    response.raise_for_status()
+    return response.json()
+
+
+def search_openalex_sources(query: str, rows: int = 3, timeout: int = 20) -> list[dict[str, Any]]:
+    if requests is None:
+        raise RuntimeError("requests is not installed")
+    url = "https://api.openalex.org/sources"
+    params = {"search": query, "per-page": rows}
+    response = requests.get(url, params=params, timeout=timeout, headers={"User-Agent": "academic-literature-alert/0.1"})
+    response.raise_for_status()
+    return response.json().get("results", [])
+
+
+def openalex_source_id_from_url(value: str) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    if text.startswith("https://openalex.org/"):
+        return text.rsplit("/", 1)[-1]
+    return text
+
+
+def resolve_openalex_source_for_journal(journal: dict[str, Any]) -> tuple[str, str]:
+    explicit = openalex_source_id_from_url(journal.get("openalex_source_id") or journal.get("source_id") or "")
+    if explicit:
+        return explicit, "openalex_source_id"
+    for identifier in [journal.get("issn"), journal.get("eissn")]:
+        if not identifier:
+            continue
+        source = fetch_openalex_source_by_issn(str(identifier))
+        if source and source.get("id"):
+            return openalex_source_id_from_url(source["id"]), "issn"
+    candidates = [journal.get("name", "")] + list(journal.get("aliases", []))
+    for query in [candidate for candidate in candidates if candidate]:
+        sources = search_openalex_sources(str(query), rows=3)
+        exact = [
+            source for source in sources
+            if str(source.get("display_name", "")).casefold() == str(query).casefold()
+        ]
+        if len(exact) == 1 and exact[0].get("id"):
+            return openalex_source_id_from_url(exact[0]["id"]), "name"
+    return "", "unresolved"
+
+
+def fetch_openalex_works_by_source(source_id: str, since_date: str, rows: int = 5, timeout: int = 20) -> list[dict[str, Any]]:
+    if requests is None:
+        raise RuntimeError("requests is not installed")
+    openalex_id = openalex_source_id_from_url(source_id)
+    if not openalex_id:
+        return []
+    url = "https://api.openalex.org/works"
+    params = {
+        "filter": f"primary_location.source.id:https://openalex.org/{openalex_id},from_publication_date:{since_date}",
+        "sort": "publication_date:desc",
+        "per-page": rows,
+    }
+    response = requests.get(url, params=params, timeout=timeout, headers={"User-Agent": "academic-literature-alert/0.1"})
+    response.raise_for_status()
+    return [openalex_work_to_item(work).to_dict() for work in response.json().get("results", []) if work.get("title")]
+
+
+def fetch_openalex_by_journals(journals: list[dict[str, Any]], since_date: str, max_per_journal: int = 5) -> list[dict[str, Any]]:
+    items: list[dict[str, Any]] = []
+    enabled = [
+        journal for journal in journals
+        if journal.get("enabled", True) and (journal.get("discovery") or {}).get("use_openalex", True)
+    ]
+    LAST_DISCOVERY_STATS["journal_whitelist_discovery_count"] = len(enabled)
+    if requests is None:
+        LOGGER.warning("fetch_openalex_by_journals skipped: requests is not installed")
+        return []
+    for journal in enabled:
+        try:
+            source_id, resolution_method = resolve_openalex_source_for_journal(journal)
+            if not source_id:
+                continue
+            fetched = fetch_openalex_works_by_source(source_id, since_date, rows=max_per_journal)
+            for item in fetched:
+                item["discovery_source"] = "journal_whitelist"
+                item["whitelist_matched"] = True
+                item["journal_whitelist_name"] = journal.get("name", "")
+                item["journal_source_resolution"] = resolution_method
+                item["category"] = category_from_journal(journal)
+                item["language"] = item.get("language") or journal.get("language") or "en"
+            items.extend(fetched)
+            time.sleep(0.2)
+        except Exception as exc:  # noqa: BLE001
+            LOGGER.warning("fetch_openalex_by_journals failed for %r: %s", journal.get("name"), exc)
+    LAST_DISCOVERY_STATS["fetched_from_openalex_journal_count"] = len(items)
+    return items
+
+
+def category_from_journal(journal: dict[str, Any]) -> str:
+    tags = set(journal.get("subject_tags") or [])
+    if {"academic_publishing", "scholarly_publishing", "journal_management", "scholarly_communication"} & tags:
+        return "academic_publishing"
+    if {"digital_publishing", "digital_transformation", "information_systems"} & tags:
+        return "digital_publishing"
+    if {"game_publishing", "digital_games", "interactive_narrative"} & tags:
+        return "game_and_interactive_publishing"
+    if {"management", "organization_studies", "strategy", "brand_management", "platform_governance"} & tags:
+        return "publishing_management"
+    return "uncategorized"
 
 
 def openalex_work_to_item(work: dict[str, Any]) -> LiteratureItem:
@@ -435,12 +648,17 @@ def read_manual_records(path: Path) -> list[dict[str, Any]]:
 
 
 def fetch_open_sources(mode: str, per_query: int = 3) -> list[dict[str, Any]]:
+    reset_discovery_stats()
     queries_by_group = topic_queries()
+    journals = load_journal_whitelist()
     selected_groups = ["technology_frontier", "digital_publishing", "academic_publishing"]
     if mode == "weekly":
         selected_groups = ["academic_publishing", "publishing_management", "digital_publishing", "game_and_interactive_publishing"]
 
     all_items: list[dict[str, Any]] = []
+    since_days = 90 if mode == "weekly" else 14
+    since_date = date.fromordinal(date.today().toordinal() - since_days).isoformat()
+    all_items.extend(fetch_openalex_by_journals(journals, since_date=since_date, max_per_journal=5))
     providers = [fetch_openalex, fetch_semantic_scholar, fetch_crossref]
     for group in selected_groups:
         keywords = queries_by_group.get(group, [])
@@ -461,6 +679,8 @@ def fetch_open_sources(mode: str, per_query: int = 3) -> list[dict[str, Any]]:
         for provider in providers:
             try:
                 fetched = provider(query, rows=per_query)
+                if provider is fetch_semantic_scholar:
+                    LAST_DISCOVERY_STATS["fetched_from_semantic_scholar_count"] += len(fetched)
                 for item in fetched:
                     item["category"] = group
                     if item.get("source") == "crossref":

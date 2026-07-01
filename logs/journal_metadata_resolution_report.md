@@ -1,0 +1,205 @@
+# Journal Metadata Resolution Report
+
+- total_journals: 94
+- resolved_count: 0
+- unresolved_count: 94
+- ambiguous_count: 0
+
+## Resolved
+
+- None
+
+## Unresolved
+
+- 出版发行研究
+  - candidates: none
+- 中国出版
+  - candidates: none
+- 科技与出版
+  - candidates: none
+- 编辑学报
+  - candidates: none
+- 出版科学
+  - candidates: none
+- 中国科技期刊研究
+  - candidates: none
+- 现代出版
+  - candidates: none
+- 编辑之友
+  - candidates: none
+- 出版广角
+  - candidates: none
+- 中国编辑
+  - candidates: none
+- 传媒
+  - candidates: none
+- 青年记者
+  - candidates: none
+- 中国图书评论
+  - candidates: none
+- 新闻与传播研究
+  - candidates: none
+- 国际新闻界
+  - candidates: none
+- 新闻大学
+  - candidates: none
+- 现代传播
+  - candidates: none
+- 当代传播
+  - candidates: none
+- 新闻记者
+  - candidates: none
+- 新闻界
+  - candidates: none
+- 管理世界
+  - candidates: none
+- 南开管理评论
+  - candidates: none
+- 管理科学学报
+  - candidates: none
+- 中国管理科学
+  - candidates: none
+- 管理评论
+  - candidates: none
+- 管理学报
+  - candidates: none
+- 科研管理
+  - candidates: none
+- 科学学研究
+  - candidates: none
+- 科学学与科学技术管理
+  - candidates: none
+- 外国经济与管理
+  - candidates: none
+- 经济管理
+  - candidates: none
+- 软科学
+  - candidates: none
+- 研究与发展管理
+  - candidates: none
+- 中国软科学
+  - candidates: none
+- 系统工程理论与实践
+  - candidates: none
+- 系统管理学报
+  - candidates: none
+- 公共管理学报
+  - candidates: none
+- 管理工程学报
+  - candidates: none
+- 预测
+  - candidates: none
+- 运筹与管理
+  - candidates: none
+- Learned Publishing
+  - candidates: none
+- Journal of Scholarly Publishing
+  - candidates: none
+- Publishing Research Quarterly
+  - candidates: none
+- Logos
+  - candidates: none
+- International Journal of the Book
+  - candidates: none
+- Journal of Electronic Publishing
+  - candidates: none
+- Information Services & Use
+  - candidates: none
+- Serials Review
+  - candidates: none
+- College & Research Libraries
+  - candidates: none
+- Journal of Librarianship and Information Science
+  - candidates: none
+- Scientometrics
+  - candidates: none
+- Journal of Informetrics
+  - candidates: none
+- Quantitative Science Studies
+  - candidates: none
+- Research Evaluation
+  - candidates: none
+- Aslib Journal of Information Management
+  - candidates: none
+- Information Processing & Management
+  - candidates: none
+- Journal of Documentation
+  - candidates: none
+- Journal of the Association for Information Science and Technology
+  - candidates: none
+- Library and Information Science Research
+  - candidates: none
+- New Media and Society
+  - candidates: none
+- Journal of Communication
+  - candidates: none
+- Communication Research
+  - candidates: none
+- Media, Culture and Society
+  - candidates: none
+- Academy of Management Journal
+  - candidates: none
+- Academy of Management Review
+  - candidates: none
+- Administrative Science Quarterly
+  - candidates: none
+- Organization Science
+  - candidates: none
+- Organization Studies
+  - candidates: none
+- Journal of Management
+  - candidates: none
+- Journal of Management Studies
+  - candidates: none
+- Strategic Management Journal
+  - candidates: none
+- Strategic Organization
+  - candidates: none
+- Management Science
+  - candidates: none
+- Journal of Marketing
+  - candidates: none
+- Journal of Marketing Research
+  - candidates: none
+- Marketing Science
+  - candidates: none
+- Journal of Consumer Research
+  - candidates: none
+- Journal of International Business Studies
+  - candidates: none
+- International Marketing Review
+  - candidates: none
+- Industrial Marketing Management
+  - candidates: none
+- Journal of Business Research
+  - candidates: none
+- MIS Quarterly
+  - candidates: none
+- Information Systems Research
+  - candidates: none
+- Journal of Management Information Systems
+  - candidates: none
+- Research Policy
+  - candidates: none
+- Technovation
+  - candidates: none
+- Journal of Product Innovation Management
+  - candidates: none
+- Information & Management
+  - candidates: none
+- Government Information Quarterly
+  - candidates: none
+- Games and Culture
+  - candidates: none
+- Convergence
+  - candidates: none
+- International Journal of Cultural Studies
+  - candidates: none
+- Digital Creativity
+  - candidates: none
+- AI and Society
+  - candidates: none
+
+## Ambiguous
+
+- None
