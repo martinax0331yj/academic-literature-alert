@@ -40,6 +40,7 @@ DEFAULT_TOPIC_QUERIES = {
     "digital_publishing": ["digital publishing", "digital reading", "digital content"],
     "game_and_interactive_publishing": ["game publishing", "interactive narrative", "transmedia"],
     "transferable_management_communication": ["platform governance", "user engagement", "media management"],
+    "management_transfer": ["organizational capability", "dynamic capability", "brand equity", "platform governance", "digital transformation"],
     "technology_frontier": ["generative AI", "large language model", "AI ethics"],
 }
 
@@ -113,7 +114,7 @@ def load_yaml(path: Path) -> dict[str, Any]:
 def topic_queries(topics_path: Path = ROOT / "config" / "topics.yml") -> dict[str, list[str]]:
     config = load_yaml(topics_path)
     groups = config.get("groups", {})
-    return {name: values.get("keywords", []) for name, values in groups.items()} or DEFAULT_TOPIC_QUERIES
+    return {name: values.get("keywords", []) for name, values in groups.items() if values.get("enabled", True)} or DEFAULT_TOPIC_QUERIES
 
 
 def source_policy(path: Path = ROOT / "config" / "source_policy.yml") -> dict[str, Any]:
@@ -651,9 +652,15 @@ def fetch_open_sources(mode: str, per_query: int = 3) -> list[dict[str, Any]]:
     reset_discovery_stats()
     queries_by_group = topic_queries()
     journals = load_journal_whitelist()
-    selected_groups = ["technology_frontier", "digital_publishing", "academic_publishing"]
+    selected_groups = ["technology_frontier", "digital_publishing", "academic_publishing", "management_transfer"]
     if mode == "weekly":
-        selected_groups = ["academic_publishing", "publishing_management", "digital_publishing", "game_and_interactive_publishing"]
+        selected_groups = [
+            "academic_publishing",
+            "publishing_management",
+            "digital_publishing",
+            "game_and_interactive_publishing",
+            "management_transfer",
+        ]
 
     all_items: list[dict[str, Any]] = []
     since_days = 90 if mode == "weekly" else 14
@@ -704,6 +711,10 @@ def scholar_queries_for_group(group: str, keywords: list[str], mode: str) -> lis
             "publishing_management": [WEEKLY_SCHOLAR_QUERIES[0]],
             "digital_publishing": [WEEKLY_SCHOLAR_QUERIES[1], WEEKLY_SCHOLAR_QUERIES[3]],
             "game_and_interactive_publishing": [WEEKLY_SCHOLAR_QUERIES[2]],
+            "management_transfer": [
+                '"organizational capability" OR "dynamic capability" OR "brand equity"',
+                '"platform governance" OR "digital transformation" OR "business model"',
+            ],
         }
         return mapping.get(group, [])[:2]
     base = build_query(group, keywords)
@@ -799,6 +810,7 @@ def build_query(group: str, keywords: list[str]) -> str:
         "digital_publishing": '"digital publishing" OR "online literature" OR audiobook',
         "game_and_interactive_publishing": '"game publishing" OR "interactive narrative" OR "transmedia storytelling"',
         "transferable_management_communication": '"brand equity" OR "dynamic capability" OR "platform governance"',
+        "management_transfer": '"organizational capability" OR "dynamic capability" OR "brand equity" OR "platform governance" OR "digital transformation"',
         "technology_frontier": '"generative AI" publishing ethics OR "AI peer review"',
     }
     if group in core_queries:

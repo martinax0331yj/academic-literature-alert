@@ -4,7 +4,7 @@ import os
 
 from fetch_literature import fetch_serpapi_google_scholar
 from fetch_literature import load_journal_whitelist
-from score_literature import score_items
+from score_literature import load_exclusion_rules, load_journal_names, load_topic_groups, score_item, score_items
 
 
 def main() -> None:
@@ -171,8 +171,57 @@ def main() -> None:
             "published_date": "2026-01-01",
             "work_type": "journal-article",
         },
+        {
+            "title": "组织能力、品牌资产与平台治理机制研究",
+            "authors": ["管理作者"],
+            "year": "2026",
+            "venue": "管理世界",
+            "doi": "10.0000/management-transfer-zh",
+            "url": "https://example.test/management-transfer-zh",
+            "abstract": "本文基于资源基础观和动态能力理论，探讨组织能力、品牌资产与平台治理之间的关系。",
+            "source": "openalex",
+            "category": "",
+            "language": "zh",
+            "citation_count": 0,
+            "published_date": "2026-01-01",
+            "work_type": "journal-article",
+        },
+        {
+            "title": "Platform governance and brand equity in digital transformation",
+            "authors": ["Management Author"],
+            "year": "2026",
+            "venue": "Organization Science",
+            "doi": "10.0000/management-transfer-en",
+            "url": "https://example.test/management-transfer-en",
+            "abstract": "This study examines platform governance, organizational capability and brand equity in digital transformation.",
+            "source": "openalex",
+            "category": "",
+            "language": "en",
+            "citation_count": 0,
+            "published_date": "2026-01-01",
+            "work_type": "journal-article",
+        },
+        {
+            "title": "Open access publishing and peer review reform",
+            "authors": ["Publishing Author"],
+            "year": "2026",
+            "venue": "Learned Publishing",
+            "doi": "10.0000/academic-publishing-topic",
+            "url": "https://example.test/academic-publishing-topic",
+            "abstract": "This paper studies open access publishing, peer review and scholarly communication.",
+            "source": "openalex",
+            "category": "",
+            "language": "en",
+            "citation_count": 0,
+            "published_date": "2026-01-01",
+            "work_type": "journal-article",
+        },
     ]
     scored = score_items(items)
+    topic_groups = load_topic_groups()
+    journal_names = load_journal_names()
+    exclusions = load_exclusion_rules()
+    evaluated = {item["title"]: score_item(dict(item), topic_groups, journal_names, exclusions) for item in items}
     titles = {item["title"] for item in scored}
     assert "Francis Academic Press foreign journal call for papers" not in titles
     assert "Conflict Resolution and Mediation Skills, Third Edition" not in titles
@@ -184,6 +233,13 @@ def main() -> None:
     assert "数字出版平台治理与知识服务研究" not in titles
     assert "Peer review governance in scholarly publishing platforms" in titles
     assert "Open access and peer review governance in scholarly publishing platforms" in titles
+    assert "management_transfer" in evaluated["组织能力、品牌资产与平台治理机制研究"]["matched_topics"]
+    assert evaluated["组织能力、品牌资产与平台治理机制研究"]["matched_category"] != "uncategorized"
+    assert "management_transfer" in evaluated["Platform governance and brand equity in digital transformation"]["matched_topics"]
+    assert evaluated["Platform governance and brand equity in digital transformation"]["matched_category"] != "uncategorized"
+    academic_topics = evaluated["Open access publishing and peer review reform"]["matched_topics"]
+    assert "academic_publishing" in academic_topics or "scholarly_communication" in academic_topics
+    assert evaluated["Open access publishing and peer review reform"]["matched_category"] != "uncategorized"
     assert all(item["priority"] in {"A", "B"} for item in scored)
     journals = load_journal_whitelist()
     assert len([journal for journal in journals if journal.get("language") == "zh"]) >= 40

@@ -141,6 +141,49 @@ groups:
       - international communication
       - media management
       - cultural industry management
+  management_transfer:
+    enabled: true
+    priority: B
+    description: 可迁移到出版企业管理、科技期刊治理与平台传播研究的管理学主题
+    keywords:
+      - organization capability
+      - organizational capability
+      - dynamic capability
+      - resource-based view
+      - RBV
+      - brand equity
+      - brand assets
+      - platform governance
+      - platform strategy
+      - digital transformation
+      - innovation management
+      - internationalization
+      - knowledge service
+      - business model
+      - organizational learning
+      - strategic management
+      - marketing capability
+      - user engagement
+      - value co-creation
+      - 管理
+      - 组织能力
+      - 组织惯例
+      - 动态能力
+      - 资源基础观
+      - 品牌资产
+      - 品牌权益
+      - 平台治理
+      - 平台战略
+      - 数字化转型
+      - 创新管理
+      - 国际化
+      - 知识服务
+      - 商业模式
+      - 组织学习
+      - 战略管理
+      - 营销能力
+      - 用户参与
+      - 价值共创
   technology_frontier:
     description: AI、数据治理与技术前沿
     keywords:

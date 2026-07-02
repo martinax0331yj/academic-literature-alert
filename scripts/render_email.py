@@ -48,6 +48,7 @@ def render_markdown(items: list[dict[str, Any]], mode: str, preview_only: bool =
                 f"- 推荐理由: {field(item.get('recommendation_reason'))}",
                 f"- 与出版研究的关系: {field(item.get('research_relation'))}",
                 f"- 阅读优先级: {field(item.get('priority'))} (score: {field(item.get('score'))})",
+                f"- Matched topics: {format_topics(item.get('matched_topics'))}",
                 f"- Category: {field(item.get('category'))}",
                 "",
             ]
@@ -99,6 +100,14 @@ def field(value: Any) -> str:
     if not text or text.casefold() in {"missing", "none", "null", "nan"}:
         return "未获取"
     return text
+
+
+def format_topics(value: Any) -> str:
+    if isinstance(value, list) and value:
+        return ", ".join(str(item) for item in value)
+    if isinstance(value, str) and value.strip():
+        return value
+    return "未获取"
 
 
 def empty_digest_message(mode: str) -> str:

@@ -12,6 +12,8 @@ def load_yaml_file(path: Path, yaml_module: Any | None = None) -> dict[str, Any]
         return load_journal_yaml_fallback(path)
     if path.name == "schedules.yml":
         return load_simple_nested_yaml_fallback(path)
+    if path.name == "topics.yml":
+        return load_topics_yaml_fallback(path)
     return {}
 
 
@@ -102,4 +104,45 @@ def load_simple_nested_yaml_fallback(path: Path) -> dict[str, Any]:
             key, value = split_key_value(stripped)
             if key and value != "":
                 config[current_section][key] = parse_scalar(value)
+    return config
+
+
+def load_topics_yaml_fallback(path: Path) -> dict[str, Any]:
+    config: dict[str, Any] = {"groups": {}}
+    in_groups = False
+    current_group: str | None = None
+    current_list_key: str | None = None
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.split("#", 1)[0].rstrip()
+        if not line.strip():
+            continue
+        stripped = line.strip()
+        indent = len(raw_line) - len(raw_line.lstrip(" "))
+        if indent == 0:
+            in_groups = stripped == "groups:"
+            current_group = None
+            current_list_key = None
+            continue
+        if not in_groups:
+            continue
+        if indent == 2 and stripped.endswith(":"):
+            current_group = stripped[:-1].strip()
+            config["groups"][current_group] = {}
+            current_list_key = None
+            continue
+        if current_group is None:
+            continue
+        if indent == 4 and ":" in stripped:
+            key, value = split_key_value(stripped)
+            if not key:
+                continue
+            if value == "":
+                config["groups"][current_group][key] = []
+                current_list_key = key
+            else:
+                config["groups"][current_group][key] = parse_scalar(value)
+                current_list_key = None
+            continue
+        if indent >= 6 and stripped.startswith("- ") and current_list_key:
+            config["groups"][current_group].setdefault(current_list_key, []).append(strip_quotes(stripped[2:].strip()))
     return config

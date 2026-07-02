@@ -20,6 +20,7 @@ DEFAULT_TOPIC_GROUPS = {
     "digital_publishing": ["digital publishing", "digital reading", "digital content", "数字出版", "数字阅读", "数字内容"],
     "game_and_interactive_publishing": ["game publishing", "interactive narrative", "transmedia", "游戏出版", "互动叙事", "跨媒介"],
     "transferable_management_communication": ["platform governance", "user engagement", "media management", "平台治理", "用户参与", "媒介管理"],
+    "management_transfer": ["organization capability", "organizational capability", "dynamic capability", "resource-based view", "brand equity", "platform governance", "digital transformation", "组织能力", "动态能力", "资源基础观", "品牌资产", "平台治理", "数字化转型"],
     "technology_frontier": ["generative AI", "large language model", "AI ethics", "生成式 AI", "大语言模型", "AI 伦理"],
 }
 
@@ -85,7 +86,11 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 def load_topic_groups(path: Path = ROOT / "config" / "topics.yml") -> dict[str, list[str]]:
     config = load_yaml(path)
-    return {name: values.get("keywords", []) for name, values in config.get("groups", {}).items()} or DEFAULT_TOPIC_GROUPS
+    groups = {}
+    for name, values in config.get("groups", {}).items():
+        if values.get("enabled", True):
+            groups[name] = values.get("keywords", [])
+    return groups or DEFAULT_TOPIC_GROUPS
 
 
 def load_journal_names() -> set[str]:
@@ -121,7 +126,7 @@ def score_item(item: dict[str, Any], topic_groups: dict[str, list[str]], journal
         str(item.get(key, ""))
         for key in ["title", "abstract", "venue", "category", "publisher", "search_snippet"]
     ).casefold()
-    category, relevance = best_topic_match(text, topic_groups)
+    matched_topics, category, relevance = match_topics(text, topic_groups)
     whitelisted = is_whitelisted_venue(item, journal_names)
     source_quality = source_quality_points(item, whitelisted)
     recency = recency_points(item)
@@ -133,6 +138,8 @@ def score_item(item: dict[str, Any], topic_groups: dict[str, list[str]], journal
     enriched = dict(item)
     enriched["category"] = item.get("category") or category
     enriched["matched_category"] = category
+    enriched["matched_topics"] = matched_topics
+    enriched["matched_topics_count"] = len(matched_topics)
     enriched["topic_relevance_points"] = relevance
     enriched["source_quality_points"] = source_quality
     enriched["quality_penalties"] = penalties
@@ -153,16 +160,18 @@ def load_exclusion_rules(path: Path = ROOT / "config" / "exclusion_rules.yml") -
     return merged
 
 
-def best_topic_match(text: str, topic_groups: dict[str, list[str]]) -> tuple[str, int]:
-    best_group = "uncategorized"
-    best_hits = 0
+def match_topics(text: str, topic_groups: dict[str, list[str]]) -> tuple[list[str], str, int]:
+    matched: list[tuple[str, int]] = []
     for group, keywords in topic_groups.items():
         hits = sum(1 for keyword in keywords if keyword.casefold() in text)
-        if hits > best_hits:
-            best_group = group
-            best_hits = hits
+        if hits > 0:
+            matched.append((group, hits))
+    if not matched:
+        return [], "uncategorized", 0
+    matched.sort(key=lambda item: item[1], reverse=True)
+    best_group, best_hits = matched[0]
     relevance = min(35, best_hits * 8)
-    return best_group, relevance
+    return [group for group, _ in matched], best_group, relevance
 
 
 def is_allowed_work_type(item: dict[str, Any]) -> bool:
@@ -231,9 +240,9 @@ def is_eligible_for_email(item: dict[str, Any], text: str, whitelisted: bool, ex
         return False
     if int(item.get("score", 0)) < quality_threshold(str(item.get("alert_mode", "daily"))):
         return False
-    if item.get("matched_category") == "uncategorized":
+    if not item.get("matched_topics"):
         return False
-    if item.get("topic_relevance_points", 0) < 16 and not whitelisted:
+    if item.get("topic_relevance_points", 0) < 8 and not whitelisted:
         return False
     if missing(item.get("venue")):
         return False
@@ -378,6 +387,7 @@ def research_relation(item: dict[str, Any]) -> str:
         "digital_publishing": "Relevant to digital publishing, integrated publishing, data publishing, reading platforms, or digital content products.",
         "game_and_interactive_publishing": "Relevant to game publishing, interactive narrative, transmedia IP, or virtual communities.",
         "transferable_management_communication": "Provides transferable theories or methods for publishing, media management, communication, or cultural industries.",
+        "management_transfer": "Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.",
         "technology_frontier": "Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.",
     }
     return mapping.get(category, "Potentially relevant; requires manual expert review.")

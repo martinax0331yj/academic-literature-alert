@@ -71,6 +71,7 @@ def main() -> None:
     evaluated = evaluate_items(items)
     block_counts = block_counts_from_evaluated(evaluated)
     filtered_reasons = top_filtered_records(evaluated)
+    topic_diagnostics = topic_diagnostics_from_evaluated(evaluated)
     records = load_records(PUSHED_RECORDS)
     fresh = filter_recent_duplicates(selected, records, args.mode)
     duplicate_count = max(0, len(selected) - len(fresh))
@@ -103,6 +104,7 @@ def main() -> None:
         duplicate_count,
         block_counts,
         filtered_reasons,
+        topic_diagnostics,
         args.mode,
         args.dry_run,
         send_empty_digest,
@@ -252,6 +254,7 @@ def build_diagnostics(
     duplicate_count: int,
     block_counts: dict[str, int],
     filtered_reasons: list[dict[str, str]],
+    topic_diagnostics: dict[str, Any],
     mode: str,
     dry_run: bool,
     send_empty_digest: bool,
@@ -265,6 +268,7 @@ def build_diagnostics(
     diagnostics["duplicate_or_already_pushed_count"] = duplicate_count
     diagnostics.update(block_counts)
     diagnostics["top_filtered_records"] = filtered_reasons
+    diagnostics.update(topic_diagnostics)
     return diagnostics
 
 
@@ -280,6 +284,8 @@ def log_diagnostics(diagnostics: dict[str, Any]) -> None:
         "fetched_from_semantic_scholar_count",
         "candidate_total_before_filter",
         "final_email_record_count",
+        "matched_topics_count",
+        "matched_topics_distribution",
         "duplicate_or_already_pushed_count",
         "blocked_by_score_threshold_count",
         "blocked_by_missing_journal_count",
@@ -289,14 +295,16 @@ def log_diagnostics(diagnostics: dict[str, Any]) -> None:
         "blocked_by_exclusion_rules_count",
     ]:
         LOGGER.info("%s=%s", key, diagnostics.get(key, 0))
+    for item in diagnostics.get("top_uncategorized_records", [])[:5]:
+        LOGGER.info("uncategorized_record title=%r journal=%r source_api=%r", item.get("title"), item.get("journal"), item.get("source_api"))
     for item in diagnostics.get("top_filtered_records", [])[:5]:
         LOGGER.info(
             "filtered_record %s | %s | %s | %s | %s | %s",
             item.get("title"),
-            item.get("source_api"),
             item.get("journal"),
+            item.get("source_api"),
+            item.get("matched_topics"),
             item.get("score"),
-            item.get("priority"),
             item.get("block_reason"),
         )
 
@@ -334,6 +342,31 @@ def block_counts_from_evaluated(evaluated: list[dict[str, Any]]) -> dict[str, in
     return counts
 
 
+def topic_diagnostics_from_evaluated(evaluated: list[dict[str, Any]]) -> dict[str, Any]:
+    distribution: dict[str, int] = {}
+    topic_matched_count = 0
+    uncategorized: list[dict[str, str]] = []
+    for item in evaluated:
+        topics = item.get("matched_topics") or []
+        if topics:
+            topic_matched_count += 1
+            for topic in topics:
+                distribution[str(topic)] = distribution.get(str(topic), 0) + 1
+        else:
+            uncategorized.append(
+                {
+                    "title": str(item.get("title", "missing")),
+                    "journal": str(item.get("venue", "missing")),
+                    "source_api": str(item.get("source_api") or item.get("source") or "missing"),
+                }
+            )
+    return {
+        "matched_topics_count": topic_matched_count,
+        "matched_topics_distribution": distribution,
+        "top_uncategorized_records": uncategorized[:8],
+    }
+
+
 def top_filtered_records(evaluated: list[dict[str, Any]]) -> list[dict[str, str]]:
     filtered: list[dict[str, str]] = []
     for item in evaluated:
@@ -344,6 +377,7 @@ def top_filtered_records(evaluated: list[dict[str, Any]]) -> list[dict[str, str]
                 "title": str(item.get("title", "missing")),
                 "source_api": str(item.get("source_api") or item.get("source") or "missing"),
                 "journal": str(item.get("venue") or "missing"),
+                "matched_topics": ",".join(str(topic) for topic in item.get("matched_topics", [])) or "missing",
                 "score": str(item.get("score", "missing")),
                 "priority": str(item.get("priority", "missing")),
                 "block_reason": filter_reason(item),
@@ -361,7 +395,7 @@ def filter_reason(item: dict[str, Any]) -> str:
         return "crossref-only or metadata-only source"
     if missing_value(item.get("venue")):
         return "missing journal/source"
-    if item.get("matched_category") == "uncategorized":
+    if not item.get("matched_topics"):
         return "uncategorized"
     if is_future_item(item):
         return "future publication year"
@@ -390,6 +424,8 @@ def append_diagnostics_to_preview(markdown: str, diagnostics: dict[str, Any]) ->
         f"- fetched_from_semantic_scholar_count: {diagnostics.get('fetched_from_semantic_scholar_count', 0)}",
         f"- candidate_total_before_filter: {diagnostics.get('candidate_total_before_filter', 0)}",
         f"- final_email_record_count: {diagnostics.get('final_email_record_count', 0)}",
+        f"- matched_topics_count: {diagnostics.get('matched_topics_count', 0)}",
+        f"- matched_topics_distribution: {diagnostics.get('matched_topics_distribution', {})}",
         f"- duplicate_or_already_pushed_count: {diagnostics.get('duplicate_or_already_pushed_count', 0)}",
         f"- blocked_by_score_threshold_count: {diagnostics.get('blocked_by_score_threshold_count', 0)}",
         f"- blocked_by_missing_journal_count: {diagnostics.get('blocked_by_missing_journal_count', 0)}",
@@ -398,11 +434,26 @@ def append_diagnostics_to_preview(markdown: str, diagnostics: dict[str, Any]) ->
         f"- blocked_by_document_type_count: {diagnostics.get('blocked_by_document_type_count', 0)}",
         f"- blocked_by_exclusion_rules_count: {diagnostics.get('blocked_by_exclusion_rules_count', 0)}",
         "",
+        "### Top Uncategorized Records",
+        "",
+        "title | journal | source_api",
+        "--- | --- | ---",
+    ]
+    uncategorized = diagnostics.get("top_uncategorized_records", [])
+    if uncategorized:
+        for item in uncategorized[:5]:
+            lines.append(f"{item.get('title', 'missing')} | {item.get('journal', 'missing')} | {item.get('source_api', 'missing')}")
+    else:
+        lines.append("None | missing | missing")
+    lines.extend(
+        [
+        "",
         "### Top Filtered Records",
         "",
-        "title | source_api | journal | score | priority | block_reason",
+        "title | journal | source_api | matched_topics | score | block_reason",
         "--- | --- | --- | --- | --- | ---",
-    ]
+        ]
+    )
     filtered = diagnostics.get("top_filtered_records", [])
     if filtered:
         for item in filtered[:5]:
@@ -410,10 +461,10 @@ def append_diagnostics_to_preview(markdown: str, diagnostics: dict[str, Any]) ->
                 " | ".join(
                     [
                         str(item.get("title", "missing")),
-                        str(item.get("source_api", "missing")),
                         str(item.get("journal", "missing")),
+                        str(item.get("source_api", "missing")),
+                        str(item.get("matched_topics", "missing")),
                         str(item.get("score", "missing")),
-                        str(item.get("priority", "missing")),
                         str(item.get("block_reason", "unknown")),
                     ]
                 )
