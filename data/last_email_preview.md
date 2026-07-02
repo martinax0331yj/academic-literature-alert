@@ -1,38 +1,27 @@
-# Literature Alert - daily - 2026-07-01
+# Literature Alert - daily - 2026-07-02
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 1
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
 
-## 暂无符合条件的文献
+## 1. Hallucination in Generative AI: Challenges to data integrity, ethical concerns and implications for knowledge management
 
-暂无符合筛选条件的高质量期刊论文。
+- 标题: Hallucination in Generative AI: Challenges to data integrity, ethical concerns and implications for knowledge management
+- 作者: Wole Michael Olatokun, Bolaji David Oladokun
+- 年份: 2026
+- 期刊或来源: Information Services & Use
+- DOI: 10.1177/18758789261463098
+- URL: https://openalex.org/W7165757317
+- 摘要: This study examines the phenomenon of hallucination in generative artificial intelligence (AI) and analyzes its implications for data integrity, ethical responsibility, and knowledge management systems. A qualitative research design was adopted using a systematic review of literature published between 2017 and 2025. Relevant studies were retrieved from academic databases including DOAJ and Google Scholar using targeted keywords related to AI hallucination, data reliability, ethics, and knowledge management. A total of 34 eligible studies were analyzed using thematic analysis to identify recurring patterns, divergences and emergent themes across the literature. The findings reveal that generative AI hallucinations significantly undermine data reliability by producing plausible but inaccurate information, thereby increasing the risk of misinformation and flawed decision-making. Ethical challenges including bias, transparency deficits, accountability gaps, and intellectual property concerns are consistently reported in the literature. While generative AI enhances efficiency, creativity, and information retrieval within knowledge management systems, the persistence of hallucinations reflects deeper structural limitations in large language models which weaken user trust and compromise knowledge accuracy and institutional credibility. This study is among the first to provide a comprehensive and integrated examination of generative AI hallucination in relation to data integrity, ethical concerns, and knowledge management systems.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 70; matched topic technology_frontier; citation count 0
+- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
+- 阅读优先级: B (score: 70)
+- Category: academic_publishing
 
-## 诊断摘要
+## Compliance Note
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 0
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 7
-- final_email_record_count: 0
-- duplicate_or_already_pushed_count: 0
-- blocked_by_score_threshold_count: 7
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 7
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 0
-
-### Top Filtered Records
-
-title | source_api | journal | score | priority | block_reason
---- | --- | --- | --- | --- | ---
-ANALYTICAL CLOUD SYSTEM ERI Digital health analysis using Spectral analysis in AI   | crossref+openalex+semantic_scholar | Journal of Engineering and Applied Sciences Technology | 13 | C | uncategorized
-Natural Sustainability Ethics for Resolving Current Outer Space Challenges | crossref+openalex | Journal of Business, Ethics and Society | 33 | C | uncategorized
-Conflict Management Research and Cross-Functional Relationships: An Integrative Review and Synthesis | crossref+openalex+semantic_scholar | International Journal of Strategic Innovative Marketing | 37 | C | uncategorized
-Effects of Integrative Behavioral Couple Therapy on Infertility Self-efficacy, Dyadic Adjustment, and Sexual Satisfaction in Infertile Couples | crossref+openalex+semantic_scholar | Journal of Client-Centered Nursing Care | 33 | C | uncategorized
-The Development of Loyalty with Online Services Customers | crossref+openalex | International Journal of Strategic Innovative Marketing | 9 | C | uncategorized
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
