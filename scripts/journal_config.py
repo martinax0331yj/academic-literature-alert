@@ -71,6 +71,8 @@ def parse_scalar(value: str) -> Any:
         return True
     if text in {"false", "False"}:
         return False
+    if text.isdigit():
+        return int(text)
     if text == "[]":
         return []
     if text.startswith("[") and text.endswith("]"):

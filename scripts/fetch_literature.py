@@ -8,7 +8,7 @@ import time
 from dataclasses import dataclass, field
 import hashlib
 import re
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
@@ -208,11 +208,15 @@ def dedupe_journals(journals: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [merged[key] for key in order]
 
 
-def fetch_crossref(query: str, rows: int = 5, timeout: int = 20) -> list[dict[str, Any]]:
+def fetch_crossref(query: str, rows: int = 5, timeout: int = 20, since_date: str | None = None, until_date: str | None = None) -> list[dict[str, Any]]:
     if requests is None:
         raise RuntimeError("requests is not installed")
     url = "https://api.crossref.org/works"
     params = {"query": query, "rows": rows, "sort": "published", "order": "desc"}
+    if since_date:
+        params["filter"] = f"from-pub-date:{date_only(since_date)}"
+        if until_date:
+            params["filter"] += f",until-pub-date:{date_only(until_date)}"
     response = requests.get(url, params=params, timeout=timeout, headers={"User-Agent": "academic-literature-alert/0.1"})
     response.raise_for_status()
     works = response.json().get("message", {}).get("items", [])
@@ -280,11 +284,18 @@ def fetch_crossref_by_doi(doi: str, timeout: int = 20) -> dict[str, Any] | None:
     ).to_dict()
 
 
-def fetch_openalex(query: str, rows: int = 5, timeout: int = 20) -> list[dict[str, Any]]:
+def fetch_openalex(query: str, rows: int = 5, timeout: int = 20, since_date: str | None = None, until_date: str | None = None) -> list[dict[str, Any]]:
     if requests is None:
         raise RuntimeError("requests is not installed")
     url = "https://api.openalex.org/works"
+    filters = []
+    if since_date:
+        filters.append(f"from_publication_date:{date_only(since_date)}")
+    if until_date:
+        filters.append(f"to_publication_date:{date_only(until_date)}")
     params = {"search": query, "per-page": rows, "sort": "publication_date:desc"}
+    if filters:
+        params["filter"] = ",".join(filters)
     response = requests.get(url, params=params, timeout=timeout, headers={"User-Agent": "academic-literature-alert/0.1"})
     response.raise_for_status()
     works = response.json().get("results", [])
@@ -387,15 +398,21 @@ def resolve_openalex_source_for_journal(journal: dict[str, Any]) -> tuple[str, s
     return "", "unresolved"
 
 
-def fetch_openalex_works_by_source(source_id: str, since_date: str, rows: int = 5, timeout: int = 20) -> list[dict[str, Any]]:
+def fetch_openalex_works_by_source(source_id: str, since_date: str, until_date: str | None = None, rows: int = 5, timeout: int = 20) -> list[dict[str, Any]]:
     if requests is None:
         raise RuntimeError("requests is not installed")
     openalex_id = openalex_source_id_from_url(source_id)
     if not openalex_id:
         return []
     url = "https://api.openalex.org/works"
+    filters = [
+        f"primary_location.source.id:https://openalex.org/{openalex_id}",
+        f"from_publication_date:{date_only(since_date)}",
+    ]
+    if until_date:
+        filters.append(f"to_publication_date:{date_only(until_date)}")
     params = {
-        "filter": f"primary_location.source.id:https://openalex.org/{openalex_id},from_publication_date:{since_date}",
+        "filter": ",".join(filters),
         "sort": "publication_date:desc",
         "per-page": rows,
     }
@@ -404,7 +421,7 @@ def fetch_openalex_works_by_source(source_id: str, since_date: str, rows: int = 
     return [openalex_work_to_item(work).to_dict() for work in response.json().get("results", []) if work.get("title")]
 
 
-def fetch_openalex_by_journals(journals: list[dict[str, Any]], since_date: str, max_per_journal: int = 5) -> list[dict[str, Any]]:
+def fetch_openalex_by_journals(journals: list[dict[str, Any]], since_date: str, until_date: str | None = None, max_per_journal: int = 5) -> list[dict[str, Any]]:
     items: list[dict[str, Any]] = []
     enabled = [
         journal for journal in journals
@@ -419,7 +436,7 @@ def fetch_openalex_by_journals(journals: list[dict[str, Any]], since_date: str, 
             source_id, resolution_method = resolve_openalex_source_for_journal(journal)
             if not source_id:
                 continue
-            fetched = fetch_openalex_works_by_source(source_id, since_date, rows=max_per_journal)
+            fetched = fetch_openalex_works_by_source(source_id, since_date, until_date=until_date, rows=max_per_journal)
             for item in fetched:
                 item["discovery_source"] = "journal_whitelist"
                 item["whitelist_matched"] = True
@@ -472,7 +489,7 @@ def openalex_work_to_item(work: dict[str, Any]) -> LiteratureItem:
     )
 
 
-def fetch_semantic_scholar(query: str, rows: int = 5, timeout: int = 20) -> list[dict[str, Any]]:
+def fetch_semantic_scholar(query: str, rows: int = 5, timeout: int = 20, since_date: str | None = None, until_date: str | None = None) -> list[dict[str, Any]]:
     if requests is None:
         raise RuntimeError("requests is not installed")
     url = "https://api.semanticscholar.org/graph/v1/paper/search"
@@ -481,6 +498,8 @@ def fetch_semantic_scholar(query: str, rows: int = 5, timeout: int = 20) -> list
         "limit": rows,
         "fields": "title,authors,year,venue,url,abstract,citationCount,externalIds,publicationTypes,publicationDate,isOpenAccess",
     }
+    if since_date or until_date:
+        params["year"] = year_range_filter(since_date, until_date)
     response = requests.get(url, params=params, timeout=timeout, headers={"User-Agent": "academic-literature-alert/0.1"})
     response.raise_for_status()
     papers = response.json().get("data", [])
@@ -543,7 +562,7 @@ def semantic_paper_to_item(paper: dict[str, Any]) -> LiteratureItem:
     )
 
 
-def fetch_serpapi_google_scholar(query: str, max_results: int, since_year: int | None = None, timeout: int = 20) -> list[dict[str, Any]]:
+def fetch_serpapi_google_scholar(query: str, max_results: int, since_year: int | None = None, until_year: int | None = None, timeout: int = 20) -> list[dict[str, Any]]:
     policy = source_policy().get("source_policy", {}).get("serpapi_google_scholar", {})
     api_key_env = policy.get("api_key_env", "SERPAPI_API_KEY")
     api_key = os.getenv(api_key_env)
@@ -563,6 +582,8 @@ def fetch_serpapi_google_scholar(query: str, max_results: int, since_year: int |
     }
     if since_year:
         params["as_ylo"] = since_year
+    if until_year:
+        params["as_yhi"] = until_year
     response = requests.get("https://serpapi.com/search.json", params=params, timeout=timeout, headers={"User-Agent": "academic-literature-alert/0.1"})
     response.raise_for_status()
     results = response.json().get("organic_results", [])
@@ -609,7 +630,7 @@ def serpapi_citation_count(result: dict[str, Any]) -> int | None:
     return parse_int(total)
 
 
-def read_manual_records(path: Path) -> list[dict[str, Any]]:
+def read_manual_records(path: Path, since_date: str | None = None, until_date: str | None = None) -> list[dict[str, Any]]:
     if not path.exists():
         LOGGER.warning("Manual record file does not exist: %s", path)
         return []
@@ -644,11 +665,14 @@ def read_manual_records(path: Path) -> list[dict[str, Any]]:
             published_date=str(first_existing(row, ["published_date", "发表日期"]) or ""),
             work_type=str(first_existing(row, ["work_type", "type", "文献类型"]) or "journal-article"),
         )
-        items.append(item.to_dict())
+        record = item.to_dict()
+        record["imported_at"] = str(first_existing(row, ["imported_at", "导入时间"]) or "")
+        if item_in_time_window(record, since_date, until_date):
+            items.append(record)
     return items
 
 
-def fetch_open_sources(mode: str, per_query: int = 3) -> list[dict[str, Any]]:
+def fetch_open_sources(mode: str, per_query: int = 8, since_date: str | None = None, until_date: str | None = None) -> list[dict[str, Any]]:
     reset_discovery_stats()
     queries_by_group = topic_queries()
     journals = load_journal_whitelist()
@@ -663,10 +687,12 @@ def fetch_open_sources(mode: str, per_query: int = 3) -> list[dict[str, Any]]:
         ]
 
     all_items: list[dict[str, Any]] = []
-    since_days = 90 if mode == "weekly" else 14
-    since_date = date.fromordinal(date.today().toordinal() - since_days).isoformat()
-    all_items.extend(fetch_openalex_by_journals(journals, since_date=since_date, max_per_journal=5))
-    providers = [fetch_openalex, fetch_semantic_scholar, fetch_crossref]
+    if since_date is None:
+        since_days = 180 if mode == "weekly" else 90
+        since_date = date.fromordinal(date.today().toordinal() - since_days).isoformat()
+    until_date = until_date or date.today().isoformat()
+    all_items.extend(fetch_openalex_by_journals(journals, since_date=since_date, until_date=until_date, max_per_journal=5))
+    providers = [fetch_openalex, fetch_semantic_scholar]
     for group in selected_groups:
         keywords = queries_by_group.get(group, [])
         query = build_query(group, keywords)
@@ -675,7 +701,8 @@ def fetch_open_sources(mode: str, per_query: int = 3) -> list[dict[str, Any]]:
                 scholar_items = fetch_serpapi_google_scholar(
                     scholar_query,
                     max_results=serpapi_max_results(),
-                    since_year=date.today().year - 5,
+                    since_year=extract_year(since_date),
+                    until_year=extract_year(until_date),
                 )
                 for item in scholar_items:
                     item["category"] = group
@@ -685,7 +712,8 @@ def fetch_open_sources(mode: str, per_query: int = 3) -> list[dict[str, Any]]:
                 LOGGER.warning("fetch_serpapi_google_scholar failed for query %r: %s", scholar_query, exc)
         for provider in providers:
             try:
-                fetched = provider(query, rows=per_query)
+                provider_rows = 20 if provider in {fetch_openalex, fetch_semantic_scholar} else per_query
+                fetched = provider(query, rows=provider_rows, since_date=since_date, until_date=until_date)
                 if provider is fetch_semantic_scholar:
                     LAST_DISCOVERY_STATS["fetched_from_semantic_scholar_count"] += len(fetched)
                 for item in fetched:
@@ -696,7 +724,8 @@ def fetch_open_sources(mode: str, per_query: int = 3) -> list[dict[str, Any]]:
                 time.sleep(0.2)
             except Exception as exc:  # noqa: BLE001
                 LOGGER.warning("%s failed for query %r: %s", provider.__name__, query, exc)
-    return [enrich_metadata(item) for item in merge_metadata(all_items)]
+    filtered = [item for item in merge_metadata(all_items) if item_in_time_window(item, since_date, until_date)]
+    return [enrich_metadata(item) for item in filtered]
 
 
 def serpapi_max_results() -> int:
@@ -801,6 +830,67 @@ def is_missing(value: Any) -> bool:
         return True
     text = str(value).strip().casefold()
     return not text or text in {"missing", "none", "null", "nan"}
+
+
+def item_in_time_window(item: dict[str, Any], since_date: str | None, until_date: str | None) -> bool:
+    item_date = item_publication_date(item)
+    if item_date is None:
+        item["date_unknown"] = True
+        return True
+    today = date.today()
+    if item_date > today:
+        item["future_date"] = True
+        return False
+    since = parse_iso_date(since_date)
+    until = parse_iso_date(until_date) or today
+    if item_date > until:
+        item["future_date"] = True
+        return False
+    if since and item_date < since:
+        return False
+    return True
+
+
+def item_publication_date(item: dict[str, Any]) -> date | None:
+    for key in ["published_date", "publication_date", "created_date", "imported_at", "year"]:
+        parsed = parse_iso_date(str(item.get(key) or ""))
+        if parsed:
+            return parsed
+    return None
+
+
+def parse_iso_date(value: str | None) -> date | None:
+    text = str(value or "").strip()
+    if not text or text.casefold() in {"missing", "none", "null", "nan"}:
+        return None
+    if text.endswith("Z"):
+        text = text[:-1] + "+00:00"
+    try:
+        return datetime.fromisoformat(text).date()
+    except ValueError:
+        pass
+    match = re.search(r"(19|20)\d{2}", text)
+    if match:
+        return date(int(match.group(0)), 1, 1)
+    return None
+
+
+def date_only(value: str | None) -> str:
+    parsed = parse_iso_date(value)
+    return parsed.isoformat() if parsed else date.today().isoformat()
+
+
+def year_range_filter(since_date: str | None, until_date: str | None) -> str:
+    start = extract_year(since_date) or date.today().year - 10
+    end = extract_year(until_date) or date.today().year
+    return f"{start}-{end}"
+
+
+def extract_year(value: Any) -> int | None:
+    match = re.search(r"(19|20)\d{2}", str(value or ""))
+    if not match:
+        return None
+    return int(match.group(0))
 
 
 def build_query(group: str, keywords: list[str]) -> str:

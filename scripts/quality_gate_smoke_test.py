@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 
 from fetch_literature import fetch_serpapi_google_scholar
 from fetch_literature import load_journal_whitelist
+from journal_config import load_yaml_file
 from score_literature import load_exclusion_rules, load_journal_names, load_topic_groups, score_item, score_items
 
 
@@ -216,6 +218,21 @@ def main() -> None:
             "published_date": "2026-01-01",
             "work_type": "journal-article",
         },
+        {
+            "title": "Future dated scholarly publishing article",
+            "authors": ["Future Author"],
+            "year": "2027",
+            "venue": "Learned Publishing",
+            "doi": "10.0000/future-date",
+            "url": "https://example.test/future-date",
+            "abstract": "This article studies scholarly publishing and peer review.",
+            "source": "openalex",
+            "category": "academic_publishing",
+            "language": "en",
+            "citation_count": 50,
+            "published_date": "2027-01-01",
+            "work_type": "journal-article",
+        },
     ]
     scored = score_items(items)
     topic_groups = load_topic_groups()
@@ -233,6 +250,7 @@ def main() -> None:
     assert "数字出版平台治理与知识服务研究" not in titles
     assert "Peer review governance in scholarly publishing platforms" in titles
     assert "Open access and peer review governance in scholarly publishing platforms" in titles
+    assert "Future dated scholarly publishing article" not in titles
     assert "management_transfer" in evaluated["组织能力、品牌资产与平台治理机制研究"]["matched_topics"]
     assert evaluated["组织能力、品牌资产与平台治理机制研究"]["matched_category"] != "uncategorized"
     assert "management_transfer" in evaluated["Platform governance and brand equity in digital transformation"]["matched_topics"]
@@ -240,6 +258,13 @@ def main() -> None:
     academic_topics = evaluated["Open access publishing and peer review reform"]["matched_topics"]
     assert "academic_publishing" in academic_topics or "scholarly_communication" in academic_topics
     assert evaluated["Open access publishing and peer review reform"]["matched_category"] != "uncategorized"
+    assert not evaluated["Future dated scholarly publishing article"]["eligible_for_email"]
+    schedules = load_yaml_file(Path("config/schedules.yml"))
+    assert schedules["daily"]["start_from"] == "last_successful_run"
+    assert schedules["daily"]["fallback_backfill_days"] == 90
+    assert schedules["daily"]["target_records"] == 10
+    assert schedules["daily"]["max_records"] == 12
+    assert schedules["weekly"]["lookback_days"] == 180
     assert all(item["priority"] in {"A", "B"} for item in scored)
     journals = load_journal_whitelist()
     assert len([journal for journal in journals if journal.get("language") == "zh"]) >= 40

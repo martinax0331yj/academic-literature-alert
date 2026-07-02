@@ -5,7 +5,8 @@ from html import escape
 from typing import Any
 
 
-def render_markdown(items: list[dict[str, Any]], mode: str, preview_only: bool = False) -> str:
+def render_markdown(items: list[dict[str, Any]], mode: str, preview_only: bool = False, diagnostics: dict[str, Any] | None = None) -> str:
+    diagnostics = diagnostics or {}
     run_date = date.today().isoformat()
     sources = sorted({str(item.get("source", "missing")) for item in items})
     lines = [
@@ -17,6 +18,19 @@ def render_markdown(items: list[dict[str, Any]], mode: str, preview_only: bool =
         f"- Data sources: {', '.join(sources) if sources else 'missing'}",
         "- Note: metadata-only alert. No full-text PDF is downloaded or attached.",
     ]
+    if diagnostics:
+        lines.extend(
+            [
+                f"- 本次运行时间: {field(diagnostics.get('current_run_started_at'))}",
+                f"- 检索起点 since_date: {field(diagnostics.get('since_date'))}",
+                f"- 检索截止 until_date: {field(diagnostics.get('until_date'))}",
+                f"- 时间窗口策略: {field(diagnostics.get('time_window_strategy'))}",
+                f"- 候选文献数: {field(diagnostics.get('candidate_total_before_filter'))}",
+                f"- 最终推送数: {field(diagnostics.get('final_email_record_count'))}",
+                f"- selected_topic_distribution: {field(diagnostics.get('selected_topic_distribution'))}",
+                f"- selected_journal_distribution: {field(diagnostics.get('selected_journal_distribution'))}",
+            ]
+        )
     if preview_only:
         lines.append("- Preview status: no fresh sendable records; this preview is for inspection only.")
     lines.append("")
@@ -64,8 +78,8 @@ def render_markdown(items: list[dict[str, Any]], mode: str, preview_only: bool =
     return "\n".join(lines)
 
 
-def render_html(items: list[dict[str, Any]], mode: str, preview_only: bool = False) -> str:
-    markdown = render_markdown(items, mode, preview_only=preview_only)
+def render_html(items: list[dict[str, Any]], mode: str, preview_only: bool = False, diagnostics: dict[str, Any] | None = None) -> str:
+    markdown = render_markdown(items, mode, preview_only=preview_only, diagnostics=diagnostics)
     return render_html_from_markdown(markdown)
 
 

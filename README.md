@@ -230,13 +230,15 @@ serpapi_google_scholar:
 daily 至少要求：
 
 - priority 为 A 或 B。
-- score 不低于 65。
+- 普通来源 score 不低于 65；白名单期刊新文章可按 55 起评，OpenAlex / Semantic Scholar 等可信来源可按 60 起评。
 - 期刊或来源明确。
 - 不是 Crossref-only。
 - 不是 uncategorized。
 - 不是黑名单文献。
-- 不是未来年份文献。
+- 不是未来年份或未来日期文献。
 - 文献类型为 article / review / journal-article / review-article。
+
+daily 不再固定只抓近 14 天。系统会优先从 `data/pipeline_state.json` 中读取上次成功 daily 运行时间作为检索起点，检索截止为当前运行时间；如果没有成功运行记录，则按 `config/schedules.yml` 的 `fallback_backfill_days` 回填，当前默认 90 天。dry-run 和 email smoke test 不会推进状态文件。
 
 weekly 至少要求：
 

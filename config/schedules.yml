@@ -1,6 +1,12 @@
 daily:
   timezone: Asia/Shanghai
   github_actions_cron_utc: "30 0 * * *"
+  end_at: now
+  start_from: last_successful_run
+  fallback_backfill_days: 90
+  target_records: 10
+  max_records: 12
+  min_records_if_available: 5
   send_empty_digest: true
   note: 每天北京时间 08:30 左右运行；GitHub Actions cron 使用 UTC。
   selections:
@@ -24,6 +30,9 @@ daily:
 weekly:
   timezone: Asia/Shanghai
   github_actions_cron_utc: "0 1 * * 1"
+  lookback_days: 180
+  target_records: 20
+  max_records: 30
   send_empty_digest: true
   note: 每周一北京时间 09:00 左右运行；GitHub Actions cron 使用 UTC。
   total_count: 4

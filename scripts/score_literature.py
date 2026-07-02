@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
@@ -238,7 +238,7 @@ def quality_penalties(item: dict[str, Any], text: str, whitelisted: bool, exclus
 def is_eligible_for_email(item: dict[str, Any], text: str, whitelisted: bool, exclusions: dict[str, Any]) -> bool:
     if item.get("priority") not in {"A", "B"}:
         return False
-    if int(item.get("score", 0)) < quality_threshold(str(item.get("alert_mode", "daily"))):
+    if int(item.get("score", 0)) < quality_threshold(str(item.get("alert_mode", "daily")), item, whitelisted):
         return False
     if not item.get("matched_topics"):
         return False
@@ -281,8 +281,18 @@ def source_allowed_for_weekly(item: dict[str, Any], source: str, whitelisted: bo
     return any(signal in source for signal in allowed_source_signals) or discovery_source == "google_scholar" or source_api == "serpapi_google_scholar"
 
 
-def quality_threshold(mode: str) -> int:
-    return 70 if mode == "weekly" else 65
+def quality_threshold(mode: str, item: dict[str, Any] | None = None, whitelisted: bool = False) -> int:
+    if mode == "weekly":
+        return 70
+    item = item or {}
+    if whitelisted and item.get("whitelist_matched"):
+        return 55
+    source = str(item.get("source", "")).casefold()
+    if whitelisted and ("openalex" in source or "semantic_scholar" in source or source.startswith("manual:")):
+        return 55
+    if "openalex" in source or "semantic_scholar" in source:
+        return 60
+    return 65
 
 
 def missing(value: Any) -> bool:
@@ -293,7 +303,11 @@ def missing(value: Any) -> bool:
 
 
 def is_future_item(item: dict[str, Any]) -> bool:
-    year = extract_year(str(item.get("published_date") or item.get("year") or ""))
+    value = str(item.get("published_date") or item.get("year") or "")
+    parsed = parse_item_date(value)
+    if parsed:
+        return parsed > date.today()
+    year = extract_year(value)
     return bool(year and year > date.today().year)
 
 
@@ -398,3 +412,18 @@ def extract_year(value: str) -> int | None:
     if not match:
         return None
     return int(match.group(0))
+
+
+def parse_item_date(value: str) -> date | None:
+    text = str(value or "").strip()
+    if not text or text.casefold() in {"missing", "none", "null", "nan"}:
+        return None
+    if text.endswith("Z"):
+        text = text[:-1] + "+00:00"
+    try:
+        return datetime.fromisoformat(text).date()
+    except ValueError:
+        pass
+    if re.fullmatch(r"(19|20)\d{2}", text):
+        return None
+    return None
