@@ -1,53 +1,74 @@
-# Literature Alert - daily - 2026-07-05
+# Literature Alert - daily - 2026-07-06
 
 ## Summary
 
-- Items selected: 2
-- Data sources: openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-07-05T04:36:55Z
-- 检索起点 since_date: 2026-04-06T04:36:55Z
-- 检索截止 until_date: 2026-07-05T04:36:55Z
+- 本次运行时间: 2026-07-06T04:47:33Z
+- 检索起点 since_date: 2026-04-07T04:47:33Z
+- 检索截止 until_date: 2026-07-06T04:47:33Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 207
-- 最终推送数: 2
-- selected_topic_distribution: {'academic_publishing': 1, 'technology_frontier': 1}
-- selected_journal_distribution: {'Quantitative Science Studies': 1, 'Journal of Communication': 1}
+- 候选文献数: 202
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. Small research ecosystems in large international public policies: tracing an infrastructurally mediated pathway from CroRIS to Overton
+## 暂无符合条件的文献
 
-- 标题: Small research ecosystems in large international public policies: tracing an infrastructurally mediated pathway from CroRIS to Overton
-- 作者: Ljerka Luić, Maja Hoić
-- 年份: 2026
-- 期刊或来源: Quantitative Science Studies
-- DOI: 10.1162/qss.a.498
-- URL: https://openalex.org/W7165804407
-- 摘要: Abstract Policy document citations are increasingly used to evidence the societal impact of research, yet we know little about how such indicators operate in small research systems. We conceptualize policy citation visibility as an infrastructurally mediated pathway that links Croatia’s national CRIS (CroRIS), which provides PID- and CERIF-based provenance of outputs, with Overton, which records downstream policy mentions. We focus on research authored by scholars at Croatian public universities and research institutes and its visibility in Overton-indexed policy documents. Our analyses are based on a CroRIS-affiliated, Overton-retrievable, DOI-available subset of 6,022 publications and 16,330 policy citation events to these articles, and therefore capture policy visibility under specific infrastructural conditions. We examine citation distributions by journal subject area, institutional affiliation, access type (open vs. closed), and the geographical and organisational origins of citing bodies. Fields with direct societal relevance, especially public health, environment, and sustainability, dominate among cited works. Open access is common among policy-cited Croatian articles, although a substantial share of frequently cited outputs remains closed. Most citations originate from European and international organisations, while Croatian government documents rarely cite domestic research and those that do are concentrated in a small number of ministries. Peer Review https://www.webofscience.com/api/gateway/wos/peer-review/10.1162/QSS.a.498
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 59; matched topic academic_publishing; citation count 0
-- 与出版研究的关系: Relevant to scholarly publishing, journal governance, peer review, open access, or research integrity.
-- 阅读优先级: B (score: 59)
-- Matched topics: academic_publishing
-- Category: academic_publishing
+暂无符合筛选条件的高质量期刊论文。
 
-## 2. Recommending the state: How social media algorithms curate state-created content in China
+## 诊断摘要
 
-- 标题: Recommending the state: How social media algorithms curate state-created content in China
-- 作者: Yingdan Lu, Xinyi Liu, Carl Zhou
-- 年份: 2026
-- 期刊或来源: Journal of Communication
-- DOI: 10.1093/joc/jqag010
-- URL: https://openalex.org/W7167250103
-- 摘要: Abstract Authoritarian governments have increasingly expanded their social media presence, producing massive content to shape public opinion and behavior. However, less is known about how social media algorithms curate such content and serve authoritarian political goals. This study theorizes algorithmic promotional curation, whereby recommendation algorithms systematically amplify state-created content, and empirically examines this curation through analyzing 119,064 trending and recommended videos from Bilibili, one of China’s largest video-sharing platforms. Using descriptive analyses, regression models, and Markov chain simulations, we find that state-created content is disproportionately amplified through video recommendations associated with state-created trending videos, and that state-affiliated accounts exhibit strong self-reinforcement. Yet this algorithmic promotional curation is not uniform across content categories, with stronger amplification among state-created news and politics than other content. These findings demonstrate how recommendation systems may subtly serve authoritarian goals, advance a multilateral understanding of algorithmic curation, and extend authoritarian information control frameworks beyond censorship and propaganda.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 59; matched topic technology_frontier; citation count 0
-- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
-- 阅读优先级: B (score: 59)
-- Matched topics: technology_frontier
-- Category: digital_publishing
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 202
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 202
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-04-07T04:47:33Z
+- until_date: 2026-07-06T04:47:33Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-07-06T04:47:33Z
+- per_query: 8
+- candidate_pool_size: 202
+- after_hard_filter_count: 201
+- after_topic_filter_count: 47
+- after_score_filter_count: 0
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 47
+- matched_topics_distribution: {'academic_publishing': 18, 'technology_frontier': 11, 'management_transfer': 20, 'transferable_management_communication': 4, 'digital_publishing': 1, 'publishing_management': 2}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 202
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 155
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 1
+- blocked_by_future_date_count: 0
 
-## Compliance Note
+### Top Uncategorized Records
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+title | journal | source_api
+--- | --- | ---
+Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | crossref+openalex+semantic_scholar
+Conclusion First: A Modest Proposal to Reorganize the <scp>IMRaD</scp> Structure of Research Articles | Learned Publishing | openalex
+Beth Driscoll, 2024. What Readers Do: Aesthetic and Moral Practices of a Post-Digital Age. London: Bloomsbury Publishing. 216 pp. US$24.25. Paperback. ISBN: 9781350375185 | Publishing Research Quarterly | openalex
+Craig J. Saper. 2025. Auteur-Publishers: Small-Press Practices as Avant-Garde Writing. Edinburgh: Edinburgh University Press. 184 pp. £90. Hardback, ISBN: 9,781,474,454,728. Also available as an e-book, 9781474454759. | Publishing Research Quarterly | openalex
+Manuel Pimentel. 2012. Manual del editor: Cómo funciona la moderna industria editorial. Córdoba: Almuzara Libros. 272pp. €19.00. Paperback, ISBN: 9788415441083. | Publishing Research Quarterly | openalex
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | crossref+openalex+semantic_scholar | missing | 51 | uncategorized
+<scp>AI</scp> ‐Assisted Scientific Figures in Scholarly Publishing: A Risk‐Based Taxonomy by Evidentiary Function | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+Conclusion First: A Modest Proposal to Reorganize the <scp>IMRaD</scp> Structure of Research Articles | Learned Publishing | openalex | missing | 43 | uncategorized
+Misuse of Generative AI in Academic and Research Publishing | Publishing Research Quarterly | openalex | technology_frontier | 41 | missing abstract
+Beth Driscoll, 2024. What Readers Do: Aesthetic and Moral Practices of a Post-Digital Age. London: Bloomsbury Publishing. 216 pp. US$24.25. Paperback. ISBN: 9781350375185 | Publishing Research Quarterly | openalex | missing | 29 | uncategorized
