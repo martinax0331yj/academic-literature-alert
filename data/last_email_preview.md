@@ -1,70 +1,74 @@
-# Literature Alert - daily - 2026-07-09
+# Literature Alert - daily - 2026-07-10
 
 ## Summary
 
-- Items selected: 3
-- Data sources: openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-07-09T04:26:20Z
-- 检索起点 since_date: 2026-04-10T04:26:20Z
-- 检索截止 until_date: 2026-07-09T04:26:20Z
+- 本次运行时间: 2026-07-10T04:29:48Z
+- 检索起点 since_date: 2026-04-11T04:29:48Z
+- 检索截止 until_date: 2026-07-10T04:29:48Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 208
-- 最终推送数: 3
-- selected_topic_distribution: {'management_transfer': 1, 'transferable_management_communication': 1, 'academic_publishing': 1, 'technology_frontier': 1}
-- selected_journal_distribution: {'Journal of Product Innovation Management': 1, 'Journal of Documentation': 1, 'New Media & Society': 1}
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. Responsible Innovation Orientation: A Dynamic Capability for Commercialization of Emerging Technologies
+## 暂无符合条件的文献
 
-- 标题: Responsible Innovation Orientation: A Dynamic Capability for Commercialization of Emerging Technologies
-- 作者: Tania Bucic, Gina Colarelli O’Connor
-- 年份: 2026
-- 期刊或来源: Journal of Product Innovation Management
-- DOI: 10.1111/jpim.70050
-- URL: https://openalex.org/W7167613476
-- 摘要: ABSTRACT Academic Summary Despite growing attention to responsible innovation, extant research offers limited guidance for how firms should organize to ensure responsibility during emerging technology (ET) commercialization, a process for which the societal consequences reflect both market pressures and uncertainty. This research introduces Responsible Innovation Orientation (RIO), a firm‐level strategic orientation, as a higher‐order dynamic capability that shapes how firms embed responsibility into their ET commercialization. Drawing on 50 in‐depth interviews with managers across 17 relevant organizations, supplemented by a systematic literature review the authors identify four interdependent organizational microfoundations that constitute RIO: anticipation, reflexivity, inclusion, and responsiveness (ARIR). Firms can implement these competencies through organizational practices that support forward‐looking consequence exploration, reflexive values alignment, strategic stakeholder engagement, and adaptive adjustment during commercialization. Organizational culture, and specifically leadership commitment, psychological safety, shared learning, and purpose‐driven values, represent contextual antecedents that condition the mobilization of ARIR competencies. By conceptualizing RIO as a dynamic capability, this research extends responsible innovation scholarship and innovation management theory, advancing understanding of how firms govern responsibility in market‐facing commercialization contexts. Managerial Summary Commercializing emerging technologies is an inherently uncertain task. Markets move fast, societal consequences are hard to predict, and stakeholder expectations shift. Firms also navigate such scenarios under pressure, often without any clear organizational framework for managing responsibility as part of their commercialization process. But with a strategic approach called Responsible Innovation Orientation, firms can embed responsibility into how they bring emerging technologies to market. Interviews with managers across 17 organizations reveal four main competencies that firms need to develop: anticipating the broader consequences of an innovation before problems arise; reflecting on whether the firm's values remain aligned with its innovation activities; engaging meaningfully with stakeholders throughout the commercialization process; and adapting to unexpected consequences. These competencies do not function in isolation. Leadership commitment, psychological safety, shared learning, and purpose‐driven values are organizational prerequisites that enable firms to embed responsible innovation practices. In turn, this article offers a practical framework for treating responsibility as a strategic priority rather than a compliance exercise. Firms that develop these capabilities are better positioned to manage risk, maintain stakeholder trust, and create value that persists over time.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 67; matched topic management_transfer; citation count 0
-- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
-- 阅读优先级: B (score: 67)
-- Matched topics: management_transfer, transferable_management_communication
-- Category: digital_publishing
+暂无符合筛选条件的高质量期刊论文。
 
-## 2. The scientific abstract as an epistemic interface: from documentary abstracting to multimodal knowledge representation
+## 诊断摘要
 
-- 标题: The scientific abstract as an epistemic interface: from documentary abstracting to multimodal knowledge representation
-- 作者: Mónica Izquierdo-Alonso
-- 年份: 2026
-- 期刊或来源: Journal of Documentation
-- DOI: 10.1108/jd-03-2026-0165
-- URL: https://openalex.org/W7167642773
-- 摘要: Purpose This study examines the transformation of the scientific abstract within the context of digital scholarly communication, reconceptualizing it as a complex form of knowledge representation situated at the intersection of knowledge organization, discourse studies and multimodality. It seeks to overcome the traditional fragmentation between documentary and discursive approaches and to position the abstract as a strategic epistemic interface within contemporary knowledge ecosystems. Design/methodology/approach The study adopts a theoretical and integrative approach, combining perspectives from knowledge organization, information retrieval and genre analysis. It develops a conceptual framework that articulates the documentary and discursive dimensions of abstracting and applies a comparative analytical approach to emerging typologies, including plain language summaries, visual abstracts, video abstracts and transmedia formats. Findings The findings indicate that the scientific abstract is undergoing a process of epistemological and functional reconfiguration. It evolves from a subordinate textual subgenre and a technical instrument of documentary representation into a hybrid, multimodal and functionally differentiated system of knowledge representation. The analysis demonstrates that emerging formats are characterized by distinct communicative functions, modes of meaning-making and degrees of structural complexity, reflecting their adaptation to diverse audiences and digital environments. Research limitations/implications This study is conceptual and theoretical in nature and does not include empirical validation of the emerging abstract formats discussed. The analysis focuses on the evolution of the scientific abstract within contemporary scholarly communication and therefore does not assess the effectiveness of specific formats across disciplines, audiences or platforms. Future research should develop comparative empirical studies examining comprehension, visibility, engagement and retrieval performance across multimodal abstract formats. Further investigation is also needed into standards, quality assessment frameworks, metadata schemes and the integration of multimodal representations into knowledge organization and information retrieval systems. Practical implications This study highlights the need to revise existing frameworks in knowledge organization and information retrieval to accommodate multimodal and distributed forms of representation. It also underscores the importance of developing new criteria for the evaluation, indexing and retrieval of multimodal abstracts, as well as fostering competencies in multimodal communication within academic training. Social implications Multimodal and accessible forms of scientific abstracts can enhance the democratization of scholarly communication by improving access to research for non-specialist audiences, including practitioners and policymakers. These formats may help reduce cognitive and linguistic barriers, supporting more inclusive dissemination practices and fostering broader societal engagement with scientific knowledge. Originality/value This paper provides an integrative reconceptualization of the scientific abstract as a hybrid epistemic and communicative interface. By bridging knowledge organization and discourse studies, it contributes to expanding the notion of knowledge representation and offers a novel analytical framework for understanding the role of abstracts within the evolving ecology of digital scholarly communication. Highlights
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 62; matched topic academic_publishing; citation count 0
-- 与出版研究的关系: Relevant to scholarly publishing, journal governance, peer review, open access, or research integrity.
-- 阅读优先级: B (score: 62)
-- Matched topics: academic_publishing
-- Category: academic_publishing
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 208
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 208
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-04-11T04:29:48Z
+- until_date: 2026-07-10T04:29:48Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-07-10T04:29:48Z
+- per_query: 8
+- candidate_pool_size: 208
+- after_hard_filter_count: 207
+- after_topic_filter_count: 53
+- after_score_filter_count: 0
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 53
+- matched_topics_distribution: {'academic_publishing': 19, 'technology_frontier': 14, 'management_transfer': 22, 'transferable_management_communication': 4, 'digital_publishing': 1, 'publishing_management': 1}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 208
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 155
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 1
+- blocked_by_future_date_count: 0
 
-## 3. The good, the bad, and the obscure: Exploring uses of generative AI in the global 2024 elections
+### Top Uncategorized Records
 
-- 标题: The good, the bad, and the obscure: Exploring uses of generative AI in the global 2024 elections
-- 作者: Ib Tunby Gulbrandsen, Sine Nørholm Just, Chris Peters
-- 年份: 2026
-- 期刊或来源: New Media & Society
-- DOI: 10.1177/14614448261445574
-- URL: https://openalex.org/W7167612035
-- 摘要: Digital technologies are ubiquitous in political communication, but their democratic consequences remain contentious, with the recent emergence of generative AI (GenAI) further complicating already complex sociotechnical issues. This article explores the empirical terrain of GenAI uses that came to public attention in the 2024 global elections by collating and analysing data from two prominent tracking projects. First, we map where GenAI was identified, which actors were involved, and through which platforms and modalities it circulated. Second, we build a provisional typology of emerging GenAI use in election campaigns, identifying practices of informing, campaigning, dissenting, disinforming, defaming, impostering, and spoofing as a basis for discussing the in-/authenticity of communicators and the in-/correctness of content. The article nuances proposed assessments of the political implications of generative AI by offering one of the first systematic, empirical analyses of its potential democratic consequences, identifying context-specific good, bad, and obscure uses of these new technologies.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 62; matched topic technology_frontier; citation count 0
-- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
-- 阅读优先级: B (score: 62)
-- Matched topics: technology_frontier
-- Category: digital_publishing
+title | journal | source_api
+--- | --- | ---
+Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | crossref+openalex+semantic_scholar
+Conclusion First: A Modest Proposal to Reorganize the <scp>IMRaD</scp> Structure of Research Articles | Learned Publishing | openalex
+A Place and Time to Write and Publish: Creating Books in Regional Australia | Publishing Research Quarterly | openalex
+Beth Driscoll, 2024. What Readers Do: Aesthetic and Moral Practices of a Post-Digital Age. London: Bloomsbury Publishing. 216 pp. US$24.25. Paperback. ISBN: 9781350375185 | Publishing Research Quarterly | openalex
+Craig J. Saper. 2025. Auteur-Publishers: Small-Press Practices as Avant-Garde Writing. Edinburgh: Edinburgh University Press. 184 pp. £90. Hardback, ISBN: 9,781,474,454,728. Also available as an e-book, 9781474454759. | Publishing Research Quarterly | openalex
 
-## Compliance Note
+### Top Filtered Records
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | crossref+openalex+semantic_scholar | missing | 51 | uncategorized
+<scp>AI</scp> ‐Assisted Scientific Figures in Scholarly Publishing: A Risk‐Based Taxonomy by Evidentiary Function | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+Conclusion First: A Modest Proposal to Reorganize the <scp>IMRaD</scp> Structure of Research Articles | Learned Publishing | openalex | missing | 43 | uncategorized
+A Place and Time to Write and Publish: Creating Books in Regional Australia | Publishing Research Quarterly | openalex | missing | 47 | uncategorized
+Misuse of Generative AI in Academic and Research Publishing | Publishing Research Quarterly | openalex | technology_frontier | 41 | missing abstract
