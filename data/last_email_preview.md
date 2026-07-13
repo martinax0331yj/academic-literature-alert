@@ -1,53 +1,53 @@
-# Literature Alert - daily - 2026-07-13
+# Literature Alert - weekly - 2026-07-13
 
 ## Summary
 
 - Items selected: 0
 - Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-07-13T04:06:37Z
-- 检索起点 since_date: 2026-04-14T04:06:37Z
-- 检索截止 until_date: 2026-07-13T04:06:37Z
-- 时间窗口策略: fallback_backfill_days
-- 候选文献数: 207
+- 本次运行时间: 2026-07-13T04:33:50Z
+- 检索起点 since_date: 2026-01-14T04:33:50Z
+- 检索截止 until_date: 2026-07-13T04:33:50Z
+- 时间窗口策略: lookback_days
+- 候选文献数: 217
 - 最终推送数: 0
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
 
 ## 暂无符合条件的文献
 
-暂无符合筛选条件的高质量期刊论文。
+本周暂无符合筛选条件的高质量期刊论文。
 
 ## 诊断摘要
 
 - loaded_journal_zh_count: 40
 - loaded_journal_en_count: 54
 - journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 207
+- fetched_from_openalex_journal_count: 217
 - fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 207
-- time_window_strategy: fallback_backfill_days
-- since_date: 2026-04-14T04:06:37Z
-- until_date: 2026-07-13T04:06:37Z
-- fallback_backfill_days: 90
-- current_run_started_at: 2026-07-13T04:06:37Z
+- candidate_total_before_filter: 217
+- time_window_strategy: lookback_days
+- since_date: 2026-01-14T04:33:50Z
+- until_date: 2026-07-13T04:33:50Z
+- fallback_backfill_days: 
+- current_run_started_at: 2026-07-13T04:33:50Z
 - per_query: 8
-- candidate_pool_size: 207
-- after_hard_filter_count: 206
+- candidate_pool_size: 217
+- after_hard_filter_count: 216
 - after_topic_filter_count: 51
 - after_score_filter_count: 0
 - after_duplicate_filter_count: 0
 - final_email_record_count: 0
-- target_records: 10
-- max_records: 12
+- target_records: 20
+- max_records: 30
 - matched_topics_count: 51
 - matched_topics_distribution: {'academic_publishing': 18, 'technology_frontier': 14, 'management_transfer': 21, 'transferable_management_communication': 5, 'publishing_management': 2}
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 207
+- duplicate_or_already_pushed_count: 4
+- blocked_by_score_threshold_count: 217
 - blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 156
+- blocked_by_uncategorized_count: 166
 - blocked_by_crossref_only_count: 0
 - blocked_by_document_type_count: 0
 - blocked_by_exclusion_rules_count: 1
