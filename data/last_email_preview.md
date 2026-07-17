@@ -1,36 +1,74 @@
-# Literature Alert - daily - 2026-07-16
+# Literature Alert - daily - 2026-07-17
 
 ## Summary
 
-- Items selected: 1
-- Data sources: openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-07-16T03:44:51Z
-- 检索起点 since_date: 2026-04-17T03:44:51Z
-- 检索截止 until_date: 2026-07-16T03:44:51Z
+- 本次运行时间: 2026-07-17T03:44:42Z
+- 检索起点 since_date: 2026-04-18T03:44:42Z
+- 检索截止 until_date: 2026-07-17T03:44:42Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 207
-- 最终推送数: 1
-- selected_topic_distribution: {'technology_frontier': 1}
-- selected_journal_distribution: {'Journal of Librarianship and Information Science': 1}
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. Ethical concerns of generative AI in academic libraries: A cross-regional quantitative study of librarians’ risk perceptions, trust, and governance practices
+## 暂无符合条件的文献
 
-- 标题: Ethical concerns of generative AI in academic libraries: A cross-regional quantitative study of librarians’ risk perceptions, trust, and governance practices
-- 作者: Zafar Imam Khan, Bolaji David Oladokun, Ashok Kumar Upadhyay, Dattatraya Kalbande
-- 年份: 2026
-- 期刊或来源: Journal of Librarianship and Information Science
-- DOI: 10.1177/09610006261461309
-- URL: https://openalex.org/W7168248227
-- 摘要: This study investigates academic librarians’ perceptions of ethical risk associated with the adoption of generative AI for various libraries in terms of data privacy breaches, threats to intellectual freedom, and algorithmic biases. The study also examines how AI ethics competence and institutional support can lead to responsible use intentions. The study employs a quantitative research approach with a cross-sectional survey gathering data from 305 academic library professionals working in higher education across South Asia (44.3%), Africa (41.6%), and the Middle East (14.1%). The survey instrument consisted of a structured questionnaire with 30 Likert scale variables across six constructs. Data analysis involved descriptive statistics, T-Test, ANOVA, Pearson correlations, and Structural Equation Modeling (SEM). Librarians reported high ethical risk perception (M = 3.41–3.77), strong responsible use intentions (3.77–4.02), and a moderate level of AI ethics competence (M = 3.47–3.77). Formal AI policies showed enhanced guidance perceptions with no robust gender differences across all constructs. Private institutions scored better than the public institutions in terms of equipping the librarians with training and resources. Geographical regional differences showed significant differences across several variables; South Asia scored the highest in awareness level, while Africa scored high in policy gaps. Structural equation modeling results showed that both AI ethics competence and perceived ethical risk positively impacted ethical AI governance, and ethical AI governance significantly increased responsible practice intentions. However, there was no significant direct effect of perceived ethical risk on responsible practice when both governance and competence were controlled. The study adds to the growing literature on librarianship ethics in the context of AI-integrated services in academic libraries, providing quantitative, non-Western evidence on risk, competence, and governance dynamics. The study offers a proposed model/framework for addressing ethical concerns and global gaps in an AI-mediated library environment in higher education. The findings of this study provide theory-driven evidence for ethical AI governance in resource-limited settings, urging targeted training and policies to align innovation with librarianship values.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 70; matched topic technology_frontier; citation count 0
-- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
-- 阅读优先级: B (score: 70)
-- Matched topics: technology_frontier
-- Category: academic_publishing
+暂无符合筛选条件的高质量期刊论文。
 
-## Compliance Note
+## 诊断摘要
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 207
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 207
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-04-18T03:44:42Z
+- until_date: 2026-07-17T03:44:42Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-07-17T03:44:42Z
+- per_query: 8
+- candidate_pool_size: 207
+- after_hard_filter_count: 202
+- after_topic_filter_count: 54
+- after_score_filter_count: 1
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 54
+- matched_topics_distribution: {'academic_publishing': 17, 'technology_frontier': 12, 'management_transfer': 24, 'transferable_management_communication': 5, 'publishing_management': 2, 'digital_publishing': 2}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 206
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 153
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 5
+- blocked_by_future_date_count: 0
+
+### Top Uncategorized Records
+
+title | journal | source_api
+--- | --- | ---
+<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar
+Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | crossref+openalex+semantic_scholar
+Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex
+Caroline Davis, Archie Dick, Elizabeth le Roux, and Dennis Walder, eds. 2023. Print Culture in Southern Africa. Abingdon: Routledge. xi + 199pp. US$152. Cloth bound. ISBN: 9780367625887. Also available in paperback, ISBN: 9780367625900. Also available online, e-ISBN: 9781003109846 | Publishing Research Quarterly | openalex
+Platformization of Online Fiction in China: The Interplay of State, Market, and Digital Infrastructure | Publishing Research Quarterly | openalex
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
+Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | crossref+openalex+semantic_scholar | missing | 43 | uncategorized
+What Happens After Rejection? Making Invisible Peer Review Visible | Learned Publishing | openalex | academic_publishing | 51 | blocked by score threshold
+Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex | missing | 51 | uncategorized
+<scp>AI</scp> ‐Assisted Scientific Figures in Scholarly Publishing: A Risk‐Based Taxonomy by Evidentiary Function | Learned Publishing | openalex | academic_publishing | 51 | blocked by score threshold
