@@ -1,13 +1,13 @@
-# Literature Alert - daily - 2026-07-17
+# Literature Alert - daily - 2026-07-18
 
 ## Summary
 
 - Items selected: 0
 - Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-07-17T03:44:42Z
-- 检索起点 since_date: 2026-04-18T03:44:42Z
-- 检索截止 until_date: 2026-07-17T03:44:42Z
+- 本次运行时间: 2026-07-18T03:39:22Z
+- 检索起点 since_date: 2026-04-19T03:39:22Z
+- 检索截止 until_date: 2026-07-18T03:39:22Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 207
 - 最终推送数: 0
@@ -27,30 +27,30 @@
 - fetched_from_semantic_scholar_count: 0
 - candidate_total_before_filter: 207
 - time_window_strategy: fallback_backfill_days
-- since_date: 2026-04-18T03:44:42Z
-- until_date: 2026-07-17T03:44:42Z
+- since_date: 2026-04-19T03:39:22Z
+- until_date: 2026-07-18T03:39:22Z
 - fallback_backfill_days: 90
-- current_run_started_at: 2026-07-17T03:44:42Z
+- current_run_started_at: 2026-07-18T03:39:22Z
 - per_query: 8
 - candidate_pool_size: 207
-- after_hard_filter_count: 202
-- after_topic_filter_count: 54
-- after_score_filter_count: 1
+- after_hard_filter_count: 203
+- after_topic_filter_count: 53
+- after_score_filter_count: 0
 - after_duplicate_filter_count: 0
 - final_email_record_count: 0
 - target_records: 10
 - max_records: 12
-- matched_topics_count: 54
+- matched_topics_count: 53
 - matched_topics_distribution: {'academic_publishing': 17, 'technology_frontier': 12, 'management_transfer': 24, 'transferable_management_communication': 5, 'publishing_management': 2, 'digital_publishing': 2}
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
 - duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 206
+- blocked_by_score_threshold_count: 207
 - blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 153
+- blocked_by_uncategorized_count: 154
 - blocked_by_crossref_only_count: 0
 - blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 5
+- blocked_by_exclusion_rules_count: 4
 - blocked_by_future_date_count: 0
 
 ### Top Uncategorized Records
@@ -58,17 +58,17 @@
 title | journal | source_api
 --- | --- | ---
 <scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar
-Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | crossref+openalex+semantic_scholar
+Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | openalex
 Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex
+Laura McGrath, 2026. Middlemen: Literary Agents and the Making of American Fiction. Princeton, NJ: Princeton University Press. 296 pp. US$29.95 / £25.00. Hardback. ISBN: 9780691256160. Also available as an e-book, ISBN: 9780691286921 | Publishing Research Quarterly | openalex
 Caroline Davis, Archie Dick, Elizabeth le Roux, and Dennis Walder, eds. 2023. Print Culture in Southern Africa. Abingdon: Routledge. xi + 199pp. US$152. Cloth bound. ISBN: 9780367625887. Also available in paperback, ISBN: 9780367625900. Also available online, e-ISBN: 9781003109846 | Publishing Research Quarterly | openalex
-Platformization of Online Fiction in China: The Interplay of State, Market, and Digital Infrastructure | Publishing Research Quarterly | openalex
 
 ### Top Filtered Records
 
 title | journal | source_api | matched_topics | score | block_reason
 --- | --- | --- | --- | --- | ---
 <scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
-Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | crossref+openalex+semantic_scholar | missing | 43 | uncategorized
+Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | openalex | missing | 43 | uncategorized
 What Happens After Rejection? Making Invisible Peer Review Visible | Learned Publishing | openalex | academic_publishing | 51 | blocked by score threshold
 Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex | missing | 51 | uncategorized
-<scp>AI</scp> ‐Assisted Scientific Figures in Scholarly Publishing: A Risk‐Based Taxonomy by Evidentiary Function | Learned Publishing | openalex | academic_publishing | 51 | blocked by score threshold
+Laura McGrath, 2026. Middlemen: Literary Agents and the Making of American Fiction. Princeton, NJ: Princeton University Press. 296 pp. US$29.95 / £25.00. Hardback. ISBN: 9780691256160. Also available as an e-book, ISBN: 9780691286921 | Publishing Research Quarterly | openalex | missing | 0 | uncategorized
