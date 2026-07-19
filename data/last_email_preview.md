@@ -1,74 +1,53 @@
-# Literature Alert - daily - 2026-07-18
+# Literature Alert - daily - 2026-07-19
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 2
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-07-18T03:39:22Z
-- 检索起点 since_date: 2026-04-19T03:39:22Z
-- 检索截止 until_date: 2026-07-18T03:39:22Z
+- 本次运行时间: 2026-07-19T04:01:40Z
+- 检索起点 since_date: 2026-04-20T04:01:40Z
+- 检索截止 until_date: 2026-07-19T04:01:40Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 207
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 最终推送数: 2
+- selected_topic_distribution: {'management_transfer': 1, 'academic_publishing': 1}
+- selected_journal_distribution: {'Journal of Product Innovation Management': 1, 'Journal of Scholarly Publishing': 1}
 
-## 暂无符合条件的文献
+## 1. Circularity and Resilience in Entrepreneurial Ecosystems in Times of Crisis
 
-暂无符合筛选条件的高质量期刊论文。
+- 标题: Circularity and Resilience in Entrepreneurial Ecosystems in Times of Crisis
+- 作者: Ingvild Reine Assmann, Francesco Rosati, Vinícius Picanço Rodrigues, Federico Cosenz, Andreas Wieland
+- 年份: 2026
+- 期刊或来源: Journal of Product Innovation Management
+- DOI: 10.1111/jpim.70053
+- URL: https://openalex.org/W7169601712
+- 摘要: ABSTRACT Despite recent efforts to bridge the circular economy and entrepreneurship, and to explore resilience in entrepreneurial ecosystems, the ways in which startups' circularity orientations influence how they build resilience in times of crisis remain unclear. Drawing on the adaptive cycle model from complexity and panarchy theories, this study employs qualitative case research on four circular and four linear startups operating within the built environment sector and belonging to the same entrepreneurial ecosystem to investigate how they responded to the raw material crisis. The study examines startups' positions within the exploitation, conservation, release, and reorganization phases of the adaptive cycle in order to uncover distinct resilience trajectories. The findings suggest that circular startups nurtured and leveraged their ecosystems more actively than linear startups did, capitalizing on ecosystem relationships to strengthen innovation, adaptability, and system‐wide resilience. In contrast, linear startups tended to withhold contributions and withdraw from ecosystem interactions, limiting collaboration and reducing their capacity to adapt and respond to crises. These findings advance understanding of how business model orientation shapes resilience trajectories within entrepreneurial ecosystems by identifying nurturing and leveraging as distinct mechanisms through which circular startups build firm‐ and ecosystem‐level resilience during crises.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 63; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 63)
+- Matched topics: management_transfer
+- Category: digital_publishing
 
-## 诊断摘要
+## 2. Structural Asymmetries and Strategic Resilience: A Road Map for Sustaining Independent Journals
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 207
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 207
-- time_window_strategy: fallback_backfill_days
-- since_date: 2026-04-19T03:39:22Z
-- until_date: 2026-07-18T03:39:22Z
-- fallback_backfill_days: 90
-- current_run_started_at: 2026-07-18T03:39:22Z
-- per_query: 8
-- candidate_pool_size: 207
-- after_hard_filter_count: 203
-- after_topic_filter_count: 53
-- after_score_filter_count: 0
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 10
-- max_records: 12
-- matched_topics_count: 53
-- matched_topics_distribution: {'academic_publishing': 17, 'technology_frontier': 12, 'management_transfer': 24, 'transferable_management_communication': 5, 'publishing_management': 2, 'digital_publishing': 2}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 207
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 154
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 4
-- blocked_by_future_date_count: 0
+- 标题: Structural Asymmetries and Strategic Resilience: A Road Map for Sustaining Independent Journals
+- 作者: Konstantin Karl Weicht, I-Ting Chen
+- 年份: 2026
+- 期刊或来源: Journal of Scholarly Publishing
+- DOI: 10.3138/jsp-2025-0170
+- URL: https://openalex.org/W7169589390
+- 摘要: Independent, niche journals play a vital role in advancing scholarly conversations that extend beyond the dominant paradigms of mainstream publishing. However, they remain acutely vulnerable to the structural pressures reshaping academic publishing. This conceptual paper examines the intersecting economic, technological, and cultural forces that challenge the sustainability of independent, non-profit journals, particularly those serving interdisciplinary or specialized scholarly communities. Drawing on both scholarly literature and the author’s anonymized reflections from editorial practice, the paper identifies systemic challenges: the consolidation of publishing power, the ascendancy of prestige metrics, shifts in library acquisition models, and the expanding influence of open access mandates. It further highlights strategies for resilience, such as strengthening author engagement, embedding journal content into teaching, and developing innovative outreach to librarians and scholarly networks. By situating these challenges within the broader transformation of the publishing ecosystem, the article provides both a critical diagnosis and a constructive road map for sustaining independent scholarly voices in an increasingly commercialized environment.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 59; matched topic academic_publishing; citation count 0
+- 与出版研究的关系: Relevant to scholarly publishing, journal governance, peer review, open access, or research integrity.
+- 阅读优先级: B (score: 59)
+- Matched topics: academic_publishing
+- Category: academic_publishing
 
-### Top Uncategorized Records
+## Compliance Note
 
-title | journal | source_api
---- | --- | ---
-<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar
-Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | openalex
-Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex
-Laura McGrath, 2026. Middlemen: Literary Agents and the Making of American Fiction. Princeton, NJ: Princeton University Press. 296 pp. US$29.95 / £25.00. Hardback. ISBN: 9780691256160. Also available as an e-book, ISBN: 9780691286921 | Publishing Research Quarterly | openalex
-Caroline Davis, Archie Dick, Elizabeth le Roux, and Dennis Walder, eds. 2023. Print Culture in Southern Africa. Abingdon: Routledge. xi + 199pp. US$152. Cloth bound. ISBN: 9780367625887. Also available in paperback, ISBN: 9780367625900. Also available online, e-ISBN: 9781003109846 | Publishing Research Quarterly | openalex
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
-Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | openalex | missing | 43 | uncategorized
-What Happens After Rejection? Making Invisible Peer Review Visible | Learned Publishing | openalex | academic_publishing | 51 | blocked by score threshold
-Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex | missing | 51 | uncategorized
-Laura McGrath, 2026. Middlemen: Literary Agents and the Making of American Fiction. Princeton, NJ: Princeton University Press. 296 pp. US$29.95 / £25.00. Hardback. ISBN: 9780691256160. Also available as an e-book, ISBN: 9780691286921 | Publishing Research Quarterly | openalex | missing | 0 | uncategorized
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
