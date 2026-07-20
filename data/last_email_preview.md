@@ -1,36 +1,74 @@
-# Literature Alert - daily - 2026-07-20
+# Literature Alert - weekly - 2026-07-20
 
 ## Summary
 
-- Items selected: 1
-- Data sources: openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-07-20T04:12:07Z
-- 检索起点 since_date: 2026-04-21T04:12:07Z
-- 检索截止 until_date: 2026-07-20T04:12:07Z
-- 时间窗口策略: fallback_backfill_days
-- 候选文献数: 207
-- 最终推送数: 1
-- selected_topic_distribution: {'management_transfer': 1}
-- selected_journal_distribution: {'Technovation': 1}
+- 本次运行时间: 2026-07-20T04:39:19Z
+- 检索起点 since_date: 2026-01-21T04:39:19Z
+- 检索截止 until_date: 2026-07-20T04:39:19Z
+- 时间窗口策略: lookback_days
+- 候选文献数: 217
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. Competition intensity and business model innovation: The distinctive role of strategic innovation readiness in European family and non-family SMEs
+## 暂无符合条件的文献
 
-- 标题: Competition intensity and business model innovation: The distinctive role of strategic innovation readiness in European family and non-family SMEs
-- 作者: María-Mercedes Gracia-Laborda, Carolina López‐Nicolás, Ángel-Luis Meroño-Cerdán
-- 年份: 2026
-- 期刊或来源: Technovation
-- DOI: 10.1016/j.technovation.2026.103651
-- URL: https://openalex.org/W7169675927
-- 摘要: This study proposes and tests a model that extends the knowledge of business model innovation (BMI)'s drivers, introducing strategic innovation readiness (SIR) as a fundamental mediating mechanism. Drawing on the Resource-Based View theory and the Socioemotional Wealth approach, we test the contingent effect of family firm on this model. Data were obtained from an international European Commission project to assess the relationships proposed. A sample of 417 Small and Medium-sized Enterprises was analyzed using partial least squares structural equation modelling. The results indicate that competition intensity positively influences both BMI novelty and BMI scope, with SIR acting as a partial mediator in these relationships. A significant contribution of our multigroup analysis is that the indirect effect of competition intensity on BMI via SIR is stronger in non-family SMEs than in family SMEs. In addition, for non-family firms, SIR fully mediates the competition intensity-BMI scope relationship, whereas for family firms, this mediation is partial. These findings underscore that while both firm types need SIR to innovate, non-family firms exhibit a more pronounced and fully mediated response in broadening their BMI, suggesting distinct strategic pathways driven by inherent firm characteristics. These insights advance the BMI literature, particularly concerning the unique innovation dynamics of family versus non-family firms.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 63; matched topic management_transfer; citation count 0
-- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
-- 阅读优先级: B (score: 63)
-- Matched topics: management_transfer
-- Category: digital_publishing
+本周暂无符合筛选条件的高质量期刊论文。
 
-## Compliance Note
+## 诊断摘要
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 217
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 217
+- time_window_strategy: lookback_days
+- since_date: 2026-01-21T04:39:19Z
+- until_date: 2026-07-20T04:39:19Z
+- fallback_backfill_days: 
+- current_run_started_at: 2026-07-20T04:39:19Z
+- per_query: 8
+- candidate_pool_size: 217
+- after_hard_filter_count: 215
+- after_topic_filter_count: 48
+- after_score_filter_count: 0
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 20
+- max_records: 30
+- matched_topics_count: 48
+- matched_topics_distribution: {'academic_publishing': 17, 'technology_frontier': 13, 'management_transfer': 19, 'publishing_management': 1, 'transferable_management_communication': 2, 'digital_publishing': 2}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 3
+- blocked_by_score_threshold_count: 217
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 169
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 2
+- blocked_by_future_date_count: 0
+
+### Top Uncategorized Records
+
+title | journal | source_api
+--- | --- | ---
+<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar
+Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | openalex
+Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex
+Laura McGrath, 2026. Middlemen: Literary Agents and the Making of American Fiction. Princeton, NJ: Princeton University Press. 296 pp. US$29.95 / £25.00. Hardback. ISBN: 9780691256160. Also available as an e-book, ISBN: 9780691286921 | Publishing Research Quarterly | openalex
+Caroline Davis, Archie Dick, Elizabeth le Roux, and Dennis Walder, eds. 2023. Print Culture in Southern Africa. Abingdon: Routledge. xi + 199pp. US$152. Cloth bound. ISBN: 9780367625887. Also available in paperback, ISBN: 9780367625900. Also available online, e-ISBN: 9781003109846 | Publishing Research Quarterly | openalex
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Lexical Traces of <scp>AI</scp> : Linguistic Impact of Generative Tools in Academic Abstracts | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing,technology_frontier | 55 | blocked by score threshold
+<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
+Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | openalex | missing | 43 | uncategorized
+What Happens After Rejection? Making Invisible Peer Review Visible | Learned Publishing | openalex | academic_publishing | 51 | blocked by score threshold
+Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex | missing | 51 | uncategorized
