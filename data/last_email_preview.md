@@ -1,74 +1,36 @@
-# Literature Alert - daily - 2026-07-23
+# Literature Alert - daily - 2026-07-24
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 1
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-07-23T03:51:24Z
-- 检索起点 since_date: 2026-04-24T03:51:24Z
-- 检索截止 until_date: 2026-07-23T03:51:24Z
+- 本次运行时间: 2026-07-24T03:50:48Z
+- 检索起点 since_date: 2026-04-25T03:50:48Z
+- 检索截止 until_date: 2026-07-24T03:50:48Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 202
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 最终推送数: 1
+- selected_topic_distribution: {'management_transfer': 1}
+- selected_journal_distribution: {'Journal of Product Innovation Management': 1}
 
-## 暂无符合条件的文献
+## 1. Coupling Responsible Innovation and Sustainable Business Model Innovation to Address Grand Challenges
 
-暂无符合筛选条件的高质量期刊论文。
+- 标题: Coupling Responsible Innovation and Sustainable Business Model Innovation to Address Grand Challenges
+- 作者: Matthew Snell, Omar Al‐Tabbaa, Morven G. McEachern
+- 年份: 2026
+- 期刊或来源: Journal of Product Innovation Management
+- DOI: 10.1111/jpim.70051
+- URL: https://openalex.org/W7170051550
+- 摘要: ABSTRACT Academic Abstract Innovations designed to address grand challenges within the social innovation sector can have unintended consequences, particularly where organizations pursue triple‐bottom‐line objectives under resource constraints. Yet research on coupling responsible innovation (RI) and sustainable business model innovation (SBMI) largely frames this as aspirational rather than theoretical, leaving it conceptually underdeveloped and empirically underexplored. Accordingly, this study asks: How can organizations operating within institutionally weak environments embed RI to make their SBMI processes more responsible? Utilizing a 10‐year longitudinal study of a social enterprise delivering off‐grid solar in Africa, we identify three SBMI cycles and develop a process framework for RI‐SBMI coupling. We outline four RI‐shaped organizational capacities that support business model evolution as a dynamic, principle‐driven process in which RI functions as a sensitizing framework rather than a fixed ethical template. We further demonstrate that paradox management, through the mechanisms of experimentation, relinquishing control, and value prioritization, is central to responsible SBMI. We also show that RI principles are not applied equally; instead, their importance changes depending on organizational capacity and the part of the business model. Finally, by grounding these dynamics in an institutionally weak context, the study advances theory on responsible business model evolution. Practitioner Abstract Low‐income households in resource‐constrained settings characterized by rural poverty, limited infrastructure, and constrained market access are some of the most vulnerable to the impacts of grand challenges. Therefore, to avoid unintentional reinforcement of structural inequalities, it is essential to conduct regular, inclusive consultation with stakeholders. Ideally, this is undertaken during SBM development but can and should be applied to existing SBMs. Within institutionally weak contexts, systematically identifying and assessing opportunities, both internal and external to the organization, and innovating to accommodate them can improve geographic reach and market competitiveness. When working with environmentally friendly technologies and practices, a critical, reflexive review should be continuously undertaken, ideally incorporating in‐house expertise and neutral, external input (e.g., from research organizations). The creation of greater social and environmental values will require a willingness to sacrifice some economic value capture. Therefore, coupling the principles between RI and SBMI can help achieve this while maintaining economic viability. For profit‐making companies, inclusive stakeholder engagement may enhance organizational legitimacy and build a low‐income customer base, while systematic identification of opportunities supports competitiveness and innovation. Coupling RI and SBMI helps balance social, environmental, and economic objectives, potentially improving credibility.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 63; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 63)
+- Matched topics: management_transfer
+- Category: digital_publishing
 
-## 诊断摘要
+## Compliance Note
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 202
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 202
-- time_window_strategy: fallback_backfill_days
-- since_date: 2026-04-24T03:51:24Z
-- until_date: 2026-07-23T03:51:24Z
-- fallback_backfill_days: 90
-- current_run_started_at: 2026-07-23T03:51:24Z
-- per_query: 8
-- candidate_pool_size: 202
-- after_hard_filter_count: 200
-- after_topic_filter_count: 44
-- after_score_filter_count: 0
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 10
-- max_records: 12
-- matched_topics_count: 44
-- matched_topics_distribution: {'academic_publishing': 16, 'technology_frontier': 12, 'management_transfer': 18, 'publishing_management': 1, 'transferable_management_communication': 2, 'digital_publishing': 1}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 202
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 158
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 2
-- blocked_by_future_date_count: 0
-
-### Top Uncategorized Records
-
-title | journal | source_api
---- | --- | ---
-<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar
-Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | openalex
-Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex
-Laura McGrath, 2026. Middlemen: Literary Agents and the Making of American Fiction. Princeton, NJ: Princeton University Press. 296 pp. US$29.95 / £25.00. Hardback. ISBN: 9780691256160. Also available as an e-book, ISBN: 9780691286921 | Publishing Research Quarterly | openalex
-Caroline Davis, Archie Dick, Elizabeth le Roux, and Dennis Walder, eds. 2023. Print Culture in Southern Africa. Abingdon: Routledge. xi + 199pp. US$152. Cloth bound. ISBN: 9780367625887. Also available in paperback, ISBN: 9780367625900. Also available online, e-ISBN: 9781003109846 | Publishing Research Quarterly | openalex
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
-Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | openalex | missing | 43 | uncategorized
-What Happens After Rejection? Making Invisible Peer Review Visible | Learned Publishing | openalex | academic_publishing | 51 | blocked by score threshold
-Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex | missing | 51 | uncategorized
-Laura McGrath, 2026. Middlemen: Literary Agents and the Making of American Fiction. Princeton, NJ: Princeton University Press. 296 pp. US$29.95 / £25.00. Hardback. ISBN: 9780691256160. Also available as an e-book, ISBN: 9780691286921 | Publishing Research Quarterly | openalex | missing | 0 | uncategorized
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
