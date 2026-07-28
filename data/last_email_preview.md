@@ -1,74 +1,36 @@
-# Literature Alert - weekly - 2026-07-27
+# Literature Alert - daily - 2026-07-28
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 1
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-07-27T04:40:50Z
-- 检索起点 since_date: 2026-01-28T04:40:50Z
-- 检索截止 until_date: 2026-07-27T04:40:50Z
-- 时间窗口策略: lookback_days
-- 候选文献数: 221
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 本次运行时间: 2026-07-28T03:43:34Z
+- 检索起点 since_date: 2026-04-29T03:43:34Z
+- 检索截止 until_date: 2026-07-28T03:43:34Z
+- 时间窗口策略: fallback_backfill_days
+- 候选文献数: 203
+- 最终推送数: 1
+- selected_topic_distribution: {'technology_frontier': 1}
+- selected_journal_distribution: {'Quantitative Science Studies': 1}
 
-## 暂无符合条件的文献
+## 1. HOW DEEP DO LARGE LANGUAGE MODELS INTERNALIZE SCIENTIFIC LITERATURE AND CITATION PRACTICES?
 
-本周暂无符合筛选条件的高质量期刊论文。
+- 标题: HOW DEEP DO LARGE LANGUAGE MODELS INTERNALIZE SCIENTIFIC LITERATURE AND CITATION PRACTICES?
+- 作者: Andres Algaba, Vincent Holst, Floriano Tori, Melika Mobini, Brecht Verbeken, Sylvia Wenmackers, Vincent Ginis
+- 年份: 2026
+- 期刊或来源: Quantitative Science Studies
+- DOI: 10.1162/qss.a.502
+- URL: https://openalex.org/W4410348581
+- 摘要: Abstract The spread of scientific knowledge depends on how researchers discover and cite prior work. Large language models (LLMs) now add a new layer to this process, but their alignment with human citation practices across domains remains unclear. Here, we compare human citations with GPT-4ogenerated reference suggestions produced from paper metadata and abstracts. Analyzing 274, 951 generated references for 10, 000 focal papers, we find that LLMs systematically reinforce the Matthew effect by favoring highly cited papers, with field-specific variation in the rate at which generated references match real papers in bibliometric databases. Generated references diverge from groundtruth reference lists by favoring more recent papers, shorter titles, and smaller author teams. Yet they remain semantically aligned with focal-paper content at levels comparable to human references, reproduce similar local citation-network structure, and reduce author self-citations. These results show that LLMs can generate content-relevant bibliographic suggestions from parametric knowledge alone, but that they also amplify dominant citation patterns. As such tools become routine in research workflows, they may reshape how scientific communities discover, prioritize, and build on prior work.
+- 引用量: 2
+- 数据来源: openalex
+- 推荐理由: priority B with score 61; matched topic technology_frontier; citation count 2
+- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
+- 阅读优先级: B (score: 61)
+- Matched topics: technology_frontier
+- Category: academic_publishing
 
-## 诊断摘要
+## Compliance Note
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 219
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 221
-- time_window_strategy: lookback_days
-- since_date: 2026-01-28T04:40:50Z
-- until_date: 2026-07-27T04:40:50Z
-- fallback_backfill_days: 
-- current_run_started_at: 2026-07-27T04:40:50Z
-- per_query: 8
-- candidate_pool_size: 221
-- after_hard_filter_count: 217
-- after_topic_filter_count: 44
-- after_score_filter_count: 1
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 20
-- max_records: 30
-- matched_topics_count: 44
-- matched_topics_distribution: {'academic_publishing': 15, 'technology_frontier': 16, 'management_transfer': 15, 'digital_publishing': 2, 'publishing_management': 1, 'transferable_management_communication': 2}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 3
-- blocked_by_score_threshold_count: 220
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 177
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 4
-- blocked_by_future_date_count: 0
-
-### Top Uncategorized Records
-
-title | journal | source_api
---- | --- | ---
-<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar
-Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | openalex
-Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex
-Steven E. Gump. 2025. How to Review Scholarly Books: Reading, Writing, Relishing. Princeton: Princeton UP. 268pp. US$22.95/£18.99. Paperback. ISBN 9780691270494 | Publishing Research Quarterly | openalex
-Laura McGrath, 2026. Middlemen: Literary Agents and the Making of American Fiction. Princeton, NJ: Princeton University Press. 296 pp. US$29.95 / £25.00. Hardback. ISBN: 9780691256160. Also available as an e-book, ISBN: 9780691286921 | Publishing Research Quarterly | openalex
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Lexical Traces of <scp>AI</scp> : Linguistic Impact of Generative Tools in Academic Abstracts | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing,technology_frontier | 55 | blocked by score threshold
-<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
-Gender Analysis and Co‐Authorship Networks in the Scientific Production of Oncology in Spain (2011–2021) | Learned Publishing | openalex | missing | 43 | uncategorized
-What Happens After Rejection? Making Invisible Peer Review Visible | Learned Publishing | openalex | academic_publishing | 51 | blocked by score threshold
-Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research | Learned Publishing | openalex | missing | 51 | uncategorized
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
