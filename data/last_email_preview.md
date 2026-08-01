@@ -1,74 +1,53 @@
-# Literature Alert - daily - 2026-07-31
+# Literature Alert - daily - 2026-08-01
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 2
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-07-31T03:57:57Z
-- 检索起点 since_date: 2026-05-02T03:57:57Z
-- 检索截止 until_date: 2026-07-31T03:57:57Z
+- 本次运行时间: 2026-08-01T03:58:08Z
+- 检索起点 since_date: 2026-05-03T03:58:08Z
+- 检索截止 until_date: 2026-08-01T03:58:08Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 204
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 最终推送数: 2
+- selected_topic_distribution: {'management_transfer': 2, 'transferable_management_communication': 1}
+- selected_journal_distribution: {'Journal of Librarianship and Information Science': 1, 'Strategic Management Journal': 1}
 
-## 暂无符合条件的文献
+## 1. Mapping gamification in the LIS context: A bibliometric analysis of the research landscape, gaps, and future directions
 
-暂无符合筛选条件的高质量期刊论文。
+- 标题: Mapping gamification in the LIS context: A bibliometric analysis of the research landscape, gaps, and future directions
+- 作者: Moyassar Al-Taie, Mohamed Aboelmaged, Gharib Hashem, Walaa Wahid ElKelish, Rana Mohamad Albatarni
+- 年份: 2026
+- 期刊或来源: Journal of Librarianship and Information Science
+- DOI: 10.1177/09610006261465453
+- URL: https://openalex.org/W7171782473
+- 摘要: Gamification has emerged as a transformative approach in the library and information science (LIS) context, enabling a shift from passive information provision to interactive, user-centered learning environments. Despite its growing adoption, the literature remains fragmented and lacks a comprehensive synthesis of its intellectual structure and development. To address this gap, this study employs a bibliometric analysis guided by the PRISMA framework to examine the evolution of gamification research in LIS. Drawing on a curated dataset of high-quality, indexed publications, the findings reveal a clear chronological progression from early exploratory studies to a rapidly expanding, mature field, particularly following the digital transformation accelerated by the COVID-19 pandemic. The analysis identifies a core body of influential studies, while thematic analysis highlights key research clusters related to pedagogy, service design, digital ecosystems, and user engagement. The evolutionary analysis indicates a shift toward structured pedagogical approaches and immersive, technology-driven applications. The study also identifies critical gaps, including limited theoretical integration, a lack of longitudinal and cross-contextual research, and insufficient attention to ethical and organizational dimensions. This study provides a comprehensive bibliometric mapping of gamification, offering a structured understanding of its intellectual landscape and future research directions. The findings highlight the need for theory-driven frameworks and offer practical insights for developing user-centered, ethically grounded, and strategically integrated gamified library services.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 67; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 67)
+- Matched topics: management_transfer, transferable_management_communication
+- Category: academic_publishing
 
-## 诊断摘要
+## 2. Shifting standards due to social class? The role of social class background in <scp>CEO</scp> career outcomes
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 204
-- fetched_from_semantic_scholar_count: 20
-- candidate_total_before_filter: 204
-- time_window_strategy: fallback_backfill_days
-- since_date: 2026-05-02T03:57:57Z
-- until_date: 2026-07-31T03:57:57Z
-- fallback_backfill_days: 90
-- current_run_started_at: 2026-07-31T03:57:57Z
-- per_query: 8
-- candidate_pool_size: 204
-- after_hard_filter_count: 201
-- after_topic_filter_count: 43
-- after_score_filter_count: 0
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 10
-- max_records: 12
-- matched_topics_count: 43
-- matched_topics_distribution: {'academic_publishing': 13, 'technology_frontier': 17, 'management_transfer': 15, 'digital_publishing': 2, 'publishing_management': 1, 'transferable_management_communication': 3}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 204
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 161
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 3
-- blocked_by_future_date_count: 0
+- 标题: Shifting standards due to social class? The role of social class background in <scp>CEO</scp> career outcomes
+- 作者: Michelle K. Lee, Shelby Gai
+- 年份: 2026
+- 期刊或来源: Strategic Management Journal
+- DOI: 10.1002/smj.70113
+- URL: https://openalex.org/W7171841071
+- 摘要: Abstract Research Summary This study investigates how social class background shapes CEO career outcomes. Extending the shifting standards model to post‐appointment evaluation, we theorize that CEOs from lower‐class backgrounds face persistently high confirmatory standards, producing asymmetric consequences. When their performance is strong, the high confirmatory standards amplify their success, resulting in higher initial and subsequent compensation compared to their higher‐class counterparts. When performance falters, the same bar makes shortfalls more readily read as falling short of expectations, resulting in lower compensation and higher dismissal risk. We test these predictions using a novel dataset on CEO social class backgrounds from 1992 to 2018, supplemented with board interviews. The findings support our hypotheses, demonstrating how social class background operates as a double‐edged sword by increasing rewards for success and penalties for failure. Managerial Summary Does social class background affect how a CEO is evaluated? Drawing on compensation and dismissal outcomes for U.S. CEOs from 1992 to 2018, along with interviews with directors, we show that CEOs' social class backgrounds shape how their performance is interpreted. CEOs from lower social class backgrounds receive higher initial compensation and are rewarded more when their firms perform well. But when performance weakens, these same CEOs face steeper pay cuts and higher dismissal risk than their higher‐class peers. The same background that generates recognition when things go well makes shortfalls easier to interpret as underperformance. For boards, this suggests that background can quietly shape evaluations at the highest levels. For CEOs, perceptions of exceptional mobility and capability can become a liability when performance turns.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 62; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 62)
+- Matched topics: management_transfer
+- Category: digital_publishing
 
-### Top Uncategorized Records
+## Compliance Note
 
-title | journal | source_api
---- | --- | ---
-Correction to ‘Sharpening the Pencil, Not Replacing the Hand: De‐Stigmatising <scp>AI</scp> Use in Research Writing’ | Learned Publishing | crossref+openalex
-Correction to “Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research” | Learned Publishing | crossref+openalex+semantic_scholar
-<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar
-Steven E. Gump. 2025. How to Review Scholarly Books: Reading, Writing, Relishing. Princeton: Princeton UP. 268pp. US$22.95/£18.99. Paperback. ISBN 9780691270494 | Publishing Research Quarterly | openalex
-Laura McGrath, 2026. Middlemen: Literary Agents and the Making of American Fiction. Princeton, NJ: Princeton University Press. 296 pp. US$29.95 / £25.00. Hardback. ISBN: 9780691256160. Also available as an e-book, ISBN: 9780691286921 | Publishing Research Quarterly | openalex
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Correction to “A Cross‐Disciplinary Analysis of <scp>AI</scp> Policies in Academic Peer Review” | Learned Publishing | crossref+openalex | academic_publishing | 0 | blocked by exclusion rules or hard quality rule
-Correction to ‘Sharpening the Pencil, Not Replacing the Hand: De‐Stigmatising <scp>AI</scp> Use in Research Writing’ | Learned Publishing | crossref+openalex | missing | 0 | uncategorized
-Correction to “Data Availability Statements in Mega Journals: A Comparative Analysis of Global and Korea‐Affiliated Publications in Health and Medical Research” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
-<scp>COI</scp> Declaration Policy in Medical Journals: From Authors to Editors | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
-Steven E. Gump. 2025. How to Review Scholarly Books: Reading, Writing, Relishing. Princeton: Princeton UP. 268pp. US$22.95/£18.99. Paperback. ISBN 9780691270494 | Publishing Research Quarterly | openalex | missing | 0 | uncategorized
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
