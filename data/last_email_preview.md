@@ -1,74 +1,70 @@
-# Literature Alert - daily - 2026-08-04
+# Literature Alert - daily - 2026-08-05
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 3
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-08-04T03:44:33Z
-- 检索起点 since_date: 2026-05-06T03:44:33Z
-- 检索截止 until_date: 2026-08-04T03:44:33Z
+- 本次运行时间: 2026-08-05T03:41:12Z
+- 检索起点 since_date: 2026-05-07T03:41:12Z
+- 检索截止 until_date: 2026-08-05T03:41:12Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 203
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 候选文献数: 200
+- 最终推送数: 3
+- selected_topic_distribution: {'transferable_management_communication': 1, 'management_transfer': 2, 'technology_frontier': 1}
+- selected_journal_distribution: {'International Marketing Review': 1, 'Journal of Marketing Research': 1, 'Strategic Management Journal': 1}
 
-## 暂无符合条件的文献
+## 1. The cultural gatekeeper: a three-level multilevel meta-analysis of the CSR attitude-behavior gap
 
-暂无符合筛选条件的高质量期刊论文。
+- 标题: The cultural gatekeeper: a three-level multilevel meta-analysis of the CSR attitude-behavior gap
+- 作者: Jungwon Lee, Yunhye Lee
+- 年份: 2026
+- 期刊或来源: International Marketing Review
+- DOI: 10.1108/imr-04-2025-0184
+- URL: https://openalex.org/W7172259612
+- 摘要: Purpose Despite the global ubiquity of corporate social responsibility, the translation of favorable consumer attitudes into behavioral intentions remains erratic across international markets. While prior meta-analyses have examined cultural moderators, they have largely ignored the hierarchical dependency of effect sizes, leading to inconclusive findings and potential Type I errors. This study aims to resolve these inconsistencies by proposing and testing the “Gatekeeper Hypothesis,” which posits that national culture acts as a filter that selectively moderates the transition from low-threshold attitudinal responses to high-threshold behavioral commitments. Design/methodology/approach To address the methodological limitations of traditional two-level models, this study employs a three-level multilevel meta-analysis. The dataset comprises 604 effect sizes derived from 258 independent studies across 38 countries. By partitioning the total variance into sampling (Level 1), study (Level 2), and country (Level 3) components, we provide a precise estimation of cross-cultural heterogeneity. Findings The analysis reveals a significant overall effect of CSR on consumer responses (r = 0.494), yet a substantial 8.5% of the variance resides at the country level, confirming the critical role of institutional context. Supporting the Gatekeeper Hypothesis, the results demonstrate that culture exerts a minimal impact on attitudinal outcomes (universal appeal) but significantly moderates behavioral outcomes. Specifically, Uncertainty Avoidance facilitates the transition to behavioral intention by valuing risk mitigation, whereas long-term orientation, indulgence, masculinity and individualism act as significant behavioral barriers, widening the attitude-behavior gap due to economic pragmatism, hedonic prioritization, competence tradeoffs and self-interest, respectively. Research limitations/implications The findings challenge the assumption of global CSR standardization. The study suggests that while the “warm glow” of CSR is relatively universal, the “wallet vote” is culturally gated. Future research should explore the micro-foundations of these cultural thresholds using longitudinal designs. Originality/value This is the first study to utilize a 3-level meta-analytic framework to decompose the CSR attitude-behavior gap. By integrating Signaling Theory with Institutional Theory, it offers a robust explanation for why CSR builds global brand equity but requires localized strategies to convert favorable attitudes into purchase intentions.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 59; matched topic transferable_management_communication; citation count 0
+- 与出版研究的关系: Provides transferable theories or methods for publishing, media management, communication, or cultural industries.
+- 阅读优先级: B (score: 59)
+- Matched topics: transferable_management_communication, management_transfer
+- Category: digital_publishing
 
-## 诊断摘要
+## 2. EXPRESS: Evaluating Novel Unstructured Treatments with Generative AI: A Causal Prediction Framework
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 203
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 203
-- time_window_strategy: fallback_backfill_days
-- since_date: 2026-05-06T03:44:33Z
-- until_date: 2026-08-04T03:44:33Z
-- fallback_backfill_days: 90
-- current_run_started_at: 2026-08-04T03:44:33Z
-- per_query: 8
-- candidate_pool_size: 203
-- after_hard_filter_count: 199
-- after_topic_filter_count: 44
-- after_score_filter_count: 1
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 10
-- max_records: 12
-- matched_topics_count: 44
-- matched_topics_distribution: {'academic_publishing': 14, 'technology_frontier': 16, 'digital_publishing': 2, 'management_transfer': 16, 'transferable_management_communication': 4, 'publishing_management': 1}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 202
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 159
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 4
-- blocked_by_future_date_count: 0
+- 标题: EXPRESS: Evaluating Novel Unstructured Treatments with Generative AI: A Causal Prediction Framework
+- 作者: Paul B. Ellickson, Wreetabrata Kar, James C. Reeder, Guang Zeng
+- 年份: 2026
+- 期刊或来源: Journal of Marketing Research
+- DOI: 10.1177/00222437261476639
+- URL: https://openalex.org/W7172334002
+- 摘要: Modern marketing increasingly requires managers to deploy new content at scale, often with limited opportunity for prior testing. As a result, decisions about what to launch become strategic managerial choices under uncertainty rather than purely creative exercises. While generative AI makes the creation of new content fast and highly scalable, it simultaneously expands the set of options managers must evaluate, making reliable content selection increasingly difficult. We develop a framework for causal prediction that enables managers to evaluate and deploy novel marketing content generated by AI. The framework uses pretrained large language models to represent previously deployed content and learn how its features causally relate to outcomes. Using a rejection-sampling procedure, the framework screens new content proposed by generative AI to avoid extrapolation beyond what historical data can reliably support. In a large-scale email marketing application (3.3 million observations across 34 campaigns), the framework improves out-of-sample prediction and real-world deployment performance relative to standard approaches, enabling outcome-guided generation of higher-performing AI-generated content. The framework establishes a threshold based on how closely new content resembles past campaigns, separating cases where causal prediction is reliable from cases where direct experimentation is warranted. The framework has important implications for marketing decision making in a rapidly evolving environment where generative AI is transforming content creation and deployment.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 63; matched topic technology_frontier; citation count 0
+- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
+- 阅读优先级: B (score: 63)
+- Matched topics: technology_frontier
+- Category: digital_publishing
 
-### Top Uncategorized Records
+## 3. ESG investing and pollution outsourcing
 
-title | journal | source_api
---- | --- | ---
-Issue Information | Learned Publishing | crossref+openalex
-Steven E. Gump. 2025. How to Review Scholarly Books: Reading, Writing, Relishing. Princeton: Princeton UP. 268pp. US$22.95/£18.99. Paperback. ISBN 9780691270494 | Publishing Research Quarterly | openalex
-Laura McGrath, 2026. Middlemen: Literary Agents and the Making of American Fiction. Princeton, NJ: Princeton University Press. 296 pp. US$29.95 / £25.00. Hardback. ISBN: 9780691256160. Also available as an e-book, ISBN: 9780691286921 | Publishing Research Quarterly | openalex
-Caroline Davis, Archie Dick, Elizabeth le Roux, and Dennis Walder, eds. 2023. Print Culture in Southern Africa. Abingdon: Routledge. xi + 199pp. US$152. Cloth bound. ISBN: 9780367625887. Also available in paperback, ISBN: 9780367625900. Also available online, e-ISBN: 9781003109846 | Publishing Research Quarterly | openalex
-Platformization of Online Fiction in China: The Interplay of State, Market, and Digital Infrastructure | Publishing Research Quarterly | openalex
+- 标题: ESG investing and pollution outsourcing
+- 作者: Shipeng Yan, Fan Zhang, Zhengyu Li
+- 年份: 2026
+- 期刊或来源: Strategic Management Journal
+- DOI: 10.1002/smj.70115
+- URL: https://openalex.org/W7172296416
+- 摘要: Abstract Research Summary Can environmental, social, and governance (ESG) investors hold businesses accountable for their environmental impact? Extending institutional theory and analyzing a global sample of firms from 2006 to 2019, we argue that, in response to ESG investors' institutional pressures, firms may intensify pollution outsourcing to suppliers as a sophisticated form of corporate decoupling. We further theorize and find suggestive evidence that this effect is less salient and sometimes reversed when ESG investors can help firms access green technologies and when they have more direct purview of firms' suppliers. We employ investor‐level acquisitions as quasi‐exogenous shocks and additionally analyze a separate firm–supplier sample to support the hypotheses with largely consistent results. Managerial Summary Environmental, social, and governance (ESG) investors are increasingly expected to act as private regulators, using ownership stakes to steer companies toward sustainability. Yet, looking only at whether a focal firm cleans up its own operations can be misleading because it ignores what happens in the broader supply chain. Using global firm data from 2006 to 2019, we find that companies under strong ESG investor pressure generate lower direct emissions but may shift pollution to suppliers, leaving the combined emissions unchanged. We also provide suggestive evidence that this outsourcing is reduced and sometimes can become reduced when investors can help firms adopt green technologies and directly oversee supplier practices.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 62; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 62)
+- Matched topics: management_transfer
+- Category: digital_publishing
 
-### Top Filtered Records
+## Compliance Note
 
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Issue Information | Learned Publishing | crossref+openalex | missing | 0 | uncategorized
-Correction to “A Cross‐Disciplinary Analysis of <scp>AI</scp> Policies in Academic Peer Review” | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 0 | blocked by exclusion rules or hard quality rule
-Katelyn E. Knox and Allison Van Deventer. <i>The Dissertation-to-Book Workbook: Exercises for Developing and Revising Your Book Manuscript</i> . Chicago Guides to Writing, Editing, and Publishing | Journal of Scholarly Publishing | crossref+openalex | academic_publishing | 37 | missing abstract
-Lai Ma. <i>The Scholarly Communication Handbook: From Research Dissemination to Societal Impact</i> | Journal of Scholarly Publishing | openalex | academic_publishing | 53 | missing abstract
-Steven E. Gump. 2025. How to Review Scholarly Books: Reading, Writing, Relishing. Princeton: Princeton UP. 268pp. US$22.95/£18.99. Paperback. ISBN 9780691270494 | Publishing Research Quarterly | openalex | missing | 0 | uncategorized
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
