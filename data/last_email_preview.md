@@ -1,15 +1,15 @@
-# Literature Alert - daily - 2026-08-11
+# Literature Alert - daily - 2026-08-12
 
 ## Summary
 
 - Items selected: 0
 - Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-08-11T02:32:10Z
-- 检索起点 since_date: 2026-05-13T02:32:10Z
-- 检索截止 until_date: 2026-08-11T02:32:10Z
+- 本次运行时间: 2026-08-12T03:01:17Z
+- 检索起点 since_date: 2026-05-14T03:01:17Z
+- 检索截止 until_date: 2026-08-12T03:01:17Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 206
+- 候选文献数: 205
 - 最终推送数: 0
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
@@ -23,17 +23,17 @@
 - loaded_journal_zh_count: 40
 - loaded_journal_en_count: 54
 - journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 206
+- fetched_from_openalex_journal_count: 205
 - fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 206
+- candidate_total_before_filter: 205
 - time_window_strategy: fallback_backfill_days
-- since_date: 2026-05-13T02:32:10Z
-- until_date: 2026-08-11T02:32:10Z
+- since_date: 2026-05-14T03:01:17Z
+- until_date: 2026-08-12T03:01:17Z
 - fallback_backfill_days: 90
-- current_run_started_at: 2026-08-11T02:32:10Z
+- current_run_started_at: 2026-08-12T03:01:17Z
 - per_query: 8
-- candidate_pool_size: 206
-- after_hard_filter_count: 202
+- candidate_pool_size: 205
+- after_hard_filter_count: 200
 - after_topic_filter_count: 48
 - after_score_filter_count: 0
 - after_duplicate_filter_count: 0
@@ -41,16 +41,16 @@
 - target_records: 10
 - max_records: 12
 - matched_topics_count: 48
-- matched_topics_distribution: {'academic_publishing': 13, 'technology_frontier': 17, 'management_transfer': 20, 'digital_publishing': 1, 'transferable_management_communication': 3, 'publishing_management': 1}
+- matched_topics_distribution: {'academic_publishing': 12, 'technology_frontier': 17, 'management_transfer': 20, 'digital_publishing': 1, 'transferable_management_communication': 3, 'publishing_management': 1}
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
 - duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 206
+- blocked_by_score_threshold_count: 205
 - blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 158
+- blocked_by_uncategorized_count: 157
 - blocked_by_crossref_only_count: 0
 - blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 4
+- blocked_by_exclusion_rules_count: 5
 - blocked_by_future_date_count: 0
 
 ### Top Uncategorized Records
