@@ -1,36 +1,74 @@
-# Literature Alert - daily - 2026-08-16
+# Literature Alert - daily - 2026-08-17
 
 ## Summary
 
-- Items selected: 1
-- Data sources: openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-08-16T02:00:23Z
-- 检索起点 since_date: 2026-05-18T02:00:23Z
-- 检索截止 until_date: 2026-08-16T02:00:23Z
+- 本次运行时间: 2026-08-17T01:59:02Z
+- 检索起点 since_date: 2026-05-19T01:59:02Z
+- 检索截止 until_date: 2026-08-17T01:59:02Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 205
-- 最终推送数: 1
-- selected_topic_distribution: {'transferable_management_communication': 1, 'management_transfer': 1}
-- selected_journal_distribution: {'Marketing Science': 1}
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. Does Premium Version Adoption in mHealth Improve User Engagement and Health-Related Outcomes?
+## 暂无符合条件的文献
 
-- 标题: Does Premium Version Adoption in mHealth Improve User Engagement and Health-Related Outcomes?
-- 作者: Yikun Jiang, Kosuke Uetake, Nathan Yang
-- 年份: 2026
-- 期刊或来源: Marketing Science
-- DOI: 10.1287/mksc.2022.0437
-- URL: https://openalex.org/W4312971961
-- 摘要: Freemium upgrade is a primary monetization lever for mHealth apps, yet whether paying for premium features actually sustains user engagement remains an open question. We study this question using large-scale data from a fitness-tracking mobile app with a staggered difference-in-differences design. Premium adoption generates an immediate increase in food and exercise tracking, caloric budget adherence, and exercise calories, but these effects attenuate within several weeks and do not translate into sustained weight loss. Sensitivity analysis and matched-sample designs confirm that the engagement responses are not solely driven by time-varying selection. Heterogeneous engagement lifts by pre-upgrade exposure are more consistent with hedonic decline than with sunk-cost effects or motivational mean reversion: users with limited prior exposure to the free version exhibit substantially larger post-upgrade engagement lifts than those who have already interacted extensively with it. We further demonstrate that failing to account for endogeneity and selection in premium adoption leads to a substantial overstatement of its effects on both engagement and health outcomes.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 59; matched topic transferable_management_communication; citation count 0
-- 与出版研究的关系: Provides transferable theories or methods for publishing, media management, communication, or cultural industries.
-- 阅读优先级: B (score: 59)
-- Matched topics: transferable_management_communication, management_transfer
-- Category: digital_publishing
+暂无符合筛选条件的高质量期刊论文。
 
-## Compliance Note
+## 诊断摘要
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 205
+- fetched_from_semantic_scholar_count: 20
+- candidate_total_before_filter: 205
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-05-19T01:59:02Z
+- until_date: 2026-08-17T01:59:02Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-08-17T01:59:02Z
+- per_query: 8
+- candidate_pool_size: 205
+- after_hard_filter_count: 201
+- after_topic_filter_count: 48
+- after_score_filter_count: 0
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 48
+- matched_topics_distribution: {'academic_publishing': 13, 'management_transfer': 20, 'technology_frontier': 18, 'digital_publishing': 1, 'transferable_management_communication': 4, 'publishing_management': 1}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 205
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 157
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 4
+- blocked_by_future_date_count: 0
+
+### Top Uncategorized Records
+
+title | journal | source_api
+--- | --- | ---
+Correction to “Mapping Scholarly Identities: A Descriptive Study of Spanish <scp>ORCID</scp> Records at the Spanish National Research Council ( <scp>CSIC</scp> )” | Learned Publishing | crossref+openalex+semantic_scholar
+Correction to ‘Do Early Career Researchers Consider <scp>AI</scp> as an Opportunity or a Threat? A Pathfinding Study’ | Learned Publishing | crossref+openalex+semantic_scholar
+Text Editors in the Context of Precarization from a Gender Perspective: A Scoping Review | Publishing Research Quarterly | openalex
+The Business of Contradiction: The Political Economy of the Modern Publishing Industry | Publishing Research Quarterly | openalex
+Steven E. Gump. 2025. How to Review Scholarly Books: Reading, Writing, Relishing. Princeton: Princeton UP. 268pp. US$22.95/£18.99. Paperback. ISBN 9780691270494 | Publishing Research Quarterly | openalex
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Correction to “Mapping Scholarly Identities: A Descriptive Study of Spanish <scp>ORCID</scp> Records at the Spanish National Research Council ( <scp>CSIC</scp> )” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
+Correction to ‘Do Early Career Researchers Consider <scp>AI</scp> as an Opportunity or a Threat? A Pathfinding Study’ | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
+Katelyn E. Knox and Allison Van Deventer. <i>The Dissertation-to-Book Workbook: Exercises for Developing and Revising Your Book Manuscript</i> . Chicago Guides to Writing, Editing, and Publishing | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 37 | missing abstract
+Front Matter | Journal of Scholarly Publishing | openalex | academic_publishing | 0 | blocked by exclusion rules or hard quality rule
+Text Editors in the Context of Precarization from a Gender Perspective: A Scoping Review | Publishing Research Quarterly | openalex | missing | 47 | uncategorized
