@@ -1,15 +1,15 @@
-# Literature Alert - daily - 2026-08-18
+# Literature Alert - daily - 2026-08-19
 
 ## Summary
 
 - Items selected: 0
 - Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-08-18T01:55:09Z
-- 检索起点 since_date: 2026-05-20T01:55:09Z
-- 检索截止 until_date: 2026-08-18T01:55:09Z
+- 本次运行时间: 2026-08-19T01:57:03Z
+- 检索起点 since_date: 2026-05-21T01:57:03Z
+- 检索截止 until_date: 2026-08-19T01:57:03Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 205
+- 候选文献数: 204
 - 最终推送数: 0
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
@@ -23,34 +23,34 @@
 - loaded_journal_zh_count: 40
 - loaded_journal_en_count: 54
 - journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 205
-- fetched_from_semantic_scholar_count: 20
-- candidate_total_before_filter: 205
+- fetched_from_openalex_journal_count: 204
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 204
 - time_window_strategy: fallback_backfill_days
-- since_date: 2026-05-20T01:55:09Z
-- until_date: 2026-08-18T01:55:09Z
+- since_date: 2026-05-21T01:57:03Z
+- until_date: 2026-08-19T01:57:03Z
 - fallback_backfill_days: 90
-- current_run_started_at: 2026-08-18T01:55:09Z
+- current_run_started_at: 2026-08-19T01:57:03Z
 - per_query: 8
-- candidate_pool_size: 205
+- candidate_pool_size: 204
 - after_hard_filter_count: 201
-- after_topic_filter_count: 48
+- after_topic_filter_count: 45
 - after_score_filter_count: 0
 - after_duplicate_filter_count: 0
 - final_email_record_count: 0
 - target_records: 10
 - max_records: 12
-- matched_topics_count: 48
-- matched_topics_distribution: {'academic_publishing': 13, 'management_transfer': 20, 'technology_frontier': 18, 'digital_publishing': 1, 'transferable_management_communication': 4, 'publishing_management': 1}
+- matched_topics_count: 45
+- matched_topics_distribution: {'academic_publishing': 13, 'management_transfer': 19, 'technology_frontier': 16, 'digital_publishing': 1, 'transferable_management_communication': 3}
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
 - duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 205
+- blocked_by_score_threshold_count: 204
 - blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 157
+- blocked_by_uncategorized_count: 159
 - blocked_by_crossref_only_count: 0
 - blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 4
+- blocked_by_exclusion_rules_count: 3
 - blocked_by_future_date_count: 0
 
 ### Top Uncategorized Records
@@ -69,6 +69,6 @@ title | journal | source_api | matched_topics | score | block_reason
 --- | --- | --- | --- | --- | ---
 Correction to “Mapping Scholarly Identities: A Descriptive Study of Spanish <scp>ORCID</scp> Records at the Spanish National Research Council ( <scp>CSIC</scp> )” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
 Correction to ‘Do Early Career Researchers Consider <scp>AI</scp> as an Opportunity or a Threat? A Pathfinding Study’ | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
-Katelyn E. Knox and Allison Van Deventer. <i>The Dissertation-to-Book Workbook: Exercises for Developing and Revising Your Book Manuscript</i> . Chicago Guides to Writing, Editing, and Publishing | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 37 | missing abstract
-Front Matter | Journal of Scholarly Publishing | openalex | academic_publishing | 0 | blocked by exclusion rules or hard quality rule
+Katelyn E. Knox and Allison Van Deventer. <i>The Dissertation-to-Book Workbook: Exercises for Developing and Revising Your Book Manuscript</i> . Chicago Guides to Writing, Editing, and Publishing | Journal of Scholarly Publishing | openalex | academic_publishing | 37 | missing abstract
 Text Editors in the Context of Precarization from a Gender Perspective: A Scoping Review | Publishing Research Quarterly | openalex | missing | 47 | uncategorized
+The Business of Contradiction: The Political Economy of the Modern Publishing Industry | Publishing Research Quarterly | openalex | missing | 47 | uncategorized
