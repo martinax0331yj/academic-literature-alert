@@ -1,74 +1,36 @@
-# Literature Alert - daily - 2026-08-20
+# Literature Alert - daily - 2026-08-21
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 1
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-08-20T01:55:50Z
-- 检索起点 since_date: 2026-05-22T01:55:50Z
-- 检索截止 until_date: 2026-08-20T01:55:50Z
+- 本次运行时间: 2026-08-21T02:02:32Z
+- 检索起点 since_date: 2026-05-23T02:02:32Z
+- 检索截止 until_date: 2026-08-21T02:02:32Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 210
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 候选文献数: 208
+- 最终推送数: 1
+- selected_topic_distribution: {'management_transfer': 1, 'technology_frontier': 1}
+- selected_journal_distribution: {'Information Systems Research': 1}
 
-## 暂无符合条件的文献
+## 1. Seeing Less, Engaging More: Rethinking Early User Experience on GenAI Co-Creation Platforms–Findings from a Field Experiment
 
-暂无符合筛选条件的高质量期刊论文。
+- 标题: Seeing Less, Engaging More: Rethinking Early User Experience on GenAI Co-Creation Platforms–Findings from a Field Experiment
+- 作者: Shenyang Jiang, Akshat Lakhiwal, Che‐Wei Liu, Jiang Duan
+- 年份: 2026
+- 期刊或来源: Information Systems Research
+- DOI: 10.1287/isre.2024.1200
+- URL: https://openalex.org/W7172525254
+- 摘要: Generative AI content-generation (GCG) platforms enable users to co-create personalized content with remarkable speed. Yet recent research suggests that such immediacy may undermine early engagement: when content appears instantly, users may not realize sufficient value to register on the platform. We address this challenge by introducing fulfillment, i.e., the extent to which co-created content is revealed prior to registration on GCG platforms, as an experiential design lever that shapes value realization in initial interactions. Drawing on value co-creation literature, we suggest that fulfillment operates through two motivational pathways: value-in-use, reflecting users’ recognition that their input meaningfully shaped the output, and curiosity, reflecting anticipatory motivation when the experience remains perceptually open. Using a randomized field experiment on a GCG platform, complemented by a follow-up online experiment, we show that partial fulfillment, which reveals some but not all generated output, outperforms both full and no fulfillment in driving registration. This effect is also conditioned by the framing of the registration message. While loss-framed messages that emphasize the cost of inaction increase registration on average, this effect attenuates under full fulfillment, suggesting a substitution relationship. Formal mediation analyses indicate that although both full and partial fulfillment enhance value-in-use, only partial fulfillment sustains curiosity, and this dual activation explains its effectiveness. Additional analyses delineate the scope of these effects, which persist beyond registration to shape subsequent engagement and return behavior, but arise only when users meaningfully co-produce content and are enhanced by better quality outputs. Together, these findings suggest that registration on GCG platforms depends not on maximizing disclosure or curiosity alone, but on structuring interactions to preserve users’ involvement in shaping generated outputs. In doing so, they highlight how effective design on GCG platforms supports engagement that emerges from complementary human and GenAI contributions, rather than from automation alone.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 59; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 59)
+- Matched topics: management_transfer, technology_frontier
+- Category: digital_publishing
 
-## 诊断摘要
+## Compliance Note
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 210
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 210
-- time_window_strategy: fallback_backfill_days
-- since_date: 2026-05-22T01:55:50Z
-- until_date: 2026-08-20T01:55:50Z
-- fallback_backfill_days: 90
-- current_run_started_at: 2026-08-20T01:55:50Z
-- per_query: 8
-- candidate_pool_size: 210
-- after_hard_filter_count: 207
-- after_topic_filter_count: 42
-- after_score_filter_count: 1
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 10
-- max_records: 12
-- matched_topics_count: 42
-- matched_topics_distribution: {'academic_publishing': 12, 'management_transfer': 19, 'technology_frontier': 13, 'digital_publishing': 1, 'transferable_management_communication': 3}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 209
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 168
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 3
-- blocked_by_future_date_count: 0
-
-### Top Uncategorized Records
-
-title | journal | source_api
---- | --- | ---
-Correction to “Visible as Journals, Invisible as Publishers: Limitations of <scp>OpenAlex</scp> for Analysing University Publishing” | Learned Publishing | crossref+openalex
-Correction to “Mapping Scholarly Identities: A Descriptive Study of Spanish <scp>ORCID</scp> Records at the Spanish National Research Council ( <scp>CSIC</scp> )” | Learned Publishing | crossref+openalex+semantic_scholar
-Correction to ‘Do Early Career Researchers Consider <scp>AI</scp> as an Opportunity or a Threat? A Pathfinding Study’ | Learned Publishing | crossref+openalex+semantic_scholar
-Text Editors in the Context of Precarization from a Gender Perspective: A Scoping Review | Publishing Research Quarterly | openalex
-The Business of Contradiction: The Political Economy of the Modern Publishing Industry | Publishing Research Quarterly | openalex
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Correction to “Visible as Journals, Invisible as Publishers: Limitations of <scp>OpenAlex</scp> for Analysing University Publishing” | Learned Publishing | crossref+openalex | missing | 0 | uncategorized
-Correction to “Mapping Scholarly Identities: A Descriptive Study of Spanish <scp>ORCID</scp> Records at the Spanish National Research Council ( <scp>CSIC</scp> )” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
-Correction to ‘Do Early Career Researchers Consider <scp>AI</scp> as an Opportunity or a Threat? A Pathfinding Study’ | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
-Referencing Styles—A Never-Ending Demand for Uniform Journal Requirements | Journal of Scholarly Publishing | crossref+openalex | academic_publishing | 51 | blocked by score threshold
-Text Editors in the Context of Precarization from a Gender Perspective: A Scoping Review | Publishing Research Quarterly | openalex | missing | 47 | uncategorized
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
