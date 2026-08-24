@@ -1,53 +1,74 @@
-# Literature Alert - daily - 2026-08-23
+# Literature Alert - daily - 2026-08-24
 
 ## Summary
 
-- Items selected: 2
-- Data sources: crossref+openalex, openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-08-23T02:06:18Z
-- 检索起点 since_date: 2026-05-25T02:06:18Z
-- 检索截止 until_date: 2026-08-23T02:06:18Z
+- 本次运行时间: 2026-08-24T02:01:54Z
+- 检索起点 since_date: 2026-05-26T02:01:54Z
+- 检索截止 until_date: 2026-08-24T02:01:54Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 174
-- 最终推送数: 2
-- selected_topic_distribution: {'academic_publishing': 1, 'technology_frontier': 1}
-- selected_journal_distribution: {'Journal of Scholarly Publishing': 1, 'Aslib Journal of Information Management': 1}
+- 候选文献数: 208
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. Open-Access Initiatives in the Scholarly World and Its Current Status in Pakistan and Its Neighbouring Countries
+## 暂无符合条件的文献
 
-- 标题: Open-Access Initiatives in the Scholarly World and Its Current Status in Pakistan and Its Neighbouring Countries
-- 作者: Muhammad Zahid Raza, Saira Hanif Soroya, Muhammad Rafiq
-- 年份: 2026
-- 期刊或来源: Journal of Scholarly Publishing
-- DOI: 10.3138/jsp-2025-0101
-- URL: https://openalex.org/W7203894320
-- 摘要: This study has been designed to explore the leading countries and continents in open access (OA) initiatives regarding OA journals, indexing of journals in Web of Science and Scopus, institutional repositories (IRs), OA policies, and leading universities in OA initiatives worldwide. It compares and analyses the OA initiatives of the leading continents and countries of the world and, importantly, of Pakistan and its neighbouring leading countries in OA initiatives. This study relies on two research methods: a narrative literature review and a survey of the websites. The websites’ survey of the Registry of Open Access Repository, the Directory of Open Access Journals, and the Repository of Open Access Repository Mandates and Policies was also conducted to meet the objectives of the study. It was exposed that the United States, Canada, the United Kingdom, Spain, Poland, Germany, Russia, Turkey, Brazil, South Africa, Australia, Indonesia, Japan, Iran, and so forth have emerged as leading contributors in OA initiatives in terms of OA journals, IRs, and OA policies in their respective continents. The majority of universities of the leading countries in OA initiatives have adopted the Green model of OA to prompt the OA publishing paradigm for a wider readership, more citations, and free access to scholarly literature. In the Pakistani neighbourhood, Iran was leading in OA initiatives, followed by India, China, Pakistan, and so forth. The present study is a comprehensive exploration of the prevalence of OA landscape geographically in leading countries and continents in terms of OA journals, indexing of journals in Web of Science and Scopus, IRs, OA policies, and leading universities in OA initiatives worldwide and with respect to Pakistani neighbouring leading countries. This study may encourage the developing countries, policymakers, higher educational institutions, and universities to adopt the OA initiatives by competing with leading contributors in OA initiatives.
-- 引用量: 0
-- 数据来源: crossref+openalex
-- 推荐理由: priority B with score 59; matched topic academic_publishing; citation count 0
-- 与出版研究的关系: Relevant to scholarly publishing, journal governance, peer review, open access, or research integrity.
-- 阅读优先级: B (score: 59)
-- Matched topics: academic_publishing
-- Category: academic_publishing
+暂无符合筛选条件的高质量期刊论文。
 
-## 2. A multidimensional heritage value assessment framework for ancient Chinese medical texts: evidence-based prioritization of preservation and utilization
+## 诊断摘要
 
-- 标题: A multidimensional heritage value assessment framework for ancient Chinese medical texts: evidence-based prioritization of preservation and utilization
-- 作者: Jingpeng Deng, Guangkun Chen, Xiang Zheng, Xujie Chai, Mingjie Li
-- 年份: 2026
-- 期刊或来源: Aslib Journal of Information Management
-- DOI: 10.1108/ajim-11-2025-0886
-- URL: https://openalex.org/W7203883284
-- 摘要: Purpose This study develops an objective, quantitative, and technology-driven multidimensional framework for assessing the heritage value of ancient Chinese medical texts. The framework aims to overcome the limitations of traditional expert-based approaches and support evidence-based conservation and sustainable reuse. Design/methodology/approach The proposed framework integrates multi-source data analysis with large language models (LLMs) and latent Dirichlet allocation (LDA) to quantify scholarly value, contemporary practical value, historical value and cultural influence. Indicator weights are determined using a hybrid weighting approach that combines expert judgment and objective data. In addition, an artistic value feature identifier and a physical-condition matrix are incorporated to support conservation and utilization decisions. Findings An empirical assessment of 200 ancient Chinese medical texts shows that scholarly value and contemporary practical value contribute more substantially to overall heritage value than traditional attributes such as age. The results also reveal a highly right-skewed value distribution, with 60% of the sampled texts classified as Level IV. The framework effectively identifies high-priority texts, such as analytic comparison of cold damage and warm pestilence, for targeted conservation and management, thereby supporting dynamic resource allocation. Originality/value By introducing a reproducible, multidimensional framework, this study shifts the assessment of ancient texts from manual judgment to an evidence-based, technology-driven approach. The framework offers a scalable and adaptable methodology for the intelligent management, conservation and utilization of documentary heritage.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 59; matched topic technology_frontier; citation count 0
-- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
-- 阅读优先级: B (score: 59)
-- Matched topics: technology_frontier
-- Category: academic_publishing
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 208
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 208
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-05-26T02:01:54Z
+- until_date: 2026-08-24T02:01:54Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-08-24T02:01:54Z
+- per_query: 8
+- candidate_pool_size: 208
+- after_hard_filter_count: 206
+- after_topic_filter_count: 45
+- after_score_filter_count: 1
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 45
+- matched_topics_distribution: {'academic_publishing': 11, 'management_transfer': 19, 'technology_frontier': 17, 'digital_publishing': 1, 'transferable_management_communication': 3}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 207
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 163
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 2
+- blocked_by_future_date_count: 0
 
-## Compliance Note
+### Top Uncategorized Records
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+title | journal | source_api
+--- | --- | ---
+Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar
+Correction to “Mapping Scholarly Identities: A Descriptive Study of Spanish ORCID Records at the Spanish National Research Council ( CSIC )” | Learned Publishing | crossref+openalex+semantic_scholar
+Correction to ‘Do Early Career Researchers Consider AI as an Opportunity or a Threat? A Pathfinding Study’ | Learned Publishing | crossref+openalex+semantic_scholar
+Editing the Workshop: How the Inclusion of Developmental Editing Skills in Creative Writing Pedagogy can Enhance the Workshop | Publishing Research Quarterly | openalex
+Text Editors in the Context of Precarization from a Gender Perspective: A Scoping Review | Publishing Research Quarterly | openalex
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
+Correction to “Mapping Scholarly Identities: A Descriptive Study of Spanish ORCID Records at the Spanish National Research Council ( CSIC )” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
+Correction to ‘Do Early Career Researchers Consider AI as an Opportunity or a Threat? A Pathfinding Study’ | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
+Referencing Styles—A Never-Ending Demand for Uniform Journal Requirements | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+Editing the Workshop: How the Inclusion of Developmental Editing Skills in Creative Writing Pedagogy can Enhance the Workshop | Publishing Research Quarterly | openalex | missing | 43 | uncategorized
