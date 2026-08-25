@@ -1,74 +1,36 @@
-# Literature Alert - weekly - 2026-08-24
+# Literature Alert - daily - 2026-08-25
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 1
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-08-24T02:23:58Z
-- 检索起点 since_date: 2026-02-25T02:23:58Z
-- 检索截止 until_date: 2026-08-24T02:23:58Z
-- 时间窗口策略: lookback_days
-- 候选文献数: 217
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 本次运行时间: 2026-08-25T01:56:48Z
+- 检索起点 since_date: 2026-05-27T01:56:48Z
+- 检索截止 until_date: 2026-08-25T01:56:48Z
+- 时间窗口策略: fallback_backfill_days
+- 候选文献数: 207
+- 最终推送数: 1
+- selected_topic_distribution: {'management_transfer': 1}
+- selected_journal_distribution: {'Strategic Management Journal': 1}
 
-## 暂无符合条件的文献
+## 1. Are client ties pre‐entry resources? Performance implications of client tie diversification
 
-本周暂无符合筛选条件的高质量期刊论文。
+- 标题: Are client ties pre‐entry resources? Performance implications of client tie diversification
+- 作者: Heejung Byun
+- 年份: 2026
+- 期刊或来源: Strategic Management Journal
+- DOI: 10.1002/smj.70119
+- URL: https://openalex.org/W7204030819
+- 摘要: Abstract Research Summary This study investigates client tie diversification, where firms enter markets with existing clients. Recognizing the theoretical basis for both positive and negative performance implications, the paper adopts a question‐driven approach and discovers a strong negative correlation between client tie diversification and firm performance. Using data from the US federal lobbying industry during the creation of the Homeland Security issue market post‐9/11, I find that lobbying firms entering the new market with existing clients underperform compared to other firms. This underperformance is associated with over‐embeddedness with clients and agency costs from dispersed client tie ownership among lobbyists. These findings challenge the notion that client ties are readily fungible and highlight relational and agency‐related complexities that can lead firms to pursue value‐destroying diversification. Managerial Summary Do firms perform better when they diversify into new markets with their existing clients, or by pursuing new opportunities independently? This study found that firms that enter new markets alongside their current clients often underperform compared to those that do not. While it might seem beneficial to leverage existing client relationships, this approach can push firms into areas where they lack capabilities, create inefficiencies, and complicate relationships with other clients, leading to weaker performance. Managers should be cautious about letting client needs drive diversification decisions. Prioritizing current clients may offer short‐term gains but can limit the firm's ability to explore new markets and achieve long‐term growth. Strategic choices should balance client requests with the firm's own strengths and future prospects.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 59; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 59)
+- Matched topics: management_transfer
+- Category: digital_publishing
 
-## 诊断摘要
+## Compliance Note
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 216
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 217
-- time_window_strategy: lookback_days
-- since_date: 2026-02-25T02:23:58Z
-- until_date: 2026-08-24T02:23:58Z
-- fallback_backfill_days: 
-- current_run_started_at: 2026-08-24T02:23:58Z
-- per_query: 8
-- candidate_pool_size: 217
-- after_hard_filter_count: 214
-- after_topic_filter_count: 48
-- after_score_filter_count: 1
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 20
-- max_records: 30
-- matched_topics_count: 48
-- matched_topics_distribution: {'academic_publishing': 12, 'management_transfer': 20, 'technology_frontier': 17, 'digital_publishing': 2, 'transferable_management_communication': 4, 'publishing_management': 1}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 0
-- blocked_by_score_threshold_count: 216
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 169
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 3
-- blocked_by_future_date_count: 0
-
-### Top Uncategorized Records
-
-title | journal | source_api
---- | --- | ---
-Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar
-Correction to “Mapping Scholarly Identities: A Descriptive Study of Spanish ORCID Records at the Spanish National Research Council ( CSIC )” | Learned Publishing | crossref+openalex+semantic_scholar
-Correction to ‘Do Early Career Researchers Consider AI as an Opportunity or a Threat? A Pathfinding Study’ | Learned Publishing | crossref+openalex+semantic_scholar
-Editing the Workshop: How the Inclusion of Developmental Editing Skills in Creative Writing Pedagogy can Enhance the Workshop | Publishing Research Quarterly | openalex
-Text Editors in the Context of Precarization from a Gender Perspective: A Scoping Review | Publishing Research Quarterly | openalex
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
-If You Really Want to Know How AI Is Changing Peer Review Talk to Early Career Researchers | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 67 | blocked by score threshold
-Correction to “Mapping Scholarly Identities: A Descriptive Study of Spanish ORCID Records at the Spanish National Research Council ( CSIC )” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
-Correction to ‘Do Early Career Researchers Consider AI as an Opportunity or a Threat? A Pathfinding Study’ | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
-Open-Access Initiatives in the Scholarly World and Its Current Status in Pakistan and Its Neighbouring Countries | Journal of Scholarly Publishing | crossref+openalex | academic_publishing | 59 | blocked by score threshold
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
