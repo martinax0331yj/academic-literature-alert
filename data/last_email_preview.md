@@ -1,36 +1,74 @@
-# Literature Alert - daily - 2026-09-06
+# Literature Alert - daily - 2026-09-07
 
 ## Summary
 
-- Items selected: 1
-- Data sources: openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-09-06T04:50:56Z
-- 检索起点 since_date: 2026-06-08T04:50:56Z
-- 检索截止 until_date: 2026-09-06T04:50:56Z
+- 本次运行时间: 2026-09-07T04:57:02Z
+- 检索起点 since_date: 2026-06-09T04:57:02Z
+- 检索截止 until_date: 2026-09-07T04:57:02Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 211
-- 最终推送数: 1
-- selected_topic_distribution: {'technology_frontier': 1}
-- selected_journal_distribution: {'Information Systems Research': 1}
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. The Effectiveness of Regulations on the Dual-Role Retailer’s Data Use for Sellers
+## 暂无符合条件的文献
 
-- 标题: The Effectiveness of Regulations on the Dual-Role Retailer’s Data Use for Sellers
-- 作者: Yeongin Kim, Seokjun Youn, Kyung Sung Jung, Young Kwark
-- 年份: 2026
-- 期刊或来源: Information Systems Research
-- DOI: 10.1287/isre.2020.0293
-- URL: https://openalex.org/W7208789646
-- 摘要: Recent regulatory scrutiny has highlighted concerns regarding Amazon’s use of market data in competing with its sellers through its private-label operations, prompting the introduction of new data governance policies across multiple jurisdictions. Motivated by this development, this paper examines the effectiveness of regulations governing platform data use. We study two policies: Policy S, which prohibits the retailer’s use of market data while granting exclusive access to sellers, and Policy RS, which allows shared data access between the retailer and sellers, reflecting emerging industry practices. These policies are evaluated against a baseline case with no data restrictions. Our analysis shows that while Policy S effectively restricts platform data use and protects sellers, it also generates strong incentives for the retailer to engage in strategic responses, including contractual adjustments and policy circumvention, as it represents the least favorable outcome for the platform. Policy RS, in contrast, emerges as a practical compromise that better aligns platform and seller incentives. We further show that the effectiveness of data regulations depends on the contractual environment and the platform’s ability to adjust its organizational structure. A key insight is that the retailer can undermine regulatory intent through subtle but systematic strategies, such as steering sellers across contract forms and exploiting regulatory ambiguities. These effects become more pronounced under the wholesale contract. Our findings highlight that recent regulations may be insufficient if they do not account for strategic platform behavior. We find that recent data regulations face important challenges, as they may not prevent the retailer from exploiting contractual flexibility and regulatory loopholes. We therefore provide guidance for designing more robust regulatory frameworks with clearer conditions and enforcement mechanisms that explicitly incorporate contract structure and limit opportunities for regulatory circumvention, thereby strengthening protection against unfair competitive practices by dominant platforms.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 62; matched topic technology_frontier; citation count 0
-- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
-- 阅读优先级: B (score: 62)
-- Matched topics: technology_frontier
-- Category: digital_publishing
+暂无符合筛选条件的高质量期刊论文。
 
-## Compliance Note
+## 诊断摘要
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 211
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 211
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-06-09T04:57:02Z
+- until_date: 2026-09-07T04:57:02Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-09-07T04:57:02Z
+- per_query: 8
+- candidate_pool_size: 211
+- after_hard_filter_count: 210
+- after_topic_filter_count: 52
+- after_score_filter_count: 2
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 52
+- matched_topics_distribution: {'academic_publishing': 12, 'technology_frontier': 23, 'management_transfer': 20, 'transferable_management_communication': 4}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 209
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 159
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 1
+- blocked_by_future_date_count: 0
+
+### Top Uncategorized Records
+
+title | journal | source_api
+--- | --- | ---
+Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar
+Murillo, E. (2025). Personaje secundario. La oscura trastienda de la edición. Madrid: Trama Editorial, 544 pp. ISBN 979-13-991122-0-7. https://tramaeditorial.es/producto/personaje-secundario/ | Publishing Research Quarterly | openalex
+Claiming Territorial Rights: Peter Carey’s Novels in a Global Literary Marketplace | Publishing Research Quarterly | openalex
+Prizing an Unpublished Manuscript: The Novel Prize, Editorial Consecration, and Jessica Au’s Cold Enough for Snow | Publishing Research Quarterly | openalex
+“Mean and Nasty Ants”: The Social, Affective, and Material Dimensions of Becoming a Reader | Publishing Research Quarterly | openalex
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
+Mapping of AI Footprints in Scholarly Publications | Journal of Scholarly Publishing | crossref+openalex | academic_publishing | 51 | blocked by score threshold
+Referencing Styles—A Never-Ending Demand for Uniform Journal Requirements | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+Murillo, E. (2025). Personaje secundario. La oscura trastienda de la edición. Madrid: Trama Editorial, 544 pp. ISBN 979-13-991122-0-7. https://tramaeditorial.es/producto/personaje-secundario/ | Publishing Research Quarterly | openalex | missing | 0 | uncategorized
+Claiming Territorial Rights: Peter Carey’s Novels in a Global Literary Marketplace | Publishing Research Quarterly | openalex | missing | 43 | uncategorized
