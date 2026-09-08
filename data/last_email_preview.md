@@ -1,74 +1,36 @@
-# Literature Alert - weekly - 2026-09-07
+# Literature Alert - daily - 2026-09-08
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 1
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-09-07T05:52:21Z
-- 检索起点 since_date: 2026-03-11T05:52:21Z
-- 检索截止 until_date: 2026-09-07T05:52:21Z
-- 时间窗口策略: lookback_days
-- 候选文献数: 219
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 本次运行时间: 2026-09-08T04:53:08Z
+- 检索起点 since_date: 2026-06-10T04:53:08Z
+- 检索截止 until_date: 2026-09-08T04:53:08Z
+- 时间窗口策略: fallback_backfill_days
+- 候选文献数: 211
+- 最终推送数: 1
+- selected_topic_distribution: {'management_transfer': 1, 'transferable_management_communication': 1, 'technology_frontier': 1}
+- selected_journal_distribution: {'Information & Management': 1}
 
-## 暂无符合条件的文献
+## 1. When Does Generative AI Adoption Pay Off? Ethical Governance as a Dynamic Capability in SMEs
 
-本周暂无符合筛选条件的高质量期刊论文。
+- 标题: When Does Generative AI Adoption Pay Off? Ethical Governance as a Dynamic Capability in SMEs
+- 作者: Tahereh Hasani
+- 年份: 2026
+- 期刊或来源: Information & Management
+- DOI: 10.1016/j.im.2026.104436
+- URL: https://openalex.org/W7208831456
+- 摘要: Generative AI (GenAI) offers substantial innovation opportunities for small and medium-sized enterprises (SMEs), yet its performance benefits vary considerably across firms. Drawing on the resource-based view (RBV) and dynamic capabilities perspective, this study theorizes ethical AI governance as a capability bundle—comprising transparency/explainability (TE), fairness/bias control (FB), privacy/data protection (PD), and accountability/responsibility (ACCT)—that conditions the innovation payoff from GenAI adoption. Using 218 usable manager responses from Canadian SMEs, we test the proposed model using covariance-based structural equation modeling in AMOS 22 and examine moderation through multigroup analysis with measurement-invariance checks. The results show that GenAI adoption is positively associated with innovation performance, while TE, PD, and ACCT significantly strengthen this relationship. In contrast, FB exhibits a significant negative moderating effect, a pattern consistent with a short-run maturity-stage trade-off in which overly rigid or poorly integrated fairness controls may slow early experimentation in resource-constrained SMEs, even though fairness assurance remains essential for responsible scaling. The findings also reveal asymmetric adoption drivers: green-innovation orientation is the strongest positive driver, whereas carbon-footprint pressure and economic disruption are negatively associated with adoption. Higher innovation performance, in turn, is positively associated with adaptability and resilience, operational efficiency, and revenue growth. Overall, the study reframes ethical AI governance from compliance overhead to a dynamic capability and identifies governance-related boundary conditions that help explain when GenAI adoption is associated with stronger innovation performance and downstream firm outcomes in SMEs.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority A with score 78; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: A (score: 78)
+- Matched topics: management_transfer, transferable_management_communication, technology_frontier
+- Category: digital_publishing
 
-## 诊断摘要
+## Compliance Note
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 218
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 219
-- time_window_strategy: lookback_days
-- since_date: 2026-03-11T05:52:21Z
-- until_date: 2026-09-07T05:52:21Z
-- fallback_backfill_days: 
-- current_run_started_at: 2026-09-07T05:52:21Z
-- per_query: 8
-- candidate_pool_size: 219
-- after_hard_filter_count: 217
-- after_topic_filter_count: 54
-- after_score_filter_count: 2
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 20
-- max_records: 30
-- matched_topics_count: 54
-- matched_topics_distribution: {'academic_publishing': 12, 'technology_frontier': 24, 'management_transfer': 20, 'transferable_management_communication': 4, 'digital_publishing': 1}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 0
-- blocked_by_score_threshold_count: 217
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 165
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 2
-- blocked_by_future_date_count: 0
-
-### Top Uncategorized Records
-
-title | journal | source_api
---- | --- | ---
-Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar
-Murillo, E. (2025). Personaje secundario. La oscura trastienda de la edición. Madrid: Trama Editorial, 544 pp. ISBN 979-13-991122-0-7. https://tramaeditorial.es/producto/personaje-secundario/ | Publishing Research Quarterly | openalex
-Claiming Territorial Rights: Peter Carey’s Novels in a Global Literary Marketplace | Publishing Research Quarterly | openalex
-Prizing an Unpublished Manuscript: The Novel Prize, Editorial Consecration, and Jessica Au’s Cold Enough for Snow | Publishing Research Quarterly | openalex
-“Mean and Nasty Ants”: The Social, Affective, and Material Dimensions of Becoming a Reader | Publishing Research Quarterly | openalex
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Sustainability of Scholarly Labour in a Billion‐Dollar Publishing Industry | Learned Publishing | crossref+openalex | academic_publishing | 59 | blocked by score threshold
-‘Two Sides of the Same Coin’: A Multi‐Stakeholder Perspective on Discoverability and Promotionality in a Comparison of Scholar‐Authored vs. AI ‐Generated Keywords From the Chinese Social Sciences | Learned Publishing | crossref+openalex | technology_frontier | 67 | blocked by score threshold
-Are AI ‐Empowered Early Career Researchers Proving To Be the Harbingers of Change? | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 59 | blocked by score threshold
-Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
-If You Really Want to Know How AI Is Changing Peer Review Talk to Early Career Researchers | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 67 | blocked by score threshold
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
