@@ -1,35 +1,35 @@
-# Literature Alert - daily - 2026-09-08
+# Literature Alert - daily - 2026-09-09
 
 ## Summary
 
 - Items selected: 1
 - Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-09-08T04:53:08Z
-- 检索起点 since_date: 2026-06-10T04:53:08Z
-- 检索截止 until_date: 2026-09-08T04:53:08Z
+- 本次运行时间: 2026-09-09T04:54:32Z
+- 检索起点 since_date: 2026-06-11T04:54:32Z
+- 检索截止 until_date: 2026-09-09T04:54:32Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 211
 - 最终推送数: 1
-- selected_topic_distribution: {'management_transfer': 1, 'transferable_management_communication': 1, 'technology_frontier': 1}
-- selected_journal_distribution: {'Information & Management': 1}
+- selected_topic_distribution: {'technology_frontier': 1}
+- selected_journal_distribution: {'Information Services & Use': 1}
 
-## 1. When Does Generative AI Adoption Pay Off? Ethical Governance as a Dynamic Capability in SMEs
+## 1. Generative AI and adaptive systems for customising help-seeking scaffolds: A systematic review
 
-- 标题: When Does Generative AI Adoption Pay Off? Ethical Governance as a Dynamic Capability in SMEs
-- 作者: Tahereh Hasani
+- 标题: Generative AI and adaptive systems for customising help-seeking scaffolds: A systematic review
+- 作者: Jecha Jecha, Chimaobi Charles Igwean, Anum Banaras, Yu Liang, Faustin M. Mwalyego
 - 年份: 2026
-- 期刊或来源: Information & Management
-- DOI: 10.1016/j.im.2026.104436
-- URL: https://openalex.org/W7208831456
-- 摘要: Generative AI (GenAI) offers substantial innovation opportunities for small and medium-sized enterprises (SMEs), yet its performance benefits vary considerably across firms. Drawing on the resource-based view (RBV) and dynamic capabilities perspective, this study theorizes ethical AI governance as a capability bundle—comprising transparency/explainability (TE), fairness/bias control (FB), privacy/data protection (PD), and accountability/responsibility (ACCT)—that conditions the innovation payoff from GenAI adoption. Using 218 usable manager responses from Canadian SMEs, we test the proposed model using covariance-based structural equation modeling in AMOS 22 and examine moderation through multigroup analysis with measurement-invariance checks. The results show that GenAI adoption is positively associated with innovation performance, while TE, PD, and ACCT significantly strengthen this relationship. In contrast, FB exhibits a significant negative moderating effect, a pattern consistent with a short-run maturity-stage trade-off in which overly rigid or poorly integrated fairness controls may slow early experimentation in resource-constrained SMEs, even though fairness assurance remains essential for responsible scaling. The findings also reveal asymmetric adoption drivers: green-innovation orientation is the strongest positive driver, whereas carbon-footprint pressure and economic disruption are negatively associated with adoption. Higher innovation performance, in turn, is positively associated with adaptability and resilience, operational efficiency, and revenue growth. Overall, the study reframes ethical AI governance from compliance overhead to a dynamic capability and identifies governance-related boundary conditions that help explain when GenAI adoption is associated with stronger innovation performance and downstream firm outcomes in SMEs.
+- 期刊或来源: Information Services & Use
+- DOI: 10.1177/18758789261486037
+- URL: https://openalex.org/W7155061064
+- 摘要: Abstract Help-seeking is a central self-regulated learning (SRL) process; however, generic scaffolds often misalign with learners’ heterogeneous needs. This systematic review addresses the lack of consolidated evidence on how artificial intelligence (AI), including large language models (LLMs), customises help-seeking scaffolds, the effects thereof, and the methodological and ethical constraints. Guided by SRL theory, this review examined empirical studies on AI-driven customised help-seeking support, focusing on evidence availability, comparative impacts versus standard scaffolds, evaluation approaches, and reported gaps. Database searches (IEEE Xplore, Web of Science, ERIC, and ScienceDirect) conducted on 28 May 2025 yielded 3,576 records; blinded multi-reviewer screening in Rayyan following PRISMA procedures identified 31 eligible studies for narrative synthesis. Data extraction by three reviewers showed high raw agreement (87.3%) but low chance-corrected agreement (Cohen’s κ ≈ 0.05; Fleiss’ κ ≈ 0.17), resolved via structured adjudication and full consensus. The included interventions (2017–2025) ranged from rule-based intelligent tutoring and learning-analytics dashboards to LLM-based textbooks, writing feedback, laboratory guidance, and coding assistants, enabling conversational, intent-sensitive, on-demand scaffolding. Most studies reported improved academic performance and engagement, particularly for lower-performing or lower–prior knowledge learners, although null or mixed effects and inconsistent satisfaction outcomes were common. The recurrent limitations concerned sample scope, duration, measurement heterogeneity, usability, and risks related to hallucinations, bias, privacy, equity, and overreliance. The review concludes that although AI-customised help-seeking scaffolds are promising, they are context-dependent and delineate methodological and design priorities to advance SRL-aligned, responsible AI support for help-seeking.
 - 引用量: 0
 - 数据来源: openalex
-- 推荐理由: priority A with score 78; matched topic management_transfer; citation count 0
-- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
-- 阅读优先级: A (score: 78)
-- Matched topics: management_transfer, transferable_management_communication, technology_frontier
-- Category: digital_publishing
+- 推荐理由: priority B with score 63; matched topic technology_frontier; citation count 0
+- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
+- 阅读优先级: B (score: 63)
+- Matched topics: technology_frontier
+- Category: academic_publishing
 
 ## Compliance Note
 
