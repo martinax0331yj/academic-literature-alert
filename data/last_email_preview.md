@@ -1,36 +1,74 @@
-# Literature Alert - daily - 2026-09-10
+# Literature Alert - daily - 2026-09-11
 
 ## Summary
 
-- Items selected: 1
-- Data sources: openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-09-10T04:56:14Z
-- 检索起点 since_date: 2026-06-12T04:56:14Z
-- 检索截止 until_date: 2026-09-10T04:56:14Z
+- 本次运行时间: 2026-09-11T04:53:07Z
+- 检索起点 since_date: 2026-06-13T04:53:07Z
+- 检索截止 until_date: 2026-09-11T04:53:07Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 210
-- 最终推送数: 1
-- selected_topic_distribution: {'management_transfer': 1}
-- selected_journal_distribution: {'Journal of Business Research': 1}
+- 候选文献数: 209
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. Organizational design for digital transformation: A systematic literature review
+## 暂无符合条件的文献
 
-- 标题: Organizational design for digital transformation: A systematic literature review
-- 作者: Tristan Thome, Marvin Hanisch, Jana Oehmichen, Pedro de Faria
-- 年份: 2026
-- 期刊或来源: Journal of Business Research
-- DOI: 10.1016/j.jbusres.2026.116508
-- URL: https://openalex.org/W7208832545
-- 摘要: Digital transformation has become a central topic in management research over the past decades. This systematic review of 109 studies from 2000 to 2025 clarifies the role of organizational design in digital transformation. Synthesizing insights from the literature, we identify eight organizational design dimensions and integrate them into a framework of three interdependent stages of digital transformation. The Align stage connects digital leadership, digital governance, and digital culture; the Execute stage mobilizes digital strategy, digital organization, as well as digital resources and capabilities; and the Transform stage establishes digital operating and business models. Our analysis further reveals a distinct tradeoff at each stage: balancing control and autonomy during alignment, stability and adaptability during execution, and optimization and reconfiguration during transformation. We build on these insights to develop a research agenda and derive implications for managerial practice.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 63; matched topic management_transfer; citation count 0
-- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
-- 阅读优先级: B (score: 63)
-- Matched topics: management_transfer
-- Category: digital_publishing
+暂无符合筛选条件的高质量期刊论文。
 
-## Compliance Note
+## 诊断摘要
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 209
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 209
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-06-13T04:53:07Z
+- until_date: 2026-09-11T04:53:07Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-09-11T04:53:07Z
+- per_query: 8
+- candidate_pool_size: 209
+- after_hard_filter_count: 206
+- after_topic_filter_count: 52
+- after_score_filter_count: 2
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 52
+- matched_topics_distribution: {'academic_publishing': 13, 'technology_frontier': 20, 'management_transfer': 21, 'digital_publishing': 1, 'game_and_interactive_publishing': 1, 'transferable_management_communication': 5}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 207
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 157
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 3
+- blocked_by_future_date_count: 0
+
+### Top Uncategorized Records
+
+title | journal | source_api
+--- | --- | ---
+Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar
+Murillo, E. (2025). Personaje secundario. La oscura trastienda de la edición. Madrid: Trama Editorial, 544 pp. ISBN 979-13-991122-0-7. https://tramaeditorial.es/producto/personaje-secundario/ | Publishing Research Quarterly | openalex
+Claiming Territorial Rights: Peter Carey’s Novels in a Global Literary Marketplace | Publishing Research Quarterly | openalex
+Prizing an Unpublished Manuscript: The Novel Prize, Editorial Consecration, and Jessica Au’s Cold Enough for Snow | Publishing Research Quarterly | openalex
+“Mean and Nasty Ants”: The Social, Affective, and Material Dimensions of Becoming a Reader | Publishing Research Quarterly | openalex
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
+Mapping of AI Footprints in Scholarly Publications | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+Referencing Styles—A Never-Ending Demand for Uniform Journal Requirements | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+Murillo, E. (2025). Personaje secundario. La oscura trastienda de la edición. Madrid: Trama Editorial, 544 pp. ISBN 979-13-991122-0-7. https://tramaeditorial.es/producto/personaje-secundario/ | Publishing Research Quarterly | openalex | missing | 0 | uncategorized
+Claiming Territorial Rights: Peter Carey’s Novels in a Global Literary Marketplace | Publishing Research Quarterly | openalex | missing | 43 | uncategorized
