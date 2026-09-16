@@ -1,15 +1,15 @@
-# Literature Alert - daily - 2026-09-15
+# Literature Alert - daily - 2026-09-16
 
 ## Summary
 
 - Items selected: 0
 - Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-09-15T05:04:29Z
-- 检索起点 since_date: 2026-06-17T05:04:29Z
-- 检索截止 until_date: 2026-09-15T05:04:29Z
+- 本次运行时间: 2026-09-16T04:59:23Z
+- 检索起点 since_date: 2026-06-18T04:59:23Z
+- 检索截止 until_date: 2026-09-16T04:59:23Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 215
+- 候选文献数: 214
 - 最终推送数: 0
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
@@ -23,31 +23,31 @@
 - loaded_journal_zh_count: 40
 - loaded_journal_en_count: 54
 - journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 215
+- fetched_from_openalex_journal_count: 214
 - fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 215
+- candidate_total_before_filter: 214
 - time_window_strategy: fallback_backfill_days
-- since_date: 2026-06-17T05:04:29Z
-- until_date: 2026-09-15T05:04:29Z
+- since_date: 2026-06-18T04:59:23Z
+- until_date: 2026-09-16T04:59:23Z
 - fallback_backfill_days: 90
-- current_run_started_at: 2026-09-15T05:04:29Z
+- current_run_started_at: 2026-09-16T04:59:23Z
 - per_query: 8
-- candidate_pool_size: 215
-- after_hard_filter_count: 212
-- after_topic_filter_count: 54
+- candidate_pool_size: 214
+- after_hard_filter_count: 211
+- after_topic_filter_count: 50
 - after_score_filter_count: 2
 - after_duplicate_filter_count: 0
 - final_email_record_count: 0
 - target_records: 10
 - max_records: 12
-- matched_topics_count: 54
-- matched_topics_distribution: {'academic_publishing': 13, 'technology_frontier': 21, 'management_transfer': 21, 'digital_publishing': 2, 'game_and_interactive_publishing': 1, 'transferable_management_communication': 4}
+- matched_topics_count: 50
+- matched_topics_distribution: {'academic_publishing': 12, 'technology_frontier': 18, 'management_transfer': 21, 'digital_publishing': 2, 'game_and_interactive_publishing': 1, 'transferable_management_communication': 4}
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
 - duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 213
+- blocked_by_score_threshold_count: 212
 - blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 161
+- blocked_by_uncategorized_count: 164
 - blocked_by_crossref_only_count: 0
 - blocked_by_document_type_count: 0
 - blocked_by_exclusion_rules_count: 3
