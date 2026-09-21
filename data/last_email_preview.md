@@ -1,13 +1,13 @@
-# Literature Alert - daily - 2026-09-20
+# Literature Alert - daily - 2026-09-21
 
 ## Summary
 
 - Items selected: 0
 - Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-09-20T05:03:36Z
-- 检索起点 since_date: 2026-06-22T05:03:36Z
-- 检索截止 until_date: 2026-09-20T05:03:36Z
+- 本次运行时间: 2026-09-21T05:09:12Z
+- 检索起点 since_date: 2026-06-23T05:09:12Z
+- 检索截止 until_date: 2026-09-21T05:09:12Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 214
 - 最终推送数: 0
@@ -27,27 +27,27 @@
 - fetched_from_semantic_scholar_count: 0
 - candidate_total_before_filter: 214
 - time_window_strategy: fallback_backfill_days
-- since_date: 2026-06-22T05:03:36Z
-- until_date: 2026-09-20T05:03:36Z
+- since_date: 2026-06-23T05:09:12Z
+- until_date: 2026-09-21T05:09:12Z
 - fallback_backfill_days: 90
-- current_run_started_at: 2026-09-20T05:03:36Z
+- current_run_started_at: 2026-09-21T05:09:12Z
 - per_query: 8
 - candidate_pool_size: 214
 - after_hard_filter_count: 212
-- after_topic_filter_count: 49
+- after_topic_filter_count: 50
 - after_score_filter_count: 1
 - after_duplicate_filter_count: 0
 - final_email_record_count: 0
 - target_records: 10
 - max_records: 12
-- matched_topics_count: 49
-- matched_topics_distribution: {'academic_publishing': 11, 'technology_frontier': 20, 'management_transfer': 19, 'publishing_management': 1, 'transferable_management_communication': 4, 'digital_publishing': 2}
+- matched_topics_count: 50
+- matched_topics_distribution: {'academic_publishing': 11, 'technology_frontier': 21, 'management_transfer': 20, 'publishing_management': 1, 'transferable_management_communication': 4, 'digital_publishing': 1}
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
 - duplicate_or_already_pushed_count: 12
 - blocked_by_score_threshold_count: 213
 - blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 165
+- blocked_by_uncategorized_count: 164
 - blocked_by_crossref_only_count: 0
 - blocked_by_document_type_count: 0
 - blocked_by_exclusion_rules_count: 2
