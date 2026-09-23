@@ -1,74 +1,36 @@
-# Literature Alert - daily - 2026-09-22
+# Literature Alert - daily - 2026-09-23
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 1
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-09-22T05:10:22Z
-- 检索起点 since_date: 2026-06-24T05:10:22Z
-- 检索截止 until_date: 2026-09-22T05:10:22Z
+- 本次运行时间: 2026-09-23T04:54:54Z
+- 检索起点 since_date: 2026-06-25T04:54:54Z
+- 检索截止 until_date: 2026-09-23T04:54:54Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 214
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 候选文献数: 215
+- 最终推送数: 1
+- selected_topic_distribution: {'management_transfer': 1}
+- selected_journal_distribution: {'Technovation': 1}
 
-## 暂无符合条件的文献
+## 1. How digital platform capability builds competitive advantage in platform firms: The mediating role of intrapreneurship and user value co-creation
 
-暂无符合筛选条件的高质量期刊论文。
+- 标题: How digital platform capability builds competitive advantage in platform firms: The mediating role of intrapreneurship and user value co-creation
+- 作者: Yue Liu, Xiumei Zhu, Shengliang Deng
+- 年份: 2026
+- 期刊或来源: Technovation
+- DOI: 10.1016/j.technovation.2026.103727
+- URL: https://openalex.org/W7213987157
+- 摘要: This study examines the relationship between digital platform capability (DPC) and competitive advantage (CA) in platform companies, focusing on the mediating roles of intrapreneurship and user value co-creation. Using a two-wave, time-lagged survey of 236 platform firms, we tested our hypotheses with polynomial regression and response surface analysis. The results indicate that DPC, particularly integration and reconfiguration capabilities, is positively associated with CA. Moreover, both internal and external value co-creation factors, namely intrapreneurship and user value co-creation, significantly mediate this relationship. Our findings also suggest that CA is enhanced when intrapreneurship and user value co-creation are balanced, but declines when their development is uneven. These insights deepen our understanding of how platform companies can align internal and external value co-creation processes to leverage DPC for sustainable competitive advantage.
+- 引用量: 0
+- 数据来源: openalex
+- 推荐理由: priority B with score 62; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 62)
+- Matched topics: management_transfer
+- Category: digital_publishing
 
-## 诊断摘要
+## Compliance Note
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 214
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 214
-- time_window_strategy: fallback_backfill_days
-- since_date: 2026-06-24T05:10:22Z
-- until_date: 2026-09-22T05:10:22Z
-- fallback_backfill_days: 90
-- current_run_started_at: 2026-09-22T05:10:22Z
-- per_query: 8
-- candidate_pool_size: 214
-- after_hard_filter_count: 212
-- after_topic_filter_count: 51
-- after_score_filter_count: 1
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 10
-- max_records: 12
-- matched_topics_count: 51
-- matched_topics_distribution: {'academic_publishing': 11, 'technology_frontier': 22, 'management_transfer': 20, 'publishing_management': 1, 'transferable_management_communication': 4, 'digital_publishing': 1}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 213
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 163
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 2
-- blocked_by_future_date_count: 0
-
-### Top Uncategorized Records
-
-title | journal | source_api
---- | --- | ---
-Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar
-Murillo, E. (2025). Personaje secundario. La oscura trastienda de la edición. Madrid: Trama Editorial, 544 pp. ISBN 979-13-991122-0-7. https://tramaeditorial.es/producto/personaje-secundario/ | Publishing Research Quarterly | openalex
-Claiming Territorial Rights: Peter Carey’s Novels in a Global Literary Marketplace | Publishing Research Quarterly | openalex
-Prizing an Unpublished Manuscript: The Novel Prize, Editorial Consecration, and Jessica Au’s Cold Enough for Snow | Publishing Research Quarterly | openalex
-“Mean and Nasty Ants”: The Social, Affective, and Material Dimensions of Becoming a Reader | Publishing Research Quarterly | openalex
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Correction to “Visible as Journals, Invisible as Publishers: Limitations of OpenAlex for Analysing University Publishing” | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
-Mapping of AI Footprints in Scholarly Publications | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
-Referencing Styles—A Never-Ending Demand for Uniform Journal Requirements | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
-Murillo, E. (2025). Personaje secundario. La oscura trastienda de la edición. Madrid: Trama Editorial, 544 pp. ISBN 979-13-991122-0-7. https://tramaeditorial.es/producto/personaje-secundario/ | Publishing Research Quarterly | openalex | missing | 0 | uncategorized
-Claiming Territorial Rights: Peter Carey’s Novels in a Global Literary Marketplace | Publishing Research Quarterly | openalex | missing | 43 | uncategorized
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
