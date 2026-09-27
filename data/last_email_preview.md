@@ -1,53 +1,74 @@
-# Literature Alert - daily - 2026-09-26
+# Literature Alert - daily - 2026-09-27
 
 ## Summary
 
-- Items selected: 2
-- Data sources: openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-09-26T05:11:11Z
-- 检索起点 since_date: 2026-06-28T05:11:11Z
-- 检索截止 until_date: 2026-09-26T05:11:11Z
+- 本次运行时间: 2026-09-27T05:28:07Z
+- 检索起点 since_date: 2026-06-29T05:28:07Z
+- 检索截止 until_date: 2026-09-27T05:28:07Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 216
-- 最终推送数: 2
-- selected_topic_distribution: {'transferable_management_communication': 1, 'management_transfer': 2, 'technology_frontier': 1}
-- selected_journal_distribution: {'Aslib Journal of Information Management': 1, 'Strategic Management Journal': 1}
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. User engagement behaviours with identity-disclosed social bots on social media: the role of perceived human–machine differences
+## 暂无符合条件的文献
 
-- 标题: User engagement behaviours with identity-disclosed social bots on social media: the role of perceived human–machine differences
-- 作者: Hao Xu, Shaobo Liang, Jing Dong, Qingxuan Cheng
-- 年份: 2026
-- 期刊或来源: Aslib Journal of Information Management
-- DOI: 10.1108/ajim-04-2026-0358
-- URL: https://openalex.org/W7214204369
-- 摘要: Purpose This study examines how users interpret identity-disclosed social bots on social media, how perceived human–machine differences shape psychological response orientations and how these orientations are enacted through visible engagement behaviours. Design/methodology/approach Drawing on a prior online experiment in a simulated Weibo comment environment, the study selected 30 cases through stratified random sampling and reconstructed them as simulation-based qualitative accounts using GPT-4. These accounts were analysed using a large language model (LLM)-enhanced grounded theory procedure involving open, axial and selective coding. The study is framed as a mechanism-building reconstruction rather than a substitute for direct participant testimony. Findings Analysis of the reconstructed accounts identified two broad types of perceived human–machine differences: content features and behaviour patterns. These reconstructed perceptions were associated with emotion- and trust-based response orientations, which were organised into four bot-oriented patterns: emotion connection avoidance, strategic-functional interaction, cautiously shallow interaction and exploratory evaluation. A four-stage model was developed comprising encounter, human–machine difference perception, behaviour responses and behaviour manifestations. The model further suggests that the same visible acts, such as liking or replying, may carry different meanings in human–human and human–bot interaction. Originality/value The study shifts social bot research from detection to post-recognition interpretation. It distinguishes response orientations from platform-visible engagement and proposes emotion and trust as linked mechanisms. Methodologically, it shows how empirically anchored LLM-simulated interviews can support LLM-enhanced grounded theory when behavioural records exist, but direct follow-up is unavailable.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 62; matched topic transferable_management_communication; citation count 0
-- 与出版研究的关系: Provides transferable theories or methods for publishing, media management, communication, or cultural industries.
-- 阅读优先级: B (score: 62)
-- Matched topics: transferable_management_communication, management_transfer, technology_frontier
-- Category: academic_publishing
+暂无符合筛选条件的高质量期刊论文。
 
-## 2. Platform development in incumbent firms: The interplay of data and actor interests in adding platforms to existing businesses
+## 诊断摘要
 
-- 标题: Platform development in incumbent firms: The interplay of data and actor interests in adding platforms to existing businesses
-- 作者: Jack Lewis Fraser, Elizabeth J. Altman, Pınar Özcan
-- 年份: 2026
-- 期刊或来源: Strategic Management Journal
-- DOI: 10.1002/smj.70124
-- URL: https://openalex.org/W7214172299
-- 摘要: Abstract Research Summary Despite growing interest in platform transitions, limited research examines how firms navigate challenges of building platform businesses alongside existing products. Through a longitudinal case study of a financial services firm launching a platform, we develop a process model revealing how data bottlenecks shape platform development. These bottlenecks arise from the interplay of technological limitations and control tensions over data aggregation, sharing, and usage. We identify five sequential bottlenecks, where resolving one reconfigures constraints, giving rise to the next. We theorize how data heterogeneity, variation in strategic sensitivity, and actors' absorptive capacity create opportunities for platform sponsors to capture value without competing with complementors. We extend resource dependency theory by showing how peripheral units overcome power imbalances by demonstrating value creation potential with limited data. Managerial Summary When established firms launch platforms alongside existing product businesses, they face significant data‐related obstacles. Drawing on a four‐year study of a financial services firm building a platform connecting SMEs with lenders, we show how firms must navigate challenges in collecting data from internal units and customers, making incompatible data sources work together, and persuading partners to share and use data in new ways. We find that these obstacles emerge in sequence, where resolving one creates the conditions for the next. We also find that not all data is equally useful to all partners, and that these differences can open market segments the platform sponsor can serve without competing with its own partners. Managers can maintain momentum by combining short‐term data workarounds with longer‐term structural solutions.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 62; matched topic management_transfer; citation count 0
-- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
-- 阅读优先级: B (score: 62)
-- Matched topics: management_transfer
-- Category: digital_publishing
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 216
+- fetched_from_semantic_scholar_count: 20
+- candidate_total_before_filter: 216
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-06-29T05:28:07Z
+- until_date: 2026-09-27T05:28:07Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-09-27T05:28:07Z
+- per_query: 8
+- candidate_pool_size: 216
+- after_hard_filter_count: 215
+- after_topic_filter_count: 48
+- after_score_filter_count: 0
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 48
+- matched_topics_distribution: {'academic_publishing': 9, 'technology_frontier': 22, 'management_transfer': 21, 'transferable_management_communication': 4, 'publishing_management': 1}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 216
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 168
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 1
+- blocked_by_future_date_count: 0
 
-## Compliance Note
+### Top Uncategorized Records
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+title | journal | source_api
+--- | --- | ---
+The Stratified Geography of Authorship: A U‐Shaped Relationship Between Journal Influence Tier and Author‐Country Concentration in Sociology | Learned Publishing | crossref+openalex+semantic_scholar
+Defining Macrostructural Editing Processes in the Australian Publishing Industry | Publishing Research Quarterly | openalex
+The Discourse of Quality, Prestige, and Impact in Academic Publishing: Analyzing Manifestations of Resistance and Dependence in Southeast Asian Communication and Media Journals | Publishing Research Quarterly | openalex
+Murillo, E. (2025). Personaje secundario. La oscura trastienda de la edición. Madrid: Trama Editorial, 544 pp. ISBN 979-13-991122-0-7. https://tramaeditorial.es/producto/personaje-secundario/ | Publishing Research Quarterly | openalex
+Claiming Territorial Rights: Peter Carey’s Novels in a Global Literary Marketplace | Publishing Research Quarterly | openalex
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+The Stratified Geography of Authorship: A U‐Shaped Relationship Between Journal Influence Tier and Author‐Country Concentration in Sociology | Learned Publishing | crossref+openalex+semantic_scholar | missing | 43 | uncategorized
+Academic Journal Impact Diffusion Framework Based on Diffusion of Innovations Theory: Integrating Entropy–AHP and ELECTRE Methods | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 47 | blocked by score threshold
+Post-Publication Discussions in (Mathematics) Education Research: Towards Broader Post‑Publication Engagement | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+Mapping of AI Footprints in Scholarly Publications | Journal of Scholarly Publishing | openalex | academic_publishing | 51 | blocked by score threshold
+Defining Macrostructural Editing Processes in the Australian Publishing Industry | Publishing Research Quarterly | openalex | missing | 43 | uncategorized
