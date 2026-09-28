@@ -1,13 +1,13 @@
-# Literature Alert - daily - 2026-09-27
+# Literature Alert - daily - 2026-09-28
 
 ## Summary
 
 - Items selected: 0
 - Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-09-27T05:28:07Z
-- 检索起点 since_date: 2026-06-29T05:28:07Z
-- 检索截止 until_date: 2026-09-27T05:28:07Z
+- 本次运行时间: 2026-09-28T05:36:08Z
+- 检索起点 since_date: 2026-06-30T05:36:08Z
+- 检索截止 until_date: 2026-09-28T05:36:08Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 216
 - 最终推送数: 0
@@ -24,30 +24,30 @@
 - loaded_journal_en_count: 54
 - journal_whitelist_discovery_count: 94
 - fetched_from_openalex_journal_count: 216
-- fetched_from_semantic_scholar_count: 20
+- fetched_from_semantic_scholar_count: 0
 - candidate_total_before_filter: 216
 - time_window_strategy: fallback_backfill_days
-- since_date: 2026-06-29T05:28:07Z
-- until_date: 2026-09-27T05:28:07Z
+- since_date: 2026-06-30T05:36:08Z
+- until_date: 2026-09-28T05:36:08Z
 - fallback_backfill_days: 90
-- current_run_started_at: 2026-09-27T05:28:07Z
+- current_run_started_at: 2026-09-28T05:36:08Z
 - per_query: 8
 - candidate_pool_size: 216
 - after_hard_filter_count: 215
-- after_topic_filter_count: 48
+- after_topic_filter_count: 50
 - after_score_filter_count: 0
 - after_duplicate_filter_count: 0
 - final_email_record_count: 0
 - target_records: 10
 - max_records: 12
-- matched_topics_count: 48
-- matched_topics_distribution: {'academic_publishing': 9, 'technology_frontier': 22, 'management_transfer': 21, 'transferable_management_communication': 4, 'publishing_management': 1}
+- matched_topics_count: 50
+- matched_topics_distribution: {'academic_publishing': 9, 'technology_frontier': 23, 'management_transfer': 22, 'transferable_management_communication': 4, 'publishing_management': 1}
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
 - duplicate_or_already_pushed_count: 12
 - blocked_by_score_threshold_count: 216
 - blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 168
+- blocked_by_uncategorized_count: 166
 - blocked_by_crossref_only_count: 0
 - blocked_by_document_type_count: 0
 - blocked_by_exclusion_rules_count: 1
