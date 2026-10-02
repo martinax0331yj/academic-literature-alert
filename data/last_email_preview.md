@@ -1,36 +1,74 @@
-# Literature Alert - daily - 2026-10-01
+# Literature Alert - daily - 2026-10-02
 
 ## Summary
 
-- Items selected: 1
-- Data sources: openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-10-01T06:11:14Z
-- 检索起点 since_date: 2026-07-03T06:11:14Z
-- 检索截止 until_date: 2026-10-01T06:11:14Z
+- 本次运行时间: 2026-10-02T05:54:29Z
+- 检索起点 since_date: 2026-07-04T05:54:29Z
+- 检索截止 until_date: 2026-10-02T05:54:29Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 216
-- 最终推送数: 1
-- selected_topic_distribution: {'management_transfer': 1}
-- selected_journal_distribution: {'Strategic Management Journal': 1}
+- 候选文献数: 213
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. Designing for unanticipated uses: How product attributes shape community‐led exaptation
+## 暂无符合条件的文献
 
-- 标题: Designing for unanticipated uses: How product attributes shape community‐led exaptation
-- 作者: Shi-Ying Lim, Tian Heong Chan
-- 年份: 2026
-- 期刊或来源: Strategic Management Journal
-- DOI: 10.1002/smj.70132
-- URL: https://openalex.org/W7214614354
-- 摘要: Abstract Research Summary Users often discover new uses for products that firms may later commercialize, which we call community‐led exaptation. We examine how product attributes shape users' discovery of new functions versus new functionalities. Using 1925 IKEA product hacks, we find that modularity increases the likelihood of new functions. This effect strengthens when product components are compatible across product lines but weakens when esthetic product variants exist. Visual simplicity, conversely, increases the likelihood of new functionalities. These findings suggest that firms can structure the opportunity space for discovery through product design. Exploratory analysis of archival data and interviews further illustrates how IKEA responds to these discoveries. We contribute to exaptation, user innovation, and design research by showing how product attributes shape the types of new uses communities discover. Managerial Summary How can firms design products to facilitate community‐led exaptation? We find that product attributes can shape what users discover. Modular products enable users to find new functions (i.e., applications), while visually simple products enable users to find new functionalities (i.e., new product capabilities). Firms' decisions to offer components that are compatible across product lines and esthetic product variants can influence the likelihood of new functions. Additionally, firms can capitalize on these new uses by showcasing promising community‐discovered functions on official channels or incorporate them as complements to existing product lines. However, functional modifications can raise safety concerns and may require additional development. Firms should therefore design for intended use, and for the kinds of new uses they are willing to seed and commercialize.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 62; matched topic management_transfer; citation count 0
-- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
-- 阅读优先级: B (score: 62)
-- Matched topics: management_transfer
-- Category: digital_publishing
+暂无符合筛选条件的高质量期刊论文。
 
-## Compliance Note
+## 诊断摘要
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 213
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 213
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-07-04T05:54:29Z
+- until_date: 2026-10-02T05:54:29Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-10-02T05:54:29Z
+- per_query: 8
+- candidate_pool_size: 213
+- after_hard_filter_count: 211
+- after_topic_filter_count: 46
+- after_score_filter_count: 0
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 46
+- matched_topics_distribution: {'academic_publishing': 10, 'technology_frontier': 17, 'management_transfer': 22, 'transferable_management_communication': 5, 'publishing_management': 1, 'digital_publishing': 1}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 213
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 167
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 2
+- blocked_by_future_date_count: 0
+
+### Top Uncategorized Records
+
+title | journal | source_api
+--- | --- | ---
+The Stratified Geography of Authorship: A U‐Shaped Relationship Between Journal Influence Tier and Author‐Country Concentration in Sociology | Learned Publishing | crossref+openalex+semantic_scholar
+Defining Macrostructural Editing Processes in the Australian Publishing Industry | Publishing Research Quarterly | openalex
+The Discourse of Quality, Prestige, and Impact in Academic Publishing: Analyzing Manifestations of Resistance and Dependence in Southeast Asian Communication and Media Journals | Publishing Research Quarterly | openalex
+Murillo, E. (2025). Personaje secundario. La oscura trastienda de la edición. Madrid: Trama Editorial, 544 pp. ISBN 979-13-991122-0-7. https://tramaeditorial.es/producto/personaje-secundario/ | Publishing Research Quarterly | openalex
+Claiming Territorial Rights: Peter Carey’s Novels in a Global Literary Marketplace | Publishing Research Quarterly | openalex
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Reject Early, Advance Faster: The Case for Timely Editorial Triage in Scholarly Publishing | Learned Publishing | crossref+openalex | academic_publishing | 51 | blocked by score threshold
+The Stratified Geography of Authorship: A U‐Shaped Relationship Between Journal Influence Tier and Author‐Country Concentration in Sociology | Learned Publishing | crossref+openalex+semantic_scholar | missing | 43 | uncategorized
+Academic Journal Impact Diffusion Framework Based on Diffusion of Innovations Theory: Integrating Entropy–AHP and ELECTRE Methods | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 47 | blocked by score threshold
+Post-Publication Discussions in (Mathematics) Education Research: Towards Broader Post‑Publication Engagement | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+Mapping of AI Footprints in Scholarly Publications | Journal of Scholarly Publishing | openalex | academic_publishing | 51 | blocked by score threshold
