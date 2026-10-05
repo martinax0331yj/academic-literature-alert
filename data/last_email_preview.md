@@ -1,15 +1,15 @@
-# Literature Alert - daily - 2026-10-04
+# Literature Alert - daily - 2026-10-05
 
 ## Summary
 
 - Items selected: 0
 - Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-10-04T06:04:05Z
-- 检索起点 since_date: 2026-07-06T06:04:05Z
-- 检索截止 until_date: 2026-10-04T06:04:05Z
+- 本次运行时间: 2026-10-05T05:56:31Z
+- 检索起点 since_date: 2026-07-07T05:56:31Z
+- 检索截止 until_date: 2026-10-05T05:56:31Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 208
+- 候选文献数: 213
 - 最终推送数: 0
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
@@ -23,31 +23,31 @@
 - loaded_journal_zh_count: 40
 - loaded_journal_en_count: 54
 - journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 208
+- fetched_from_openalex_journal_count: 213
 - fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 208
+- candidate_total_before_filter: 213
 - time_window_strategy: fallback_backfill_days
-- since_date: 2026-07-06T06:04:05Z
-- until_date: 2026-10-04T06:04:05Z
+- since_date: 2026-07-07T05:56:31Z
+- until_date: 2026-10-05T05:56:31Z
 - fallback_backfill_days: 90
-- current_run_started_at: 2026-10-04T06:04:05Z
+- current_run_started_at: 2026-10-05T05:56:31Z
 - per_query: 8
-- candidate_pool_size: 208
-- after_hard_filter_count: 206
-- after_topic_filter_count: 43
+- candidate_pool_size: 213
+- after_hard_filter_count: 211
+- after_topic_filter_count: 47
 - after_score_filter_count: 0
 - after_duplicate_filter_count: 0
 - final_email_record_count: 0
 - target_records: 10
 - max_records: 12
-- matched_topics_count: 43
-- matched_topics_distribution: {'academic_publishing': 9, 'technology_frontier': 17, 'management_transfer': 19, 'transferable_management_communication': 5, 'publishing_management': 1, 'digital_publishing': 1}
+- matched_topics_count: 47
+- matched_topics_distribution: {'academic_publishing': 9, 'technology_frontier': 18, 'management_transfer': 22, 'transferable_management_communication': 5, 'publishing_management': 1, 'digital_publishing': 1}
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
 - duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 208
+- blocked_by_score_threshold_count: 213
 - blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 165
+- blocked_by_uncategorized_count: 166
 - blocked_by_crossref_only_count: 0
 - blocked_by_document_type_count: 0
 - blocked_by_exclusion_rules_count: 2
