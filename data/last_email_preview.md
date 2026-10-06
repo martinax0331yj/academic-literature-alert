@@ -1,63 +1,63 @@
-# Literature Alert - weekly - 2026-10-05
+# Literature Alert - daily - 2026-10-06
 
 ## Summary
 
 - Items selected: 0
 - Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-10-05T06:43:39Z
-- 检索起点 since_date: 2026-04-08T06:43:39Z
-- 检索截止 until_date: 2026-10-05T06:43:39Z
-- 时间窗口策略: lookback_days
-- 候选文献数: 221
+- 本次运行时间: 2026-10-06T06:35:13Z
+- 检索起点 since_date: 2026-07-08T06:35:13Z
+- 检索截止 until_date: 2026-10-06T06:35:13Z
+- 时间窗口策略: fallback_backfill_days
+- 候选文献数: 213
 - 最终推送数: 0
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
 
 ## 暂无符合条件的文献
 
-本周暂无符合筛选条件的高质量期刊论文。
+暂无符合筛选条件的高质量期刊论文。
 
 ## 诊断摘要
 
 - loaded_journal_zh_count: 40
 - loaded_journal_en_count: 54
 - journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 219
+- fetched_from_openalex_journal_count: 213
 - fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 221
-- time_window_strategy: lookback_days
-- since_date: 2026-04-08T06:43:39Z
-- until_date: 2026-10-05T06:43:39Z
-- fallback_backfill_days: 
-- current_run_started_at: 2026-10-05T06:43:39Z
+- candidate_total_before_filter: 213
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-07-08T06:35:13Z
+- until_date: 2026-10-06T06:35:13Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-10-06T06:35:13Z
 - per_query: 8
-- candidate_pool_size: 221
-- after_hard_filter_count: 217
-- after_topic_filter_count: 51
+- candidate_pool_size: 213
+- after_hard_filter_count: 211
+- after_topic_filter_count: 46
 - after_score_filter_count: 0
 - after_duplicate_filter_count: 0
 - final_email_record_count: 0
-- target_records: 20
-- max_records: 30
-- matched_topics_count: 51
-- matched_topics_distribution: {'academic_publishing': 9, 'technology_frontier': 20, 'management_transfer': 22, 'transferable_management_communication': 5, 'publishing_management': 1, 'digital_publishing': 3}
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 46
+- matched_topics_distribution: {'academic_publishing': 9, 'technology_frontier': 17, 'management_transfer': 21, 'transferable_management_communication': 5, 'publishing_management': 1, 'digital_publishing': 1}
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 1
-- blocked_by_score_threshold_count: 221
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 213
 - blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 170
+- blocked_by_uncategorized_count: 167
 - blocked_by_crossref_only_count: 0
 - blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 4
+- blocked_by_exclusion_rules_count: 2
 - blocked_by_future_date_count: 0
 
 ### Top Uncategorized Records
 
 title | journal | source_api
 --- | --- | ---
-Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex
+Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar
 The Stratified Geography of Authorship: A U‐Shaped Relationship Between Journal Influence Tier and Author‐Country Concentration in Sociology | Learned Publishing | crossref+openalex+semantic_scholar
 Defining Macrostructural Editing Processes in the Australian Publishing Industry | Publishing Research Quarterly | openalex
 The Discourse of Quality, Prestige, and Impact in Academic Publishing: Analyzing Manifestations of Resistance and Dependence in Southeast Asian Communication and Media Journals | Publishing Research Quarterly | openalex
@@ -67,8 +67,8 @@ Murillo, E. (2025). Personaje secundario. La oscura trastienda de la edición. M
 
 title | journal | source_api | matched_topics | score | block_reason
 --- | --- | --- | --- | --- | ---
-Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex | missing | 54 | uncategorized
+Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar | missing | 54 | uncategorized
 Reject Early, Advance Faster: The Case for Timely Editorial Triage in Scholarly Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
-Evolution of the Involvement of Researchers From the University of Caen (France) in Author Identifiers and Social Networks: 2019–2023 | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 59 | blocked by score threshold
 The Stratified Geography of Authorship: A U‐Shaped Relationship Between Journal Influence Tier and Author‐Country Concentration in Sociology | Learned Publishing | crossref+openalex+semantic_scholar | missing | 43 | uncategorized
-China's Price of Retraction: Wasted Research Funding and Beyond | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing,technology_frontier | 55 | blocked by score threshold
+Academic Journal Impact Diffusion Framework Based on Diffusion of Innovations Theory: Integrating Entropy–AHP and ELECTRE Methods | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 47 | blocked by score threshold
+Post-Publication Discussions in (Mathematics) Education Research: Towards Broader Post‑Publication Engagement | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
