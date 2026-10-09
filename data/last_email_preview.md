@@ -1,52 +1,52 @@
-# Literature Alert - daily - 2026-10-08
+# Literature Alert - daily - 2026-10-09
 
 ## Summary
 
 - Items selected: 2
 - Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-10-08T06:20:47Z
-- 检索起点 since_date: 2026-07-10T06:20:47Z
-- 检索截止 until_date: 2026-10-08T06:20:47Z
+- 本次运行时间: 2026-10-09T06:22:35Z
+- 检索起点 since_date: 2026-07-11T06:22:35Z
+- 检索截止 until_date: 2026-10-09T06:22:35Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 214
+- 候选文献数: 215
 - 最终推送数: 2
-- selected_topic_distribution: {'management_transfer': 2}
-- selected_journal_distribution: {'Journal of Business Research': 1, 'Industrial Marketing Management': 1}
+- selected_topic_distribution: {'technology_frontier': 1, 'academic_publishing': 1}
+- selected_journal_distribution: {'Information Processing & Management': 1, 'Journal of the Association for Information Science and Technology': 1}
 
-## 1. Balancing risk and opportunity: Digital transformation, cybersecurity investments, and export performance in low-tech firms
+## 1. ASAF-MedRec: Auxiliary-supervised semantic alignment and fusion for medication recommendation
 
-- 标题: Balancing risk and opportunity: Digital transformation, cybersecurity investments, and export performance in low-tech firms
-- 作者: Giovanna Terrizzi, Maria Cristina Cinici, Alba Marino, Daniela Baglieri
+- 标题: ASAF-MedRec: Auxiliary-supervised semantic alignment and fusion for medication recommendation
+- 作者: Xuelei Yin, QIN Li, Yao Li, Zaiquan Dong, Yujie Wan, Shenggen Ju
 - 年份: 2026
-- 期刊或来源: Journal of Business Research
-- DOI: 10.1016/j.jbusres.2026.116584
-- URL: https://openalex.org/W7220422914
-- 摘要: This study examines whether investments in digital technologies raise export sales among low-tech firms, and whether cybersecurity spending conditions these returns. Reading the Resource-Based View through resource orchestration, we frame digital technologies as enabling resources and cybersecurity as a protective commitment securing their value but competing for the investment budget under scarcity. This competition is sharper in low-tech firms, with thinner slack. Using Bank of Italy data (2016–2023), we find digital investment positively associated with export sales where cybersecurity spending is absent. This association is negative in the highest protective-spending brackets, and a specification imposing no functional form locates the reversal at the top of the distribution. The pattern is clearer among SMEs and manufacturing firms; among larger firms, digital investment shows no association with exports, while protective spending is associated with higher export volume. This is a cyber-risk paradox: under scarcity, protection substitutes for, rather than complements, digital expansion.
+- 期刊或来源: Information Processing & Management
+- DOI: 10.1016/j.ipm.2026.105218
+- URL: https://openalex.org/W7220868952
+- 摘要: Medication recommendation aims to predict appropriate medication combinations according to a patient’s clinical status. Existing methods have made important progress by modeling longitudinal EHR trajectories, medication relations, external knowledge graphs, molecular structures, and large language model (LLM) knowledge, but the direct semantic matching between textual patient conditions and candidate medication descriptions remains insufficiently explored. This paper investigates current-visit textual semantic matching and proposes ASAF-MedRec, an auxiliary-supervised semantic alignment and fusion model for medication recommendation. ASAF-MedRec maps diagnosis, procedure, and symptom texts and medication description texts into a shared semantic space for bounded multi-label medication set prediction. Specifically, ASAF-MedRec first adapts BioBERT to task-related clinical and medication texts through task-aware pre-training. It then introduces patient–prescription-set contrastive learning with a medication-overlap-aware negative masking mechanism to align patient states with ground-truth prescription sets while reducing false negatives caused by highly overlapping medication combinations. Furthermore, an auxiliary-supervised adaptive semantic fusion module assigns fusion weights according to the auxiliary prediction capability of diagnosis, procedure, and symptom views, and matches the fused patient representation with candidate medication text representations. Experiments on 13,490 and 126,001 visit records from MIMIC-III and MIMIC-IV show that ASAF-MedRec achieves competitive medication set prediction performance, with Jaccard and F1-score values of 0.5468 and 0.6994 on MIMIC-III, and 0.4988 and 0.6512 on MIMIC-IV. Ablation studies further show that set-level semantic alignment, medication text representations, and auxiliary-supervised fusion all contribute to the reported performance.
 - 引用量: 0
 - 数据来源: openalex
-- 推荐理由: priority B with score 63; matched topic management_transfer; citation count 0
-- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
-- 阅读优先级: B (score: 63)
-- Matched topics: management_transfer
-- Category: digital_publishing
+- 推荐理由: priority B with score 67; matched topic technology_frontier; citation count 0
+- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
+- 阅读优先级: B (score: 67)
+- Matched topics: technology_frontier
+- Category: academic_publishing
 
-## 2. A process theory of data-centric marketing innovation
+## 2. National heterogeneity and disparity in academic gatekeeping
 
-- 标题: A process theory of data-centric marketing innovation
-- 作者: Heiko Gebauer, Fabian Krabacz, Christoph Laroque, Jenny Rüffer, David Ziegler
+- 标题: National heterogeneity and disparity in academic gatekeeping
+- 作者: Xueying Wang, Danqun Zhao, Jialin Liu, Vincent Larivière, Yi Bu
 - 年份: 2026
-- 期刊或来源: Industrial Marketing Management
-- DOI: 10.1016/j.indmarman.2026.09.006
-- URL: https://openalex.org/W7213979252
-- 摘要: The growing availability of customer and market data, together with advances in data analytics and artificial intelligence (AI), is transforming how manufacturing firms organize marketing. Drawing on a management innovation perspective, this study develops a process theory explaining how manufacturing firms progressively become data-centric through the continuous innovation of marketing practices. We employ an embedded longitudinal case study of a European manufacturing SME, Industrial Corp., and examine 16 data-centric marketing practices as embedded units of analysis. Our findings show that data-centric marketing evolves through three cumulative phases: data-enabled marketing practices, analytics-driven marketing practices, and integrated customer intelligence practices. A distinct innovation process characterizes each phase: adopt–implement–refine, explore–experiment–scale, and reframe–integrate–institutionalize—and by evolving configurations of internal and external change agents. As complementary bundles of marketing practices accumulate and become institutionalized, they progressively strengthen operational, dynamic, and transformational marketing capabilities, enabling increasingly sophisticated operational, strategic, and enterprise-wide marketing decisions. By integrating the management innovation, marketing practice, and marketing capability literatures, this study explains how manufacturing firms transform customer and market data into sustained marketing capabilities through the continuous innovation of marketing practices. The findings also provide managers with a process model for systematically developing data-centric marketing practices and capabilities.
+- 期刊或来源: Journal of the Association for Information Science and Technology
+- DOI: 10.1002/asi.70125
+- URL: https://openalex.org/W7220865459
+- 摘要: Abstract Geographical representation of reviewers is a critical dimension of disparity in the peer review process. To investigate its relationship with gatekeeping behavior, this paper uses manuscript metadata from Elsevier's peer review platform, supplemented by national‐level indicators of economic development and of political and cultural dimensions. Accounting for national differences in publication output, we develop country‐level metrics of peer review representativeness and review duration. Our analysis reveals that, compared to North America and Western Europe, countries in Asia and Africa remain markedly underrepresented in gatekeeping. We also observe that reviewers based in Central America and Africa tend to exhibit slower review turnaround times. To further elucidate the structural underpinnings behind these disparities, we employ regression analyses linking national characteristics to gatekeeping behavior. Results suggest that countries that are overrepresented in gatekeeping tend to share similar political and cultural profiles. Specifically, countries with stronger governance frameworks tend to be structurally overrepresented as gatekeepers; editorial processes appear faster in cultures with a stronger orientation toward planning, whereas reviewers from countries characterized by higher levels of risk preference tend to show lower sensitivity to time constraints. These findings provide new empirical support for calls to advance equity in global academic participation.
 - 引用量: 0
 - 数据来源: openalex
-- 推荐理由: priority B with score 62; matched topic management_transfer; citation count 0
-- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 推荐理由: priority B with score 62; matched topic academic_publishing; citation count 0
+- 与出版研究的关系: Relevant to scholarly publishing, journal governance, peer review, open access, or research integrity.
 - 阅读优先级: B (score: 62)
-- Matched topics: management_transfer
-- Category: digital_publishing
+- Matched topics: academic_publishing
+- Category: academic_publishing
 
 ## Compliance Note
 
