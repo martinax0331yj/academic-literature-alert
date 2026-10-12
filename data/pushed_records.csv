@@ -121,3 +121,5 @@ doi,title_hash,title,category,first_seen_date,pushed_date,source,status
 10.1002/asi.70125,ba63b57e2949e166,National heterogeneity and disparity in academic gatekeeping,academic_publishing,2026-10-09,2026-10-09,openalex,sent
 10.1016/j.ipm.2026.105227,3bb907437149f4bd,Bridging the Cognitive Gulf: User Dialogue Repair Strategies and Effectiveness in Human-AI Interaction,technology_frontier,2026-10-10,2026-10-10,openalex,sent
 10.1002/leap.2101,c20763be74cc6d4a,Evolution of the Involvement of Researchers From the University of Caen (France) in Author Identifiers and Social Networks: 2019–2023,academic_publishing,2026-10-11,2026-10-11,crossref+openalex+semantic_scholar,sent
+10.1177/18758789261496243,d1ab3a82245229d4,Proposing a minimal-coding methodology to customize large language models to automate services in information organizations,academic_publishing,2026-10-12,2026-10-12,openalex,sent
+10.1108/ajim-10-2025-0800,26a207cd8f24af87,Uncovering the innovation effects and multiple antecedents of employee role orientations in human-generative AI collaboration: a social information processing perspective,academic_publishing,2026-10-12,2026-10-12,openalex,sent
