@@ -1,74 +1,36 @@
-# Literature Alert - weekly - 2026-10-19
+# Literature Alert - daily - 2026-10-20
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 1
+- Data sources: crossref+openalex+semantic_scholar
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-10-19T05:55:05Z
-- 检索起点 since_date: 2026-04-22T05:55:05Z
-- 检索截止 until_date: 2026-10-19T05:55:05Z
-- 时间窗口策略: lookback_days
-- 候选文献数: 220
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 本次运行时间: 2026-10-20T05:02:36Z
+- 检索起点 since_date: 2026-07-22T05:02:36Z
+- 检索截止 until_date: 2026-10-20T05:02:36Z
+- 时间窗口策略: fallback_backfill_days
+- 候选文献数: 214
+- 最终推送数: 1
+- selected_topic_distribution: {'technology_frontier': 1}
+- selected_journal_distribution: {'Management Science': 1}
 
-## 暂无符合条件的文献
+## 1. AI-Driven Human Task Substitution: Evidence from Google Translate and ChatGPT
 
-本周暂无符合筛选条件的高质量期刊论文。
+- 标题: AI-Driven Human Task Substitution: Evidence from Google Translate and ChatGPT
+- 作者: Erdem Dogukan Yilmaz, Ivana Naumovska, Vikas A. Aggarwal
+- 年份: 2026
+- 期刊或来源: Management Science
+- DOI: 10.1287/mnsc.2024.06740
+- URL: https://openalex.org/W7221755170
+- 摘要: We examine how different generations of artificial intelligence (AI) substitute for human knowledge worker tasks, leveraging two sequential natural experiments in the translation industry. We study the introduction of Google Neural Machine Translation (GNMT), a predictive, task-specific AI, as well as ChatGPT, a broad, general-purpose generative AI, in a major online labor market. Distinguishing between analytical tasks (regular translations) and intuitive tasks (transcreations, which require creative and cultural adaptation), we estimate difference-in-differences models on transaction-level data from 2016 to 2017 and 2022 to 2023. We find that GNMT reduced the demand for analytical tasks by economically meaningful magnitudes, while having no detectable effect on intuitive tasks. By contrast, ChatGPT produced substantially larger and more uniform reductions for both analytical and intuitive tasks, indicating a marked expansion in the scope and magnitude of AI substitution. By comparing these two technological shocks within the same labor market, we show that conclusions about which types of human work are resilient to automation do not straightforwardly generalize from predictive to generative AI. This paper was accepted by Joshua Gans, business strategy. Supplemental Material: The online appendix and data files are available at https://doi.org/10.1287/mnsc.2024.06740 .
+- 引用量: 0
+- 数据来源: crossref+openalex+semantic_scholar
+- 推荐理由: priority B with score 59; matched topic technology_frontier; citation count 0
+- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
+- 阅读优先级: B (score: 59)
+- Matched topics: technology_frontier
+- Category: digital_publishing
 
-## 诊断摘要
+## Compliance Note
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 219
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 220
-- time_window_strategy: lookback_days
-- since_date: 2026-04-22T05:55:05Z
-- until_date: 2026-10-19T05:55:05Z
-- fallback_backfill_days: 
-- current_run_started_at: 2026-10-19T05:55:05Z
-- per_query: 8
-- candidate_pool_size: 220
-- after_hard_filter_count: 216
-- after_topic_filter_count: 49
-- after_score_filter_count: 1
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 20
-- max_records: 30
-- matched_topics_count: 49
-- matched_topics_distribution: {'academic_publishing': 12, 'management_transfer': 19, 'technology_frontier': 17, 'transferable_management_communication': 3, 'digital_publishing': 3}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 0
-- blocked_by_score_threshold_count: 219
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 171
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 4
-- blocked_by_future_date_count: 0
-
-### Top Uncategorized Records
-
-title | journal | source_api
---- | --- | ---
-Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | openalex
-The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar
-Another Double Shift? Australian Authors, Digital Media and Gendered Promotional Labor | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Kate Cuthbert. 2025. How to Judge a Book by its Cover: New Analytical Tools for Book Covers and Titles. Abingdon: Routledge. 252 pp. US$200. Hardback. ISBN: 978-1-032-99222-8 | Publishing Research Quarterly | openalex
-Copyright, Moral Rights, and Darnton’s Communication Circuit: Conceptions of Authorship in Australia | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Before the Science Begins: The Non‐Scientific Chasm in Academic Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 47 | blocked by score threshold
-Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | openalex | missing | 39 | uncategorized
-The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar | missing | 54 | uncategorized
-Open Access to Master Theses: Follow‐Up of Nine SEA ‐ EU Alliance Universities, 2019–2023 | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 55 | blocked by score threshold
-Reject Early, Advance Faster: The Case for Timely Editorial Triage in Scholarly Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
