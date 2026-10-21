@@ -134,3 +134,4 @@ doi,title_hash,title,category,first_seen_date,pushed_date,source,status
 10.1016/j.ipm.2026.105232,449ea154728136c6,Synthesizing event semantics for temporal knowledge graph reasoning,academic_publishing,2026-10-18,2026-10-18,crossref+openalex,sent
 10.1016/j.ipm.2026.105234,49d33cc20684398f,Generative semantic-enhanced vision-language pre-training for sign language translation,academic_publishing,2026-10-18,2026-10-18,crossref+openalex,sent
 10.1287/mnsc.2024.06740,e62e1532626808a9,AI-Driven Human Task Substitution: Evidence from Google Translate and ChatGPT,digital_publishing,2026-10-20,2026-10-20,crossref+openalex+semantic_scholar,sent
+10.3138/jsp-2024-0129,9b11fc228da10ec8,Sentiment Analysis on Twitter Data Using Acrgruatt: Amalgam Convolution Reversible Gated Recurrent Unit with Attention Network,academic_publishing,2026-10-21,2026-10-21,crossref+openalex,sent
