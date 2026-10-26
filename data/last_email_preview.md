@@ -1,36 +1,74 @@
-# Literature Alert - daily - 2026-10-26
+# Literature Alert - weekly - 2026-10-26
 
 ## Summary
 
-- Items selected: 1
-- Data sources: openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-10-26T05:01:46Z
-- 检索起点 since_date: 2026-07-28T05:01:46Z
-- 检索截止 until_date: 2026-10-26T05:01:46Z
-- 时间窗口策略: fallback_backfill_days
-- 候选文献数: 207
-- 最终推送数: 1
-- selected_topic_distribution: {'publishing_management': 1, 'management_transfer': 1}
-- selected_journal_distribution: {'Journal of Documentation': 1}
+- 本次运行时间: 2026-10-26T05:53:19Z
+- 检索起点 since_date: 2026-04-29T05:53:19Z
+- 检索截止 until_date: 2026-10-26T05:53:19Z
+- 时间窗口策略: lookback_days
+- 候选文献数: 216
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. Reinterpreting Ranganathan’s Five Laws in the AI era: national libraries as intelligent knowledge infrastructures
+## 暂无符合条件的文献
 
-- 标题: Reinterpreting Ranganathan’s Five Laws in the AI era: national libraries as intelligent knowledge infrastructures
-- 作者: Heesop Kim
-- 年份: 2026
-- 期刊或来源: Journal of Documentation
-- DOI: 10.1108/jd-07-2026-0462
-- URL: https://openalex.org/W7223451173
-- 摘要: Purpose This study reinterprets S. R. Ranganathan’s Five Laws of Library Science within contemporary artificial intelligence (AI)-driven library environments and explores how artificial intelligence is reshaping the philosophical, ethical, and institutional foundations of libraries. The study further examines how national libraries may increasingly function as human-centered public knowledge infrastructures within emerging AI-mediated information societies. Design/methodology/approach The study adopts a conceptual and interpretive approach combining theoretical analysis, critical literature review, and institutionally situated discussion. Drawing upon scholarship concerning library philosophy, artificial intelligence, human-centered AI, semantic knowledge systems, and AI governance, the study develops a conceptual framework for interpreting AI-driven transformation through the philosophical lens of Ranganathan’s Five Laws. The National Library of Korea is discussed as an illustrative institutional context through which contemporary AI-related developments in national libraries may be interpreted. Findings The analysis suggests that artificial intelligence significantly expands and recontextualizes the philosophical assumptions embedded within Ranganathan’s Five Laws. AI-driven library environments increasingly transform traditional understandings of accessibility, discoverability, personalization, efficiency, and institutional growth through semantic retrieval systems, conversational AI, intelligent metadata infrastructures, and multimodal knowledge services. At the same time, AI-mediated library transformation introduces important ethical and institutional tensions involving algorithmic bias, misinformation, privacy, transparency, intellectual freedom, and public trust. The study argues that the continuing relevance of Ranganathan’s philosophy lies in its adaptability as a human-centered normative framework for guiding libraries within intelligent information societies. Originality/value This study contributes to contemporary library and information science scholarship by conceptually connecting classical library philosophy with emerging discussions concerning human-centered AI, trustworthy knowledge ecosystems, AI governance, and the evolving role of national libraries. While recent work has also explicitly connected Ranganathan’s Five Laws with artificial intelligence (Kalbande, 2025), this study differentiates its contribution by examining national libraries as public knowledge infrastructures and by linking each law to documented institutional illustrations and cross-cutting ethical conditions. The study therefore frames AI-driven library transformation as a broader philosophical and institutional shift affecting the public role of national libraries.
-- 引用量: 0
-- 数据来源: openalex
-- 推荐理由: priority B with score 59; matched topic publishing_management; citation count 0
-- 与出版研究的关系: Relevant to publishing enterprise management, brand operation, copyright operation, platform governance, or knowledge services.
-- 阅读优先级: B (score: 59)
-- Matched topics: publishing_management, management_transfer
-- Category: academic_publishing
+本周暂无符合筛选条件的高质量期刊论文。
 
-## Compliance Note
+## 诊断摘要
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 216
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 216
+- time_window_strategy: lookback_days
+- since_date: 2026-04-29T05:53:19Z
+- until_date: 2026-10-26T05:53:19Z
+- fallback_backfill_days: 
+- current_run_started_at: 2026-10-26T05:53:19Z
+- per_query: 8
+- candidate_pool_size: 216
+- after_hard_filter_count: 213
+- after_topic_filter_count: 47
+- after_score_filter_count: 1
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 20
+- max_records: 30
+- matched_topics_count: 47
+- matched_topics_distribution: {'academic_publishing': 12, 'management_transfer': 23, 'digital_publishing': 1, 'technology_frontier': 13, 'publishing_management': 3, 'transferable_management_communication': 4}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 1
+- blocked_by_score_threshold_count: 215
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 169
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 3
+- blocked_by_future_date_count: 0
+
+### Top Uncategorized Records
+
+title | journal | source_api
+--- | --- | ---
+Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar
+The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | openalex
+Another Double Shift? Australian Authors, Digital Media and Gendered Promotional Labor | Publishing Research Quarterly | openalex
+Kate Cuthbert. 2025. How to Judge a Book by its Cover: New Analytical Tools for Book Covers and Titles. Abingdon: Routledge. 252 pp. US$200. Hardback. ISBN: 978-1-032-99222-8 | Publishing Research Quarterly | openalex
+Copyright, Moral Rights, and Darnton’s Communication Circuit: Conceptions of Authorship in Australia | Publishing Research Quarterly | openalex
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Before the Science Begins: The Non‐Scientific Chasm in Academic Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 47 | blocked by score threshold
+Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
+The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | openalex | missing | 54 | uncategorized
+Open Access to Master Theses: Follow‐Up of Nine SEA ‐ EU Alliance Universities, 2019–2023 | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 55 | blocked by score threshold
+Reject Early, Advance Faster: The Case for Timely Editorial Triage in Scholarly Publishing | Learned Publishing | openalex | academic_publishing | 51 | blocked by score threshold
