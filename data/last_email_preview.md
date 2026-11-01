@@ -1,74 +1,36 @@
-# Literature Alert - daily - 2026-10-31
+# Literature Alert - daily - 2026-11-01
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 1
+- Data sources: crossref+openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-10-31T05:58:34Z
-- 检索起点 since_date: 2026-08-02T05:58:34Z
-- 检索截止 until_date: 2026-10-31T05:58:34Z
+- 本次运行时间: 2026-11-01T06:27:59Z
+- 检索起点 since_date: 2026-08-03T06:27:59Z
+- 检索截止 until_date: 2026-11-01T06:27:59Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 208
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 候选文献数: 203
+- 最终推送数: 1
+- selected_topic_distribution: {'management_transfer': 1}
+- selected_journal_distribution: {'Strategic Management Journal': 1}
 
-## 暂无符合条件的文献
+## 1. Strategy as a theory of change
 
-暂无符合筛选条件的高质量期刊论文。
+- 标题: Strategy as a theory of change
+- 作者: Sérgio G. Lazzarini, Todd R. Zenger, Teppo Felin
+- 年份: 2026
+- 期刊或来源: Strategic Management Journal
+- DOI: 10.1002/smj.70139
+- URL: https://openalex.org/W7224840503
+- 摘要: Abstract Research Summary The theory‐based view argues that a strategist's task is to develop a theory to move the organization to an improved future state. Focusing on theorizing as a thought process of model creation, we propose a framework to specify hypothetical causal links and analyze their structure as a directed graph connecting inputs, activities, and indicators of problem resolution. We then propose a set of metrics operationalizing key theory attributes: complexity, equifinality, interdependence, and circularity. We discuss the strategic relevance of these attributes in terms of a theory's ability to promote comprehensive problem resolution as well as implement, evaluate, and replicate the proposed solution. Our work represents a step toward operationalizing model creation in the theory‐based view and informs the design of strategic theories of change. Managerial Summary Strategists often theorize how to move their organizations toward an improved performance state. Yet most strategic analysis tools describe the organization's external environment or the internal components of its business model, without precisely specifying forward‐looking interventions that might cause the desired changes. In this paper, we represent strategic theories as a chain of causal interventions—inputs and activities that address relevant problems and lead to desirable outcomes. We propose a structured framework that helps managers develop theories and measure key attributes that influence comprehensive problem resolution and the ability to implement, evaluate, and replicate the proposed interventions. In this sense, our work helps managers mentally create their strategic theories and assess their usefulness as a roadmap to superior performance.
+- 引用量: 0
+- 数据来源: crossref+openalex
+- 推荐理由: priority B with score 63; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 63)
+- Matched topics: management_transfer
+- Category: digital_publishing
 
-## 诊断摘要
+## Compliance Note
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 208
-- fetched_from_semantic_scholar_count: 40
-- candidate_total_before_filter: 208
-- time_window_strategy: fallback_backfill_days
-- since_date: 2026-08-02T05:58:34Z
-- until_date: 2026-10-31T05:58:34Z
-- fallback_backfill_days: 90
-- current_run_started_at: 2026-10-31T05:58:34Z
-- per_query: 8
-- candidate_pool_size: 208
-- after_hard_filter_count: 204
-- after_topic_filter_count: 44
-- after_score_filter_count: 0
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 10
-- max_records: 12
-- matched_topics_count: 44
-- matched_topics_distribution: {'academic_publishing': 13, 'management_transfer': 23, 'digital_publishing': 1, 'technology_frontier': 9, 'publishing_management': 3, 'transferable_management_communication': 4}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 208
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 164
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 4
-- blocked_by_future_date_count: 0
-
-### Top Uncategorized Records
-
-title | journal | source_api
---- | --- | ---
-Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar
-The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar
-Another Double Shift? Australian Authors, Digital Media and Gendered Promotional Labor | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Kate Cuthbert. 2025. How to Judge a Book by its Cover: New Analytical Tools for Book Covers and Titles. Abingdon: Routledge. 252 pp. US$200. Hardback. ISBN: 978-1-032-99222-8 | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Copyright, Moral Rights, and Darnton’s Communication Circuit: Conceptions of Authorship in Australia | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Before the Science Begins: The Non‐Scientific Chasm in Academic Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 47 | blocked by score threshold
-Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
-The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar | missing | 54 | uncategorized
-Reject Early, Advance Faster: The Case for Timely Editorial Triage in Scholarly Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
-Internationalization of Vietnam’s Academic Journals: Readiness and Prospects | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing,management_transfer | 51 | blocked by score threshold
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
