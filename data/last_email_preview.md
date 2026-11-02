@@ -1,36 +1,74 @@
-# Literature Alert - daily - 2026-11-02
+# Literature Alert - weekly - 2026-11-02
 
 ## Summary
 
-- Items selected: 1
-- Data sources: crossref+openalex+semantic_scholar
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-11-02T06:29:03Z
-- 检索起点 since_date: 2026-08-04T06:29:03Z
-- 检索截止 until_date: 2026-11-02T06:29:03Z
-- 时间窗口策略: fallback_backfill_days
-- 候选文献数: 209
-- 最终推送数: 1
-- selected_topic_distribution: {'transferable_management_communication': 1, 'management_transfer': 1}
-- selected_journal_distribution: {'Information & Management': 1}
+- 本次运行时间: 2026-11-02T07:30:27Z
+- 检索起点 since_date: 2026-05-06T07:30:27Z
+- 检索截止 until_date: 2026-11-02T07:30:27Z
+- 时间窗口策略: lookback_days
+- 候选文献数: 218
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. AI capability and organizational performance: Do team learning and creativity play a role?
+## 暂无符合条件的文献
 
-- 标题: AI capability and organizational performance: Do team learning and creativity play a role?
-- 作者: Nisreen Ameen, Jun‐Hwa Cheah, Shlomo Y. Tarba, Margherita Pagani, Eleonora Pantano, Senmao Xia
-- 年份: 2026
-- 期刊或来源: Information & Management
-- DOI: 10.1016/j.im.2026.104458
-- URL: https://openalex.org/W7223850965
-- 摘要: Drawing on dynamic capability and resource-based theories, we theorize that team learning is a microfoundation through which firms develop artificial intelligence (AI) capabilities, and that team creativity is a value-realizing mechanism through which these capabilities generate service innovations and improve organizational performance. Study 1 examines how team learning contributes to the development of firms' AI capability and subsequent service innovations, using data from 600 managers in service firms in China. Study 2 investigates whether team creativity mediates the effects of AI capability on service innovation and performance, based on data from 276 managers in service firms in China. Across two studies, we found that teams contribute to the development and realization of AI capability. Specifically, team learning facilitates the development of AI capability, and team creativity enables firms to translate this capability into innovation and performance outcomes. Overall, this study advances the understanding of how human–AI collaboration enables firms to convert AI capability into tangible organizational value by integrating a microfoundational perspective with the resource-based logic of value realization.
-- 引用量: 0
-- 数据来源: crossref+openalex+semantic_scholar
-- 推荐理由: priority B with score 62; matched topic transferable_management_communication; citation count 0
-- 与出版研究的关系: Provides transferable theories or methods for publishing, media management, communication, or cultural industries.
-- 阅读优先级: B (score: 62)
-- Matched topics: transferable_management_communication, management_transfer
-- Category: digital_publishing
+本周暂无符合筛选条件的高质量期刊论文。
 
-## Compliance Note
+## 诊断摘要
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 218
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 218
+- time_window_strategy: lookback_days
+- since_date: 2026-05-06T07:30:27Z
+- until_date: 2026-11-02T07:30:27Z
+- fallback_backfill_days: 
+- current_run_started_at: 2026-11-02T07:30:27Z
+- per_query: 8
+- candidate_pool_size: 218
+- after_hard_filter_count: 215
+- after_topic_filter_count: 49
+- after_score_filter_count: 0
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 20
+- max_records: 30
+- matched_topics_count: 49
+- matched_topics_distribution: {'academic_publishing': 10, 'management_transfer': 26, 'digital_publishing': 1, 'technology_frontier': 13, 'publishing_management': 2, 'transferable_management_communication': 5}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 1
+- blocked_by_score_threshold_count: 218
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 169
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 3
+- blocked_by_future_date_count: 0
+
+### Top Uncategorized Records
+
+title | journal | source_api
+--- | --- | ---
+Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar
+The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar
+Another Double Shift? Australian Authors, Digital Media and Gendered Promotional Labor | Publishing Research Quarterly | crossref+openalex+semantic_scholar
+Kate Cuthbert. 2025. How to Judge a Book by its Cover: New Analytical Tools for Book Covers and Titles. Abingdon: Routledge. 252 pp. US$200. Hardback. ISBN: 978-1-032-99222-8 | Publishing Research Quarterly | crossref+openalex+semantic_scholar
+Copyright, Moral Rights, and Darnton’s Communication Circuit: Conceptions of Authorship in Australia | Publishing Research Quarterly | crossref+openalex+semantic_scholar
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Before the Science Begins: The Non‐Scientific Chasm in Academic Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 47 | blocked by score threshold
+Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
+The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar | missing | 54 | uncategorized
+Open Access to Master Theses: Follow‐Up of Nine SEA ‐ EU Alliance Universities, 2019–2023 | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 55 | blocked by score threshold
+Reject Early, Advance Faster: The Case for Timely Editorial Triage in Scholarly Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
