@@ -1,34 +1,34 @@
-# Literature Alert - daily - 2026-11-01
+# Literature Alert - daily - 2026-11-02
 
 ## Summary
 
 - Items selected: 1
-- Data sources: crossref+openalex
+- Data sources: crossref+openalex+semantic_scholar
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-11-01T06:27:59Z
-- 检索起点 since_date: 2026-08-03T06:27:59Z
-- 检索截止 until_date: 2026-11-01T06:27:59Z
+- 本次运行时间: 2026-11-02T06:29:03Z
+- 检索起点 since_date: 2026-08-04T06:29:03Z
+- 检索截止 until_date: 2026-11-02T06:29:03Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 203
+- 候选文献数: 209
 - 最终推送数: 1
-- selected_topic_distribution: {'management_transfer': 1}
-- selected_journal_distribution: {'Strategic Management Journal': 1}
+- selected_topic_distribution: {'transferable_management_communication': 1, 'management_transfer': 1}
+- selected_journal_distribution: {'Information & Management': 1}
 
-## 1. Strategy as a theory of change
+## 1. AI capability and organizational performance: Do team learning and creativity play a role?
 
-- 标题: Strategy as a theory of change
-- 作者: Sérgio G. Lazzarini, Todd R. Zenger, Teppo Felin
+- 标题: AI capability and organizational performance: Do team learning and creativity play a role?
+- 作者: Nisreen Ameen, Jun‐Hwa Cheah, Shlomo Y. Tarba, Margherita Pagani, Eleonora Pantano, Senmao Xia
 - 年份: 2026
-- 期刊或来源: Strategic Management Journal
-- DOI: 10.1002/smj.70139
-- URL: https://openalex.org/W7224840503
-- 摘要: Abstract Research Summary The theory‐based view argues that a strategist's task is to develop a theory to move the organization to an improved future state. Focusing on theorizing as a thought process of model creation, we propose a framework to specify hypothetical causal links and analyze their structure as a directed graph connecting inputs, activities, and indicators of problem resolution. We then propose a set of metrics operationalizing key theory attributes: complexity, equifinality, interdependence, and circularity. We discuss the strategic relevance of these attributes in terms of a theory's ability to promote comprehensive problem resolution as well as implement, evaluate, and replicate the proposed solution. Our work represents a step toward operationalizing model creation in the theory‐based view and informs the design of strategic theories of change. Managerial Summary Strategists often theorize how to move their organizations toward an improved performance state. Yet most strategic analysis tools describe the organization's external environment or the internal components of its business model, without precisely specifying forward‐looking interventions that might cause the desired changes. In this paper, we represent strategic theories as a chain of causal interventions—inputs and activities that address relevant problems and lead to desirable outcomes. We propose a structured framework that helps managers develop theories and measure key attributes that influence comprehensive problem resolution and the ability to implement, evaluate, and replicate the proposed interventions. In this sense, our work helps managers mentally create their strategic theories and assess their usefulness as a roadmap to superior performance.
+- 期刊或来源: Information & Management
+- DOI: 10.1016/j.im.2026.104458
+- URL: https://openalex.org/W7223850965
+- 摘要: Drawing on dynamic capability and resource-based theories, we theorize that team learning is a microfoundation through which firms develop artificial intelligence (AI) capabilities, and that team creativity is a value-realizing mechanism through which these capabilities generate service innovations and improve organizational performance. Study 1 examines how team learning contributes to the development of firms' AI capability and subsequent service innovations, using data from 600 managers in service firms in China. Study 2 investigates whether team creativity mediates the effects of AI capability on service innovation and performance, based on data from 276 managers in service firms in China. Across two studies, we found that teams contribute to the development and realization of AI capability. Specifically, team learning facilitates the development of AI capability, and team creativity enables firms to translate this capability into innovation and performance outcomes. Overall, this study advances the understanding of how human–AI collaboration enables firms to convert AI capability into tangible organizational value by integrating a microfoundational perspective with the resource-based logic of value realization.
 - 引用量: 0
-- 数据来源: crossref+openalex
-- 推荐理由: priority B with score 63; matched topic management_transfer; citation count 0
-- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
-- 阅读优先级: B (score: 63)
-- Matched topics: management_transfer
+- 数据来源: crossref+openalex+semantic_scholar
+- 推荐理由: priority B with score 62; matched topic transferable_management_communication; citation count 0
+- 与出版研究的关系: Provides transferable theories or methods for publishing, media management, communication, or cultural industries.
+- 阅读优先级: B (score: 62)
+- Matched topics: transferable_management_communication, management_transfer
 - Category: digital_publishing
 
 ## Compliance Note
