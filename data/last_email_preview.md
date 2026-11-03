@@ -1,74 +1,36 @@
-# Literature Alert - weekly - 2026-11-02
+# Literature Alert - daily - 2026-11-03
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 1
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-11-02T07:30:27Z
-- 检索起点 since_date: 2026-05-06T07:30:27Z
-- 检索截止 until_date: 2026-11-02T07:30:27Z
-- 时间窗口策略: lookback_days
-- 候选文献数: 218
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 本次运行时间: 2026-11-03T07:01:03Z
+- 检索起点 since_date: 2026-08-05T07:01:03Z
+- 检索截止 until_date: 2026-11-03T07:01:03Z
+- 时间窗口策略: fallback_backfill_days
+- 候选文献数: 209
+- 最终推送数: 1
+- selected_topic_distribution: {'technology_frontier': 1}
+- selected_journal_distribution: {'Marketing Science': 1}
 
-## 暂无符合条件的文献
+## 1. Frontiers: Reducing Disparity Between LLMs and Humans: Optimal LLM Sample Calibration
 
-本周暂无符合筛选条件的高质量期刊论文。
+- 标题: Frontiers: Reducing Disparity Between LLMs and Humans: Optimal LLM Sample Calibration
+- 作者: Yan Leng, Yunxin Sang, Ashish Agarwal
+- 年份: 2026
+- 期刊或来源: Marketing Science
+- DOI: 10.1287/mksc.2024.0983
+- URL: https://openalex.org/W4395015967
+- 摘要: Large language models (LLMs) are increasingly used to measure preferences and opinions, but outputs vary across prompts, personas, and model checkpoints, leaving analysts with multiple noisy elicitation variants and no principled way to combine them. Existing practice typically relies on heuristic aggregation---uniform averaging, population-weighted post-stratification, or selecting the single best subgroup---which uses fixed ex ante weights and can remain misaligned with human benchmarks. We propose Human Mimicry Calibration (HuMCal), a post-hoc calibration method that learns credibility weights over elicitation variants using only aggregate benchmark data, with no access to model internals or subgroup-level labels. HuMCal is model-agnostic and baseline-safe on the calibration split: its optimized loss weakly dominates any fixed-weight rule over the same subgroup set, including uniform weighting, post-stratification, and the best single subgroup. We evaluate HuMCal in a revealed-preference market-structure application using U.S. bank-card transactions and in a public-opinion application using Pew survey data. Across both settings, HuMCal improves alignment on the calibration split relative to all fixed-weight baselines. Out of sample, source-learned weights outperform heuristic baselines across time, geography, industry, and topic in the large majority of evaluations, although transfer is empirical rather than guaranteed. Recalibration with newer LLM checkpoints often improves alignment further. These results suggest that HuMCal can serve as a scalable calibration tool for LLM-based measurement when collecting fresh benchmark data for each target setting is costly.
+- 引用量: 3
+- 数据来源: openalex
+- 推荐理由: priority B with score 61; matched topic technology_frontier; citation count 3
+- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
+- 阅读优先级: B (score: 61)
+- Matched topics: technology_frontier
+- Category: digital_publishing
 
-## 诊断摘要
+## Compliance Note
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 218
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 218
-- time_window_strategy: lookback_days
-- since_date: 2026-05-06T07:30:27Z
-- until_date: 2026-11-02T07:30:27Z
-- fallback_backfill_days: 
-- current_run_started_at: 2026-11-02T07:30:27Z
-- per_query: 8
-- candidate_pool_size: 218
-- after_hard_filter_count: 215
-- after_topic_filter_count: 49
-- after_score_filter_count: 0
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 20
-- max_records: 30
-- matched_topics_count: 49
-- matched_topics_distribution: {'academic_publishing': 10, 'management_transfer': 26, 'digital_publishing': 1, 'technology_frontier': 13, 'publishing_management': 2, 'transferable_management_communication': 5}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 1
-- blocked_by_score_threshold_count: 218
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 169
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 3
-- blocked_by_future_date_count: 0
-
-### Top Uncategorized Records
-
-title | journal | source_api
---- | --- | ---
-Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar
-The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar
-Another Double Shift? Australian Authors, Digital Media and Gendered Promotional Labor | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Kate Cuthbert. 2025. How to Judge a Book by its Cover: New Analytical Tools for Book Covers and Titles. Abingdon: Routledge. 252 pp. US$200. Hardback. ISBN: 978-1-032-99222-8 | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Copyright, Moral Rights, and Darnton’s Communication Circuit: Conceptions of Authorship in Australia | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Before the Science Begins: The Non‐Scientific Chasm in Academic Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 47 | blocked by score threshold
-Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
-The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar | missing | 54 | uncategorized
-Open Access to Master Theses: Follow‐Up of Nine SEA ‐ EU Alliance Universities, 2019–2023 | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 55 | blocked by score threshold
-Reject Early, Advance Faster: The Case for Timely Editorial Triage in Scholarly Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
