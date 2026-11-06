@@ -1,74 +1,53 @@
-# Literature Alert - daily - 2026-11-05
+# Literature Alert - daily - 2026-11-06
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 2
+- Data sources: crossref+openalex, crossref+openalex+semantic_scholar
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-11-05T07:03:10Z
-- 检索起点 since_date: 2026-08-07T07:03:10Z
-- 检索截止 until_date: 2026-11-05T07:03:10Z
+- 本次运行时间: 2026-11-06T07:03:27Z
+- 检索起点 since_date: 2026-08-08T07:03:27Z
+- 检索截止 until_date: 2026-11-06T07:03:27Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 213
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 最终推送数: 2
+- selected_topic_distribution: {'management_transfer': 2, 'publishing_management': 1, 'digital_publishing': 1, 'transferable_management_communication': 1}
+- selected_journal_distribution: {'Journal of Management Studies': 1, 'New Media & Society': 1}
 
-## 暂无符合条件的文献
+## 1. The Ubiquity of Business Groups around the World: A Property‐Rights Theory
 
-暂无符合筛选条件的高质量期刊论文。
+- 标题: The Ubiquity of Business Groups around the World: A Property‐Rights Theory
+- 作者: Ruth V. Aguilera, Rafel Crespí‐Cladera, Alfredo Martín‐Oliver, Bartolomé Pascual‐Fuster
+- 年份: 2026
+- 期刊或来源: Journal of Management Studies
+- DOI: 10.1111/joms.70179
+- URL: https://openalex.org/W7225234604
+- 摘要: Abstract Business groups (BGs) are collections of legally independent firms connected by ownership ties and are widely present in both developing and developed economies. We develop property‐rights theory (PRT) to explain this prevalence, extending its scope from the allocation of rights over a bundle of assets to the legal partitioning of assets as another allocative mechanism of property rights. Our conceptual framework complements traditional theories understanding BGs primarily as responses to institutional voids. Drawing on a large global dataset of firms, we examine how firm asset specificity and ownership sharing influence the controlling owners' decision to organize their economic activities as a BG or as a standalone firm. We find that the likelihood of adopting a BG organizational form over a standalone entity increases when (1) controlling owners rely on more firm‐specific assets, and (2) ownership is shared or potentially shared. Moreover, our findings are robust across three commonly observed firm strategic configurations: focused, vertically integrated, and diversified. Our study expands the PRT by developing a theory of property‐rights architecture, moving forward from the institutional voids perspective to explain BGs as efficient governance responses to asset and ownership complexities, hence contributing also to the strategic management and international business literatures.
+- 引用量: 0
+- 数据来源: crossref+openalex
+- 推荐理由: priority B with score 62; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 62)
+- Matched topics: management_transfer
+- Category: digital_publishing
 
-## 诊断摘要
+## 2. Paid, but not a partner: Monetization without standing in Facebook’s Performance Bonus Program
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 213
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 213
-- time_window_strategy: fallback_backfill_days
-- since_date: 2026-08-07T07:03:10Z
-- until_date: 2026-11-05T07:03:10Z
-- fallback_backfill_days: 90
-- current_run_started_at: 2026-11-05T07:03:10Z
-- per_query: 8
-- candidate_pool_size: 213
-- after_hard_filter_count: 212
-- after_topic_filter_count: 48
-- after_score_filter_count: 2
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 10
-- max_records: 12
-- matched_topics_count: 48
-- matched_topics_distribution: {'academic_publishing': 13, 'management_transfer': 23, 'technology_frontier': 12, 'publishing_management': 2, 'digital_publishing': 1, 'transferable_management_communication': 5}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 211
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 165
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 1
-- blocked_by_future_date_count: 0
+- 标题: Paid, but not a partner: Monetization without standing in Facebook’s Performance Bonus Program
+- 作者: Rebecca C. Hains
+- 年份: 2026
+- 期刊或来源: New Media & Society
+- DOI: 10.1177/14614448261498621
+- URL: https://openalex.org/W7225074216
+- 摘要: Platform revenue-sharing programs both pay and govern creators. Drawing on interviews with 18 participants in Facebook’s Performance Bonus Program (PBP) and the author’s own participation, this study examines how monetization reshaped creators’ platform governance expectations. PBP’s onboarding, which addressed recipients as “valued creators” and promised earnings of “up to $30,000 a month,” combined with early recurring payouts to cultivate expectations of continuity and institutional responsiveness, particularly among participants new to monetization. When enforcement errors, payout volatility, and support failures followed, participants discovered that payment had not conferred meaningful access to explanation, human review, or recourse. This article theorizes that condition as monetization without standing : a governance arrangement in which creators are compensated and governed as laborers while denied the procedural recognition typically associated with paid work. This arrangement constitutes a breach of the psychological contract generated by monetization, producing durable behavioral constraint, disparate impacts on marginalized creators, and creator attrition.
+- 引用量: 0
+- 数据来源: crossref+openalex+semantic_scholar
+- 推荐理由: priority B with score 59; matched topic publishing_management; citation count 0
+- 与出版研究的关系: Relevant to publishing enterprise management, brand operation, copyright operation, platform governance, or knowledge services.
+- 阅读优先级: B (score: 59)
+- Matched topics: publishing_management, digital_publishing, transferable_management_communication, management_transfer
+- Category: digital_publishing
 
-### Top Uncategorized Records
+## Compliance Note
 
-title | journal | source_api
---- | --- | ---
-Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar
-The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar
-Correction to: Australian YA Fiction and Social Media: Mediations in Contemporary Book Cultures for Young Adults | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Another Double Shift? Australian Authors, Digital Media and Gendered Promotional Labor | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Kate Cuthbert. 2025. How to Judge a Book by its Cover: New Analytical Tools for Book Covers and Titles. Abingdon: Routledge. 252 pp. US$200. Hardback. ISBN: 978-1-032-99222-8 | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Before the Science Begins: The Non‐Scientific Chasm in Academic Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 47 | blocked by score threshold
-Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
-The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar | missing | 54 | uncategorized
-Reject Early, Advance Faster: The Case for Timely Editorial Triage in Scholarly Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
-Global AI Impact in the Era of Intelligent Paradigm: A Perspective from Research Papers | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
