@@ -1,51 +1,51 @@
-# Literature Alert - daily - 2026-11-06
+# Literature Alert - daily - 2026-11-07
 
 ## Summary
 
 - Items selected: 2
-- Data sources: crossref+openalex, crossref+openalex+semantic_scholar
+- Data sources: openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-11-06T07:03:27Z
-- 检索起点 since_date: 2026-08-08T07:03:27Z
-- 检索截止 until_date: 2026-11-06T07:03:27Z
+- 本次运行时间: 2026-11-07T06:15:54Z
+- 检索起点 since_date: 2026-08-09T06:15:54Z
+- 检索截止 until_date: 2026-11-07T06:15:54Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 213
+- 候选文献数: 215
 - 最终推送数: 2
-- selected_topic_distribution: {'management_transfer': 2, 'publishing_management': 1, 'digital_publishing': 1, 'transferable_management_communication': 1}
-- selected_journal_distribution: {'Journal of Management Studies': 1, 'New Media & Society': 1}
+- selected_topic_distribution: {'technology_frontier': 1, 'management_transfer': 1}
+- selected_journal_distribution: {'Information & Management': 1, 'Industrial Marketing Management': 1}
 
-## 1. The Ubiquity of Business Groups around the World: A Property‐Rights Theory
+## 1. Guidelines for Employing Large Language Models in Information Systems Research
 
-- 标题: The Ubiquity of Business Groups around the World: A Property‐Rights Theory
-- 作者: Ruth V. Aguilera, Rafel Crespí‐Cladera, Alfredo Martín‐Oliver, Bartolomé Pascual‐Fuster
+- 标题: Guidelines for Employing Large Language Models in Information Systems Research
+- 作者: Kilian Sprenkamp, Kazem Haki, Liudmila Zavolokina
 - 年份: 2026
-- 期刊或来源: Journal of Management Studies
-- DOI: 10.1111/joms.70179
-- URL: https://openalex.org/W7225234604
-- 摘要: Abstract Business groups (BGs) are collections of legally independent firms connected by ownership ties and are widely present in both developing and developed economies. We develop property‐rights theory (PRT) to explain this prevalence, extending its scope from the allocation of rights over a bundle of assets to the legal partitioning of assets as another allocative mechanism of property rights. Our conceptual framework complements traditional theories understanding BGs primarily as responses to institutional voids. Drawing on a large global dataset of firms, we examine how firm asset specificity and ownership sharing influence the controlling owners' decision to organize their economic activities as a BG or as a standalone firm. We find that the likelihood of adopting a BG organizational form over a standalone entity increases when (1) controlling owners rely on more firm‐specific assets, and (2) ownership is shared or potentially shared. Moreover, our findings are robust across three commonly observed firm strategic configurations: focused, vertically integrated, and diversified. Our study expands the PRT by developing a theory of property‐rights architecture, moving forward from the institutional voids perspective to explain BGs as efficient governance responses to asset and ownership complexities, hence contributing also to the strategic management and international business literatures.
+- 期刊或来源: Information & Management
+- DOI: 10.1016/j.im.2026.104466
+- URL: https://openalex.org/W7225274091
+- 摘要: ABSTRACT The rise of large language models (LLMs) marks a new era of computationally intensive research in the information systems (IS) discipline. While LLMs offer unprecedented capabilities for analyzing unstructured text data, their integration into IS research remains fragmented and lacks a shared methodological foundation. This paper proposes a set of methodological guidelines for systematically integrating LLMs into the IS research process, supporting transparency, reproducibility, and rigor across four key phases: problem formulation, data collection, modeling, and communication of results. To achieve this, we synthesize insights from IS and adjacent disciplines and demonstrate the application of the guidelines through an exemplary study.
 - 引用量: 0
-- 数据来源: crossref+openalex
-- 推荐理由: priority B with score 62; matched topic management_transfer; citation count 0
-- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 数据来源: openalex
+- 推荐理由: priority B with score 62; matched topic technology_frontier; citation count 0
+- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
 - 阅读优先级: B (score: 62)
-- Matched topics: management_transfer
+- Matched topics: technology_frontier
 - Category: digital_publishing
 
-## 2. Paid, but not a partner: Monetization without standing in Facebook’s Performance Bonus Program
+## 2. The future of interaction, relationships and networks: Reshaping interdependencies in a changing world
 
-- 标题: Paid, but not a partner: Monetization without standing in Facebook’s Performance Bonus Program
-- 作者: Rebecca C. Hains
+- 标题: The future of interaction, relationships and networks: Reshaping interdependencies in a changing world
+- 作者: Luís Araújo, Judy Zolkiewski
 - 年份: 2026
-- 期刊或来源: New Media & Society
-- DOI: 10.1177/14614448261498621
-- URL: https://openalex.org/W7225074216
-- 摘要: Platform revenue-sharing programs both pay and govern creators. Drawing on interviews with 18 participants in Facebook’s Performance Bonus Program (PBP) and the author’s own participation, this study examines how monetization reshaped creators’ platform governance expectations. PBP’s onboarding, which addressed recipients as “valued creators” and promised earnings of “up to $30,000 a month,” combined with early recurring payouts to cultivate expectations of continuity and institutional responsiveness, particularly among participants new to monetization. When enforcement errors, payout volatility, and support failures followed, participants discovered that payment had not conferred meaningful access to explanation, human review, or recourse. This article theorizes that condition as monetization without standing : a governance arrangement in which creators are compensated and governed as laborers while denied the procedural recognition typically associated with paid work. This arrangement constitutes a breach of the psychological contract generated by monetization, producing durable behavioral constraint, disparate impacts on marginalized creators, and creator attrition.
+- 期刊或来源: Industrial Marketing Management
+- DOI: 10.1016/j.indmarman.2026.10.013
+- URL: https://openalex.org/W7225255844
+- 摘要: This special issue explores how business networks are being reconfigured in response to escalating uncertainty, geopolitical tensions, climate-related pressures, and recurring disruptions. It argues that much of the business marketing literature has developed within an implicit globalization paradigm that prioritized efficiency, internationalization, and network expansion. However, recent geopolitical and economic developments have challenged these assumptions, prompting a shift in focus from efficiency to resilience, adaptability, and network reconfigurability. Drawing on concepts such as permacrisis, polycrisis, and Knightian uncertainty, we advance a relational and processual perspective on adaptation and resilience, viewing them as outcomes of interconnected relationships and network structures rather than attributes of individual firms alone. The editorial concludes by introducing the contributions to the special issue, which examines the liabilities of network insidership, interorganizational preparedness, the role of natural resources in network theory, interconnected change processes, technology sourcing and organizational identity, and the digital transformation of trade shows.
 - 引用量: 0
-- 数据来源: crossref+openalex+semantic_scholar
-- 推荐理由: priority B with score 59; matched topic publishing_management; citation count 0
-- 与出版研究的关系: Relevant to publishing enterprise management, brand operation, copyright operation, platform governance, or knowledge services.
-- 阅读优先级: B (score: 59)
-- Matched topics: publishing_management, digital_publishing, transferable_management_communication, management_transfer
+- 数据来源: openalex
+- 推荐理由: priority B with score 63; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 63)
+- Matched topics: management_transfer
 - Category: digital_publishing
 
 ## Compliance Note
