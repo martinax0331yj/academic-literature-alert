@@ -1,36 +1,74 @@
-# Literature Alert - daily - 2026-11-13
+# Literature Alert - daily - 2026-11-14
 
 ## Summary
 
-- Items selected: 1
-- Data sources: crossref+openalex
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-11-13T06:58:29Z
-- 检索起点 since_date: 2026-08-15T06:58:29Z
-- 检索截止 until_date: 2026-11-13T06:58:29Z
+- 本次运行时间: 2026-11-14T06:46:50Z
+- 检索起点 since_date: 2026-08-16T06:46:50Z
+- 检索截止 until_date: 2026-11-14T06:46:50Z
 - 时间窗口策略: fallback_backfill_days
 - 候选文献数: 216
-- 最终推送数: 1
-- selected_topic_distribution: {'technology_frontier': 1}
-- selected_journal_distribution: {'Journal of Informetrics': 1}
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. Generative AI adoption and scientific output: Quasi-experimental evidence on heterogeneous changes across 26 disciplines
+## 暂无符合条件的文献
 
-- 标题: Generative AI adoption and scientific output: Quasi-experimental evidence on heterogeneous changes across 26 disciplines
-- 作者: Andrés Mauricio Arcila
-- 年份: 2026
-- 期刊或来源: Journal of Informetrics
-- DOI: 10.1016/j.joi.2026.101890
-- URL: https://openalex.org/W7134958845
-- 摘要: Using monthly OpenAlex data on 92 million publications across 26 academic fields (2015–2025), we examine publication growth associated with large language model (LLM) adoption through a quasi-experimental difference-in-differences design around ChatGPT’s release. The pooled estimate is statistically indistinguishable from zero. However, fields with one standard deviation higher pre-existing AI intensity show 4.52 percentage points greater output growth per percentage point of measured adoption ( 𝑝 = 0 . 0 1 0 ). Expanded keyword definitions reduce this estimate to 1.21–1.75 percentage points. Computer Science shows an estimated cumulative output increase of 8.7% by late 2025. These findings indicate heterogeneous field-level publication responses, with magnitudes sensitive to how adoption is measured.
-- 引用量: 0
-- 数据来源: crossref+openalex
-- 推荐理由: priority B with score 63; matched topic technology_frontier; citation count 0
-- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
-- 阅读优先级: B (score: 63)
-- Matched topics: technology_frontier
-- Category: academic_publishing
+暂无符合筛选条件的高质量期刊论文。
 
-## Compliance Note
+## 诊断摘要
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 216
+- fetched_from_semantic_scholar_count: 20
+- candidate_total_before_filter: 216
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-08-16T06:46:50Z
+- until_date: 2026-11-14T06:46:50Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-11-14T06:46:50Z
+- per_query: 8
+- candidate_pool_size: 216
+- after_hard_filter_count: 212
+- after_topic_filter_count: 43
+- after_score_filter_count: 3
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 43
+- matched_topics_distribution: {'academic_publishing': 14, 'technology_frontier': 13, 'management_transfer': 16, 'digital_publishing': 2, 'publishing_management': 1, 'transferable_management_communication': 3}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 213
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 173
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 4
+- blocked_by_future_date_count: 0
+
+### Top Uncategorized Records
+
+title | journal | source_api
+--- | --- | ---
+Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar
+The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar
+Correction to: Australian YA Fiction and Social Media: Mediations in Contemporary Book Cultures for Young Adults | Publishing Research Quarterly | crossref+openalex+semantic_scholar
+Another Double Shift? Australian Authors, Digital Media and Gendered Promotional Labor | Publishing Research Quarterly | crossref+openalex+semantic_scholar
+Kate Cuthbert. 2025. How to Judge a Book by its Cover: New Analytical Tools for Book Covers and Titles. Abingdon: Routledge. 252 pp. US$200. Hardback. ISBN: 978-1-032-99222-8 | Publishing Research Quarterly | crossref+openalex+semantic_scholar
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Before the Science Begins: The Non‐Scientific Chasm in Academic Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 47 | blocked by score threshold
+Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
+The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar | missing | 54 | uncategorized
+Reject Early, Advance Faster: The Case for Timely Editorial Triage in Scholarly Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+Global AI Impact in the Era of Intelligent Paradigm: A Perspective from Research Papers | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
