@@ -1,15 +1,15 @@
-# Literature Alert - daily - 2026-11-14
+# Literature Alert - daily - 2026-11-15
 
 ## Summary
 
 - Items selected: 0
 - Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-11-14T06:46:50Z
-- 检索起点 since_date: 2026-08-16T06:46:50Z
-- 检索截止 until_date: 2026-11-14T06:46:50Z
+- 本次运行时间: 2026-11-15T06:51:14Z
+- 检索起点 since_date: 2026-08-17T06:51:14Z
+- 检索截止 until_date: 2026-11-15T06:51:14Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 216
+- 候选文献数: 215
 - 最终推送数: 0
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
@@ -23,29 +23,29 @@
 - loaded_journal_zh_count: 40
 - loaded_journal_en_count: 54
 - journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 216
-- fetched_from_semantic_scholar_count: 20
-- candidate_total_before_filter: 216
+- fetched_from_openalex_journal_count: 215
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 215
 - time_window_strategy: fallback_backfill_days
-- since_date: 2026-08-16T06:46:50Z
-- until_date: 2026-11-14T06:46:50Z
+- since_date: 2026-08-17T06:51:14Z
+- until_date: 2026-11-15T06:51:14Z
 - fallback_backfill_days: 90
-- current_run_started_at: 2026-11-14T06:46:50Z
+- current_run_started_at: 2026-11-15T06:51:14Z
 - per_query: 8
-- candidate_pool_size: 216
-- after_hard_filter_count: 212
-- after_topic_filter_count: 43
-- after_score_filter_count: 3
+- candidate_pool_size: 215
+- after_hard_filter_count: 211
+- after_topic_filter_count: 42
+- after_score_filter_count: 6
 - after_duplicate_filter_count: 0
 - final_email_record_count: 0
 - target_records: 10
 - max_records: 12
-- matched_topics_count: 43
-- matched_topics_distribution: {'academic_publishing': 14, 'technology_frontier': 13, 'management_transfer': 16, 'digital_publishing': 2, 'publishing_management': 1, 'transferable_management_communication': 3}
+- matched_topics_count: 42
+- matched_topics_distribution: {'academic_publishing': 13, 'technology_frontier': 13, 'management_transfer': 16, 'digital_publishing': 2, 'publishing_management': 1, 'transferable_management_communication': 3}
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
 - duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 213
+- blocked_by_score_threshold_count: 209
 - blocked_by_missing_journal_count: 0
 - blocked_by_uncategorized_count: 173
 - blocked_by_crossref_only_count: 0
@@ -57,18 +57,18 @@
 
 title | journal | source_api
 --- | --- | ---
+Issue Information | Learned Publishing | crossref+openalex
 Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar
 The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar
 Correction to: Australian YA Fiction and Social Media: Mediations in Contemporary Book Cultures for Young Adults | Publishing Research Quarterly | crossref+openalex+semantic_scholar
 Another Double Shift? Australian Authors, Digital Media and Gendered Promotional Labor | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Kate Cuthbert. 2025. How to Judge a Book by its Cover: New Analytical Tools for Book Covers and Titles. Abingdon: Routledge. 252 pp. US$200. Hardback. ISBN: 978-1-032-99222-8 | Publishing Research Quarterly | crossref+openalex+semantic_scholar
 
 ### Top Filtered Records
 
 title | journal | source_api | matched_topics | score | block_reason
 --- | --- | --- | --- | --- | ---
+Issue Information | Learned Publishing | crossref+openalex | missing | 0 | uncategorized
 Before the Science Begins: The Non‐Scientific Chasm in Academic Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 47 | blocked by score threshold
 Better Bored Than Confused: Why Consistency Is Key in Biomedical and Scientific Writing | Learned Publishing | crossref+openalex+semantic_scholar | missing | 39 | uncategorized
 The Limited Communication of Corrections to Users of Scholarly Platforms | Learned Publishing | crossref+openalex+semantic_scholar | missing | 54 | uncategorized
-Reject Early, Advance Faster: The Case for Timely Editorial Triage in Scholarly Publishing | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
 Global AI Impact in the Era of Intelligent Paradigm: A Perspective from Research Papers | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
