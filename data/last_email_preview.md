@@ -1,15 +1,15 @@
-# Literature Alert - daily - 2026-11-17
+# Literature Alert - daily - 2026-11-18
 
 ## Summary
 
 - Items selected: 0
 - Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-11-17T08:10:38Z
-- 检索起点 since_date: 2026-08-19T08:10:38Z
-- 检索截止 until_date: 2026-11-17T08:10:38Z
+- 本次运行时间: 2026-11-18T07:44:19Z
+- 检索起点 since_date: 2026-08-20T07:44:19Z
+- 检索截止 until_date: 2026-11-18T07:44:19Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 215
+- 候选文献数: 214
 - 最终推送数: 0
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
@@ -23,52 +23,52 @@
 - loaded_journal_zh_count: 40
 - loaded_journal_en_count: 54
 - journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 215
+- fetched_from_openalex_journal_count: 214
 - fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 215
+- candidate_total_before_filter: 214
 - time_window_strategy: fallback_backfill_days
-- since_date: 2026-08-19T08:10:38Z
-- until_date: 2026-11-17T08:10:38Z
+- since_date: 2026-08-20T07:44:19Z
+- until_date: 2026-11-18T07:44:19Z
 - fallback_backfill_days: 90
-- current_run_started_at: 2026-11-17T08:10:38Z
+- current_run_started_at: 2026-11-18T07:44:19Z
 - per_query: 8
-- candidate_pool_size: 215
+- candidate_pool_size: 214
 - after_hard_filter_count: 211
 - after_topic_filter_count: 46
-- after_score_filter_count: 6
+- after_score_filter_count: 7
 - after_duplicate_filter_count: 0
 - final_email_record_count: 0
 - target_records: 10
 - max_records: 12
 - matched_topics_count: 46
-- matched_topics_distribution: {'academic_publishing': 14, 'digital_publishing': 3, 'technology_frontier': 15, 'management_transfer': 17, 'publishing_management': 1, 'transferable_management_communication': 3}
+- matched_topics_distribution: {'academic_publishing': 15, 'digital_publishing': 3, 'technology_frontier': 16, 'management_transfer': 16, 'publishing_management': 1, 'transferable_management_communication': 2}
 - selected_topic_distribution: {}
 - selected_journal_distribution: {}
 - duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 209
+- blocked_by_score_threshold_count: 207
 - blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 169
+- blocked_by_uncategorized_count: 168
 - blocked_by_crossref_only_count: 0
 - blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 4
+- blocked_by_exclusion_rules_count: 3
 - blocked_by_future_date_count: 0
 
 ### Top Uncategorized Records
 
 title | journal | source_api
 --- | --- | ---
-Issue Information | Learned Publishing | crossref+openalex
+Issue Information | Learned Publishing | crossref+openalex+semantic_scholar
+Seeking Publication: Aspirational Labor and the Fiction Submission Process | Publishing Research Quarterly | crossref+openalex+semantic_scholar
 Correction to: Australian YA Fiction and Social Media: Mediations in Contemporary Book Cultures for Young Adults | Publishing Research Quarterly | crossref+openalex+semantic_scholar
 Another Double Shift? Australian Authors, Digital Media and Gendered Promotional Labor | Publishing Research Quarterly | crossref+openalex+semantic_scholar
 Kate Cuthbert. 2025. How to Judge a Book by its Cover: New Analytical Tools for Book Covers and Titles. Abingdon: Routledge. 252 pp. US$200. Hardback. ISBN: 978-1-032-99222-8 | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Copyright, Moral Rights, and Darnton’s Communication Circuit: Conceptions of Authorship in Australia | Publishing Research Quarterly | crossref+openalex+semantic_scholar
 
 ### Top Filtered Records
 
 title | journal | source_api | matched_topics | score | block_reason
 --- | --- | --- | --- | --- | ---
-Issue Information | Learned Publishing | crossref+openalex | missing | 0 | uncategorized
-Caught Between Fires in Specialised (Legal) Publishing: The Case of European Constitutionalism | Learned Publishing | crossref+openalex | academic_publishing | 51 | blocked by score threshold
+Issue Information | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
+Caught Between Fires in Specialised (Legal) Publishing: The Case of European Constitutionalism | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
 Global AI Impact in the Era of Intelligent Paradigm: A Perspective from Research Papers | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
 Internationalization of Vietnam’s Academic Journals: Readiness and Prospects | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing,management_transfer | 51 | blocked by score threshold
-From Principles to Practice: Aligning GenAI Governance in Scholarly Publishing and Higher Education | Publishing Research Quarterly | crossref+openalex+semantic_scholar | academic_publishing | 45 | missing abstract
+Seeking Publication: Aspirational Labor and the Fiction Submission Process | Publishing Research Quarterly | crossref+openalex+semantic_scholar | missing | 43 | uncategorized
