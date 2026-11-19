@@ -1,74 +1,36 @@
-# Literature Alert - daily - 2026-11-18
+# Literature Alert - daily - 2026-11-19
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 1
+- Data sources: crossref+openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-11-18T07:44:19Z
-- 检索起点 since_date: 2026-08-20T07:44:19Z
-- 检索截止 until_date: 2026-11-18T07:44:19Z
+- 本次运行时间: 2026-11-19T07:40:32Z
+- 检索起点 since_date: 2026-08-21T07:40:32Z
+- 检索截止 until_date: 2026-11-19T07:40:32Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 214
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 候选文献数: 215
+- 最终推送数: 1
+- selected_topic_distribution: {'management_transfer': 1}
+- selected_journal_distribution: {'Strategic Management Journal': 1}
 
-## 暂无符合条件的文献
+## 1. Should birds of a feather flock together: How public criticism shapes pressures for sustainability conformity and differentiation
 
-暂无符合筛选条件的高质量期刊论文。
+- 标题: Should birds of a feather flock together: How public criticism shapes pressures for sustainability conformity and differentiation
+- 作者: N Piyasinchai, M Grimes
+- 年份: 2026
+- 期刊或来源: Strategic Management Journal
+- DOI: 10.1002/smj.70144
+- URL: https://openalex.org/W7225704261
+- 摘要: Abstract Research Summary While firms face pressure to engage in Environmental, Social, and Governance (ESG) practices, it is unclear how they should specifically engage given the breadth of sustainability‐related concerns. Drawing on optimal distinctiveness and social evaluations research, we argue that public criticism directed toward an industry creates oscillating pressures for firms to conform with or deviate from industry ESG norms. Using data on 8176 global companies from 2013 to 2022, we find that although ESG conformity benefits investor evaluations, once industry peers' public criticism accumulates beyond a threshold, ESG differentiation is rewarded, particularly when firms increase material ESG practices and reduce immaterial ones. Our study reveals how public criticism dynamically reshapes the evaluative processes by which investors determine firm legitimacy, bridging optimal distinctiveness and social evaluations literatures. Managerial Summary Our research indicates that firms often adopt similar ESG practices as their industry peers, which usually enhances investor evaluations. However, this conformity can backfire and become a liability when industry peers face significant criticism. In such scenarios, firms that adopt distinctive ESG practices compared to the industry tend to receive greater rewards, especially when differentiation involves increasing material ESG practices and reducing immaterial ones. Therefore, while adopting ESG norms can be beneficial, managers should be vigilant of public opinion and ready to deviate from those norms when necessary.
+- 引用量: 0
+- 数据来源: crossref+openalex
+- 推荐理由: priority B with score 62; matched topic management_transfer; citation count 0
+- 与出版研究的关系: Provides transferable management theories or mechanisms for publishing enterprise management, platform governance, brand assets, organizational capability, or digital transformation.
+- 阅读优先级: B (score: 62)
+- Matched topics: management_transfer
+- Category: digital_publishing
 
-## 诊断摘要
+## Compliance Note
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 214
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 214
-- time_window_strategy: fallback_backfill_days
-- since_date: 2026-08-20T07:44:19Z
-- until_date: 2026-11-18T07:44:19Z
-- fallback_backfill_days: 90
-- current_run_started_at: 2026-11-18T07:44:19Z
-- per_query: 8
-- candidate_pool_size: 214
-- after_hard_filter_count: 211
-- after_topic_filter_count: 46
-- after_score_filter_count: 7
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 10
-- max_records: 12
-- matched_topics_count: 46
-- matched_topics_distribution: {'academic_publishing': 15, 'digital_publishing': 3, 'technology_frontier': 16, 'management_transfer': 16, 'publishing_management': 1, 'transferable_management_communication': 2}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 207
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 168
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 3
-- blocked_by_future_date_count: 0
-
-### Top Uncategorized Records
-
-title | journal | source_api
---- | --- | ---
-Issue Information | Learned Publishing | crossref+openalex+semantic_scholar
-Seeking Publication: Aspirational Labor and the Fiction Submission Process | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Correction to: Australian YA Fiction and Social Media: Mediations in Contemporary Book Cultures for Young Adults | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Another Double Shift? Australian Authors, Digital Media and Gendered Promotional Labor | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Kate Cuthbert. 2025. How to Judge a Book by its Cover: New Analytical Tools for Book Covers and Titles. Abingdon: Routledge. 252 pp. US$200. Hardback. ISBN: 978-1-032-99222-8 | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-
-### Top Filtered Records
-
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Issue Information | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
-Caught Between Fires in Specialised (Legal) Publishing: The Case of European Constitutionalism | Learned Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
-Global AI Impact in the Era of Intelligent Paradigm: A Perspective from Research Papers | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
-Internationalization of Vietnam’s Academic Journals: Readiness and Prospects | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing,management_transfer | 51 | blocked by score threshold
-Seeking Publication: Aspirational Labor and the Fiction Submission Process | Publishing Research Quarterly | crossref+openalex+semantic_scholar | missing | 43 | uncategorized
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
