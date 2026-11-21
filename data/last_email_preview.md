@@ -1,36 +1,74 @@
-# Literature Alert - daily - 2026-11-20
+# Literature Alert - daily - 2026-11-21
 
 ## Summary
 
-- Items selected: 1
-- Data sources: crossref+openalex+semantic_scholar
+- Items selected: 0
+- Data sources: missing
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-11-20T07:31:24Z
-- 检索起点 since_date: 2026-08-22T07:31:24Z
-- 检索截止 until_date: 2026-11-20T07:31:24Z
+- 本次运行时间: 2026-11-21T07:27:08Z
+- 检索起点 since_date: 2026-08-23T07:27:08Z
+- 检索截止 until_date: 2026-11-21T07:27:08Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 215
-- 最终推送数: 1
-- selected_topic_distribution: {'academic_publishing': 1}
-- selected_journal_distribution: {'Serials Review': 1}
+- 候选文献数: 216
+- 最终推送数: 0
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
 
-## 1. Are Editorial Team Citation Scores Associated with Journal Performance? Evidence from Management Science and Operations Research
+## 暂无符合条件的文献
 
-- 标题: Are Editorial Team Citation Scores Associated with Journal Performance? Evidence from Management Science and Operations Research
-- 作者: Yundong Xie, Yezhu Wang, Zhiqiang Zhou
-- 年份: 2026
-- 期刊或来源: Serials Review
-- DOI: 10.1080/00987913.2026.2756901
-- URL: https://openalex.org/W7233772538
-- 摘要: Editors occupy formal positions within journal governance, but the extent to which the scholarly profiles of editorial teams are associated with journal performance remains unclear. This study developed an editorial team citation score (ETCS) and classified editorial positions into two groups: editors, associate editors, and comparable senior positions constituted the top editorship team (TET), whereas the remaining listed positions constituted the non-top editorship team (non-TET). The analysis examined the associations of full-team ETCS and its TET and non-TET components with journal reputation and citation-based impact after adjustment for selected journal- and editorial team-level characteristics. The dataset comprised 3,209 editorial appointments, including 412 TET and 2,797 non-TET appointments, across 43 management science and operations research journals. Full-team ETCS and TET ETCS were positively associated with all three measures of journal performance, whereas non-TET ETCS was positively associated only with the Article Influence Score. These findings indicate team-level associations but do not establish that the scholarly profiles of editorial teams cause improvements in journal performance. ETCS should therefore be interpreted as a complementary descriptive measure of editorial teams rather than as a standalone indicator of journal quality or a journal-ranking tool.
-- 引用量: 0
-- 数据来源: crossref+openalex+semantic_scholar
-- 推荐理由: priority B with score 62; matched topic academic_publishing; citation count 0
-- 与出版研究的关系: Relevant to scholarly publishing, journal governance, peer review, open access, or research integrity.
-- 阅读优先级: B (score: 62)
-- Matched topics: academic_publishing
-- Category: academic_publishing
+暂无符合筛选条件的高质量期刊论文。
 
-## Compliance Note
+## 诊断摘要
 
-This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
+- loaded_journal_zh_count: 40
+- loaded_journal_en_count: 54
+- journal_whitelist_discovery_count: 94
+- fetched_from_openalex_journal_count: 216
+- fetched_from_semantic_scholar_count: 0
+- candidate_total_before_filter: 216
+- time_window_strategy: fallback_backfill_days
+- since_date: 2026-08-23T07:27:08Z
+- until_date: 2026-11-21T07:27:08Z
+- fallback_backfill_days: 90
+- current_run_started_at: 2026-11-21T07:27:08Z
+- per_query: 8
+- candidate_pool_size: 216
+- after_hard_filter_count: 215
+- after_topic_filter_count: 43
+- after_score_filter_count: 7
+- after_duplicate_filter_count: 0
+- final_email_record_count: 0
+- target_records: 10
+- max_records: 12
+- matched_topics_count: 43
+- matched_topics_distribution: {'academic_publishing': 16, 'technology_frontier': 15, 'management_transfer': 14, 'publishing_management': 1, 'digital_publishing': 1, 'transferable_management_communication': 2}
+- selected_topic_distribution: {}
+- selected_journal_distribution: {}
+- duplicate_or_already_pushed_count: 12
+- blocked_by_score_threshold_count: 209
+- blocked_by_missing_journal_count: 0
+- blocked_by_uncategorized_count: 173
+- blocked_by_crossref_only_count: 0
+- blocked_by_document_type_count: 0
+- blocked_by_exclusion_rules_count: 1
+- blocked_by_future_date_count: 0
+
+### Top Uncategorized Records
+
+title | journal | source_api
+--- | --- | ---
+Issue Information | Learned Publishing | crossref+openalex+semantic_scholar
+Seeking Publication: Aspirational Labor and the Fiction Submission Process | Publishing Research Quarterly | crossref+openalex+semantic_scholar
+Correction to: Australian YA Fiction and Social Media: Mediations in Contemporary Book Cultures for Young Adults | Publishing Research Quarterly | crossref+openalex+semantic_scholar
+Another Double Shift? Australian Authors, Digital Media and Gendered Promotional Labor | Publishing Research Quarterly | crossref+openalex+semantic_scholar
+Kate Cuthbert. 2025. How to Judge a Book by its Cover: New Analytical Tools for Book Covers and Titles. Abingdon: Routledge. 252 pp. US$200. Hardback. ISBN: 978-1-032-99222-8 | Publishing Research Quarterly | crossref+openalex+semantic_scholar
+
+### Top Filtered Records
+
+title | journal | source_api | matched_topics | score | block_reason
+--- | --- | --- | --- | --- | ---
+Issue Information | Learned Publishing | crossref+openalex+semantic_scholar | missing | 0 | uncategorized
+Global AI Impact in the Era of Intelligent Paradigm: A Perspective from Research Papers | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
+Internationalization of Vietnam’s Academic Journals: Readiness and Prospects | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing,management_transfer | 51 | blocked by score threshold
+Seeking Publication: Aspirational Labor and the Fiction Submission Process | Publishing Research Quarterly | crossref+openalex+semantic_scholar | missing | 43 | uncategorized
+From Principles to Practice: Aligning GenAI Governance in Scholarly Publishing and Higher Education | Publishing Research Quarterly | crossref+openalex+semantic_scholar | academic_publishing | 45 | missing abstract
