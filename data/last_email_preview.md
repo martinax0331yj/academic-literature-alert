@@ -1,74 +1,70 @@
-# Literature Alert - daily - 2026-11-25
+# Literature Alert - daily - 2026-11-26
 
 ## Summary
 
-- Items selected: 0
-- Data sources: missing
+- Items selected: 3
+- Data sources: crossref+openalex
 - Note: metadata-only alert. No full-text PDF is downloaded or attached.
-- 本次运行时间: 2026-11-25T08:54:06Z
-- 检索起点 since_date: 2026-08-27T08:54:06Z
-- 检索截止 until_date: 2026-11-25T08:54:06Z
+- 本次运行时间: 2026-11-26T08:39:17Z
+- 检索起点 since_date: 2026-08-28T08:39:17Z
+- 检索截止 until_date: 2026-11-26T08:39:17Z
 - 时间窗口策略: fallback_backfill_days
-- 候选文献数: 222
-- 最终推送数: 0
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
+- 候选文献数: 203
+- 最终推送数: 3
+- selected_topic_distribution: {'transferable_management_communication': 2, 'management_transfer': 2, 'publishing_management': 1, 'technology_frontier': 1}
+- selected_journal_distribution: {'Journal of Management Information Systems': 3}
 
-## 暂无符合条件的文献
+## 1. Regulating Data Use in Social Media: Strategic Implications for Platforms and Users
 
-暂无符合筛选条件的高质量期刊论文。
+- 标题: Regulating Data Use in Social Media: Strategic Implications for Platforms and Users
+- 作者: Hyeonsik Shin, Leila Hosseini, Subodha Kumar
+- 年份: 2026
+- 期刊或来源: Journal of Management Information Systems
+- DOI: 10.1080/07421222.2026.2736935
+- URL: https://openalex.org/W7239352126
+- 摘要: Social media platforms rely heavily on harvesting users’ personal data to fuel personalized engagement and maximize profits. While enhancing user engagement, this raises concerns about behavioral exploitation and user well-being, including social media addiction. In response, policymakers are considering purpose-limiting regulations on data use that restrict how platforms may use collected data, for example, by banning manipulative personalization, consistent with global initiatives such as the General Data Protection Regulation (GDPR) and the Digital Services Act (DSA). This paper develops a game-theoretic model to examine how such purpose-limiting regulation on data use affects platform strategies, market outcomes, and user welfare. We find that, in equilibrium, imposing this regulation may sometimes increase the amount of data collected per user, suggesting potential unintended consequences. It may also increase platform demand and profitability, and expand the market coverage while consistently enhancing overall user welfare. These findings offer theoretical and policy insights regarding regulatory impacts.
+- 引用量: 0
+- 数据来源: crossref+openalex
+- 推荐理由: priority B with score 62; matched topic transferable_management_communication; citation count 0
+- 与出版研究的关系: Provides transferable theories or methods for publishing, media management, communication, or cultural industries.
+- 阅读优先级: B (score: 62)
+- Matched topics: transferable_management_communication, management_transfer
+- Category: digital_publishing
 
-## 诊断摘要
+## 2. Governing Value Creation on Livestreaming Platforms: Intervention, Privilege Structure, and Streamer Adaptation
 
-- loaded_journal_zh_count: 40
-- loaded_journal_en_count: 54
-- journal_whitelist_discovery_count: 94
-- fetched_from_openalex_journal_count: 222
-- fetched_from_semantic_scholar_count: 0
-- candidate_total_before_filter: 222
-- time_window_strategy: fallback_backfill_days
-- since_date: 2026-08-27T08:54:06Z
-- until_date: 2026-11-25T08:54:06Z
-- fallback_backfill_days: 90
-- current_run_started_at: 2026-11-25T08:54:06Z
-- per_query: 8
-- candidate_pool_size: 222
-- after_hard_filter_count: 221
-- after_topic_filter_count: 42
-- after_score_filter_count: 4
-- after_duplicate_filter_count: 0
-- final_email_record_count: 0
-- target_records: 10
-- max_records: 12
-- matched_topics_count: 42
-- matched_topics_distribution: {'academic_publishing': 13, 'technology_frontier': 18, 'management_transfer': 13, 'publishing_management': 1, 'digital_publishing': 1, 'transferable_management_communication': 2}
-- selected_topic_distribution: {}
-- selected_journal_distribution: {}
-- duplicate_or_already_pushed_count: 12
-- blocked_by_score_threshold_count: 218
-- blocked_by_missing_journal_count: 0
-- blocked_by_uncategorized_count: 180
-- blocked_by_crossref_only_count: 0
-- blocked_by_document_type_count: 0
-- blocked_by_exclusion_rules_count: 1
-- blocked_by_future_date_count: 0
+- 标题: Governing Value Creation on Livestreaming Platforms: Intervention, Privilege Structure, and Streamer Adaptation
+- 作者: Dongwon Shin, Sunghun Chung, Yi‐Chun Ho, Gunwoong Lee
+- 年份: 2026
+- 期刊或来源: Journal of Management Information Systems
+- DOI: 10.1080/07421222.2026.2736932
+- URL: https://openalex.org/W7204726332
+- 摘要: Platform governance shapes not only how value is created in digital ecosystems but also who is better positioned to create it. Yet little is known about how governance interventions triggered by external pressures affect value creation across platform privilege structures. We investigate a bitrate restriction on Twitch, a global livestreaming platform, in South Korea. Implemented in response to rising network fees, this governance intervention constrained streamers’ access to a critical operational resource. We find that the intervention reduced streamer value creation, measured by average concurrent viewership, by approximately 9.6%. This harm was unevenly distributed, concentrating among the least-privileged streamers, while more-privileged streamers appeared partially buffered by platform-endowed technical resources and their established audience bases. Streamers reconfigured their content portfolios in response, but the performance implications of this adaptation depend on its form and platform privilege. We theorize and empirically show how resource-restricting governance interventions produce governance-induced digital inequality and condition participant adaptation in platform ecosystems.
+- 引用量: 0
+- 数据来源: crossref+openalex
+- 推荐理由: priority B with score 62; matched topic publishing_management; citation count 0
+- 与出版研究的关系: Relevant to publishing enterprise management, brand operation, copyright operation, platform governance, or knowledge services.
+- 阅读优先级: B (score: 62)
+- Matched topics: publishing_management, transferable_management_communication, management_transfer
+- Category: digital_publishing
 
-### Top Uncategorized Records
+## 3. Knowing is Not Enough: Information Retrievability as a Precondition to Effective LLM Oversight
 
-title | journal | source_api
---- | --- | ---
-Can AI Express Sentiment Like Humans in Research Abstracts? Implications for Academic Publishing | Learned Publishing | crossref+openalex+semantic_scholar
-Who Vouches for the Data? | Learned Publishing | crossref+openalex
-“Braille Is the Script of My Life”: Braille Publishing and Braille Readers’ Access to Books in Australia | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Seeking Publication: Aspirational Labor and the Fiction Submission Process | Publishing Research Quarterly | crossref+openalex+semantic_scholar
-Correction to: Australian YA Fiction and Social Media: Mediations in Contemporary Book Cultures for Young Adults | Publishing Research Quarterly | crossref+openalex+semantic_scholar
+- 标题: Knowing is Not Enough: Information Retrievability as a Precondition to Effective LLM Oversight
+- 作者: Xinyu Fu, Narayan Ramasubbu, Dennis Galletta
+- 年份: 2026
+- 期刊或来源: Journal of Management Information Systems
+- DOI: 10.1080/07421222.2026.2736934
+- URL: https://openalex.org/W7207771305
+- 摘要: Large language models (LLMs) are increasingly embedded in organizational work, yet their errors often pass human review. Prior research locates such failures in users’ capability to review LLM output or their engagement in doing so. We develop an alternative, retrieval-based account of human oversight and posit that error detection is more effective when oversight-relevant information is accessible to users at the moment of review. Across two randomized lab-in-the-field experiments with 640 customer-facing employees, we show that self-generated explanations improve error detection and strengthen recall of verification-relevant reasoning, while cues that reactivate such reasoning help sustain detection under repeated LLM use. Theoretically, we identify information retrievability as a distinct precondition for effective oversight and specify generative encoding and cue-supported reactivation as mechanisms that build and sustain it. Practically, lightweight onboarding self-explanations and daily retrieval cues can make human oversight more resilient as LLM use becomes routine.
+- 引用量: 0
+- 数据来源: crossref+openalex
+- 推荐理由: priority B with score 62; matched topic technology_frontier; citation count 0
+- 与出版研究的关系: Relevant to AI, data governance, recommendation systems, knowledge graphs, or technology-enabled publishing workflows.
+- 阅读优先级: B (score: 62)
+- Matched topics: technology_frontier
+- Category: digital_publishing
 
-### Top Filtered Records
+## Compliance Note
 
-title | journal | source_api | matched_topics | score | block_reason
---- | --- | --- | --- | --- | ---
-Can AI Express Sentiment Like Humans in Research Abstracts? Implications for Academic Publishing | Learned Publishing | crossref+openalex+semantic_scholar | missing | 43 | uncategorized
-Who Vouches for the Data? | Learned Publishing | crossref+openalex | missing | 43 | uncategorized
-Global AI Impact in the Era of Intelligent Paradigm: A Perspective from Research Papers | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing | 51 | blocked by score threshold
-Internationalization of Vietnam’s Academic Journals: Readiness and Prospects | Journal of Scholarly Publishing | crossref+openalex+semantic_scholar | academic_publishing,management_transfer | 51 | blocked by score threshold
-“Braille Is the Script of My Life”: Braille Publishing and Braille Readers’ Access to Books in Australia | Publishing Research Quarterly | crossref+openalex+semantic_scholar | missing | 47 | uncategorized
+This email contains metadata and short summaries only. Missing metadata is marked as 未获取 and not fabricated.
